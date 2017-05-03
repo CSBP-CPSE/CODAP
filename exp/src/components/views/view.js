@@ -1,7 +1,7 @@
 
 r.define(["Api/util/lang",
 		  "Api/util/dom",
-		  "Api/components/Evented"],
+		  "Api/components/evented"],
     
 	function (Lang,
 			  Dom,
