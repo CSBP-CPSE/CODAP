@@ -87,6 +87,16 @@ r.define(["Api/util/lang",
 				
 				else if (ev.model.Active === "Building") this.SetActiveView(this.View("Building"));
 				
+				else if (ev.model.Active === "Geolocate") {
+					this.SetActiveView(null);
+
+					this.Controller("Map").model.Geolocating = true;
+				
+					if (ev.origin !== "Main") return;
+				
+					this.NotifyViewNewModel("Map");
+				}
+				
 				else this.SetActiveView(null);
 			},
 			

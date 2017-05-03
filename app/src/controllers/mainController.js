@@ -19,16 +19,6 @@ r.define(["Api/util/lang",
 				}		
 			},
 			
-			Geolocate : function() {
-				if (!navigator.geolocation) this.NotifyViewError(new Error("Geolocation is not supported by this browser."));
-				
-				else navigator.geolocation.getCurrentPosition(success.bind(this), this.NotifyViewError.bind(this));
-				
-				function success(ev) {
-					this.subs.map.ZoomToXY(ev.coords.longitude, ev.coord.latitude, "4326");
-				}
-			},
-			
 			SetActive : function(active) {
 				this.model.Active = active;
 				

@@ -74,9 +74,7 @@ r.define(["Api/util/lang",
 			},
 			
 			BtnGeolocate_OnClick : function(e) { 
-				this.controller.SetActive(null);				
-				
-				this.controller.Geolocate();
+				this.controller.SetActive("Geolocate");			
 			},
 			
 			BtnRanking_OnClick : function(e) {				

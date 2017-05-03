@@ -76,13 +76,16 @@ r.define(["Api/util/lang",
 				
 				page.Top = Dom.Create("div", { "className":"Page Two" });
 				page.Title = Dom.Create("div", { "className":"Title" }, page.Top);
-				page.LblBuilding = Dom.Create("div", { "className":"Label Building" }, page.Top);
-				page.CbxBuilding = Dom.Create("select", { "className":"Combo Building" }, page.Top);
-				page.LblAddress = Dom.Create("div", { "className":"Label Address" }, page.Top);
-				page.IptStreet = Dom.Create("input", { "className":"Input Street" }, page.Top);
+				page.Container = Dom.Create("div", { "className":"Container" }, page.Top);
+				
+				
+				page.LblBuilding = Dom.Create("div", { "className":"Label Building" }, page.Container);
+				page.CbxBuilding = Dom.Create("select", { "className":"Combo Building" }, page.Container);
+				page.LblAddress = Dom.Create("div", { "className":"Label Address" }, page.Container);
+				page.IptStreet = Dom.Create("input", { "className":"Input Street" }, page.Container);
 				
 				page.Row = {};
-				page.Row.Top = Dom.Create("div", { "className":"Row" }, page.Top);
+				page.Row.Top = Dom.Create("div", { "className":"Row" }, page.Container);
 				
 				var div = Dom.Create("div", { "className":"Gutter" }, page.Row.Top);
 				page.Row.IptNumber = Dom.Create("input", { "className":"Input Number" }, div);
@@ -90,17 +93,17 @@ r.define(["Api/util/lang",
 				var div = Dom.Create("div", { "className":"Gutter" }, page.Row.Top);
 				page.Row.IptPostal = Dom.Create("input", { "className":"Input Postal" }, div);
 				
-				page.LblAccess = Dom.Create("div", { "className":"Label Accessible" }, page.Top);
-				page.CbxAccess = Dom.Create("select", { "className":"Combo Access" }, page.Top);
-				page.IptDescr = Dom.Create("input", { "className":"Input Description" }, page.Top);
+				page.LblAccess = Dom.Create("div", { "className":"Label Accessible" }, page.Container);
+				page.CbxAccess = Dom.Create("select", { "className":"Combo Access" }, page.Container);
+				page.IptDescr = Dom.Create("input", { "className":"Input Description" }, page.Container);
 				
-				page.LblSource = Dom.Create("div", { "className":"Label Source" }, page.Top);
-				page.IptSource = Dom.Create("input", { "className":"Input Source" }, page.Top);
+				page.LblSource = Dom.Create("div", { "className":"Label Source" }, page.Container);
+				page.IptSource = Dom.Create("input", { "className":"Input Source" }, page.Container);
 				
-				page.LblFixme = Dom.Create("div", { "className":"Label Fixme" }, page.Top);
-				page.IptFixme = Dom.Create("input", { "className":"Input Fixme" }, page.Top);
+				page.LblFixme = Dom.Create("div", { "className":"Label Fixme" }, page.Container);
+				page.IptFixme = Dom.Create("input", { "className":"Input Fixme" }, page.Container);
 				
-				var div = Dom.Create("div", { "className":"Footer" }, page.Top);
+				var div = Dom.Create("div", { "className":"Footer" }, page.Container);
 				page.BtnSave = Dom.Create("button", { "className":"Button Save" }, div);
 				// page.LblNoPlace = Dom.Create("div", { "className":"Label NoPlace" }, div);
 				// page.BtnDelete = Dom.Create("button", { "className":"Button Delete" }, div);

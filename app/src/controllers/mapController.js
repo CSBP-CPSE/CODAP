@@ -39,7 +39,8 @@ r.define(["Api/util/lang",
 				
 				this.model = {
 					Map : this.map,
-					Selected : null
+					Selected : null,
+					Geolocating : false
 				};
 			},
 			
@@ -85,6 +86,12 @@ r.define(["Api/util/lang",
 				f.setStyle(Styles["Search"]);
 				
 				this.vLayer.getSource().addFeature(f);
+			},
+			
+			SetView : function(coords, zoom) {
+				var view = new ol.View({ center:coords, zoom:zoom });
+				
+				this.map.setView(view);
 			},
 			
 			IdentifyFeatures : function(coordinate) {
@@ -141,6 +148,44 @@ r.define(["Api/util/lang",
 				}
 				
 				return format.readFeatures(geojson, opts);
+			},
+			
+			Geolocate : function() {
+				this.model.Geolocating = false;
+			
+				if (!navigator.geolocation) this.NotifyViewError(new Error("Geolocation is not supported by this browser."));
+				
+				else navigator.geolocation.getCurrentPosition(success.bind(this), this.NotifyViewError.bind(this));
+				
+				function success(ev) {
+					var f = this.MakePointFeature(ev.coords, "Marker");
+					
+					this.AddFeature(f);
+					
+					this.SetView(f.getGeometry().getCoordinates(), 18);
+					
+					setTimeout(timeout.bind(this, f), 1500);
+				}
+				
+				function timeout(f1, ev) {
+					var features = this.vLayer.getSource().getFeatures();
+				
+					if (!Array.Find(features, function(f2) { return f1 === f2; })) return;
+					
+					this.vLayer.getSource().removeFeature(f1);
+				}
+			},
+			
+			MakePointFeature : function(coords, style) {
+				var pt = Project.Point(coords.longitude, coords.latitude, "4326", "900913");
+				
+				var f = new ol.Feature({
+				  geometry: new ol.geom.Point([pt.x, pt.y])
+				});
+				
+				f.setStyle(Styles[style]);
+				
+				return f;
 			},
 			
 			SelectFeature : function(feature) {

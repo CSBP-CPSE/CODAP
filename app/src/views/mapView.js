@@ -32,9 +32,9 @@ r.define(["Api/util/lang",
 			onController_ModelChange : function(ev) {
 				this.controller.ClearMap();
 				
-				if (!ev.model.Selected) return;
+				if (ev.model.Selected) this.controller.AddFeature(ev.model.Selected);
 				
-				this.controller.AddFeature(ev.model.Selected);
+				if (ev.model.Geolocating) this.controller.Geolocate();
 			}
 		})
 		
