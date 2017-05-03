@@ -96,7 +96,7 @@ r.define(["Api/util/lang",
 				// NOTE : Openstreetmap has serious limitations when it comes to querying the data it contains. The two following API
 				//		  calls are the best I managed to do for now.
 				// NOTE : This url will only return features as long as the radius around the clicked point contains a node or a way
-				var url = 'http://overpass-api.de/api/interpreter?data=[out:json][timeout:60];(way["building"](around:{0},{1},{2});>);out;'
+				var url = 'https://overpass-api.de/api/interpreter?data=[out:json][timeout:60];(way["building"](around:{0},{1},{2});>);out;'
 
 				// NOTE : This url will return ways that are in an area that contain  the clicked point. The problem is, an area must be 
 				// 		  defined for this to work. Usually, this works with big commercial buildings, not residences.
