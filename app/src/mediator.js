@@ -1,6 +1,6 @@
 
 r.define(["Api/util/lang",
-		  "Exp/components/Mediator"],
+		  "Exp/components/mediator"],
     
 	function (Lang,
 			  Mediator) {
