@@ -1,0 +1,106 @@
+.Login .Container {
+	position: fixed;
+    left	: 50%;
+    top		: 50%;
+    margin-top	: -180px;
+    margin-left	: -120px;
+	z-index	 	: 500;
+	background : none;
+	
+    color		: white;
+    font-size	: 15px;
+    font-family	: sans-serif;
+}
+
+.Login .Container .Inner {
+    width	: 240px;
+}
+
+.Login .Container .Inner,
+.Login .Container .Language,
+.Login .Container .Tutorial {
+    background-color: rgba(99, 30, 28, 0.8);
+    border-radius	: 6px;
+    border			: solid rgba(255, 255, 255, 0.9) 1.5px;
+}
+	
+.Login .Container .Inner {
+	text-align : center;
+}
+
+.Login .Container .Inner .Message {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Login.View .Footer {
+    padding-top : 5px;
+}
+
+.Login .Container .Message.Top,
+.Login .Container .Buttons > * {
+    font-weight: bold;
+}
+
+.Login .Container .UserInfo {
+	border-bottom: solid rgba(255, 255, 255, 0.9) 1.5px;
+	border-top: solid rgba(255, 255, 255, 0.9) 1.5px;
+}
+
+
+.Login .Container .Message.Top {
+    font-weight: bold;
+    padding: 18px 6px 18px 6px;
+}
+
+.Login .Container .Buttons {
+	position:relative;
+	display:block;
+}
+	
+.Login .Container .Buttons > * {
+    margin: 25px 5px 25px 5px;
+    background-color: white;
+    color: #A8504E;
+}
+
+.Login .Container .Buttons .Button:disabled {
+    background-color: rgb(65, 4, 4);
+    cursor			: not-allowed;
+    color			: #ffeded;
+    box-shadow		: none;
+}
+
+.Login .Container .Language,
+.Login .Container .Tutorial {
+	height	: 35px;
+	width	: 115px;
+}
+
+.Login .Container .Language {
+    position: absolute;
+	right : 0px;
+}
+ 
+.Login .Container .Tutorial{
+    position: relative;
+	left  : 0px;
+}
+
+.Login .Container .Tutorial,
+.Login .Container .Language {
+    cursor: not-allowed;
+}
+
+.Login .Container .UserInfo {
+	padding : 15px 15px 15px 15px;
+}
+
+.Login .Container .UserInfo .Label {
+	display: inline-block;
+    vertical-align: middle;
+    padding-left: 26px;
+	
+	background-image: url(../assets/user.png);
+    background-repeat: no-repeat;
+}

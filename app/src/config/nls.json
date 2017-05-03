@@ -1,0 +1,67 @@
+﻿{
+	"Main_BtnLog_In"            	: { "fr" : "Login", "en" : "Login" },
+	"Main_BtnLog_Out"            	: { "fr" : "Logout", "en" : "Logout" },
+	"Main_BtnGo"            		: { "fr" : "Continuer", "en" : "Continue" },
+	"Main_LoginMessage_Row1"		: { "fr" : "Nom d'utilisateur OSM", "en" : "OSM username"},
+	"Main_LoginMessage_Row2"		: { "fr" : "mot de passe", "en" : "password"},
+	"Main_LoginMessage_1"			: { "fr" : "Bienvenue à l'application de cartographie en ligne de Statistiques Canada", "en" : "Welcome to Statistics Canada Mobile Mapping App"},
+	"Main_LoginMessage_2"			: { "fr" : "Veuillez vous authentifier avec votre compte OSM", "en" : "Please log into your OSM account to begin"},
+	"Main_LoginMessage_3"			: { "fr" : "Vous êtes présentement authentifié en tant qu'utilisateur", "en" : "You are currently logged<br>in as user"},
+
+	"Main_ButtonTutorial"			: { "fr" : "Tutoriel", "en" : "Tutorial"},
+	"Main_ButtonLanguage"			: { "fr" : "English", "en" : "Français"},
+	
+	"Building_Title"				: { "fr" : "MODIFIER UN BÂTIMENT", "en" : "EDIT BUILDING" },
+	"Building_LabelBuilding"		: { "fr" : "Bâtiment", "en" : "Building" },
+	"Building_BtnEdit"				: { "fr" : "Modifier", "en" : "Edit" },
+	"Building_LabelNoData"			: { "fr" : "Pour sélectionner un bâtiment, zoomer et cliquer sur la carte", "en" : "To select a building, zoom in and click on the map" },
+
+	"Building_LabelAddress"			: { "fr" : "Adresse", "en" : "Address" },
+	"Building_LabelSource"			: { "fr" : "Source de données", "en" : "Data Source" },
+	"Building_LabelAccess"			: { "fr" : "Accessible fauteuil roulant", "en" : "Wheelchair Accessible" },
+	"Building_LabelFixme"			: { "fr" : "Corrigez moi", "en" : "Fix me" },
+	"Building_BtnSave"				: { "fr" : "Sauvegarder", "en" : "Save" },
+	"Building_LabelNoPlace"			: { "fr" : "L'endroit n'existe pas?", "en" : "Place doesn't exist?" },
+	"Building_BtnDelete"			: { "fr" : "Effacer", "en" : "Delete" },
+	
+	"Building_PH_Source"			: { "fr" : "Source de données", "en" : "Data source" },
+	"Building_PH_Street"			: { "fr" : "Rue", "en" : "Street" },
+	"Building_PH_Number"			: { "fr" : "Numéro civique", "en" : "Address Number" },
+	"Building_PH_Postal"			: { "fr" : "Code postal", "en" : "Postal Code" },
+	"Building_PH_Descr"				: { "fr" : "Description", "en" : "Description" },
+	"Building_PH_Fixme"				: { "fr" : "Problème à corriger", "en" : "Issue to be fixed" },
+	
+	"Ranking_Title"					: { "fr" : "TABLEAU DE POINTAGE", "en" : "SCOREBOARD" },
+	
+	"Settings_Title"				: { "fr" : "PARAMÈTRES", "en" : "SETTINGS" },
+	"Settings_BtnLogout"			: { "fr" : "Logout", "en" : "Logout" },
+	"Settings_LnkContact"			: { "fr" : "Nous contacter", "en" : "Contact us" },
+	"Settings_LnkIssues"			: { "fr" : "Rapporter un problème", "en" : "Report an issue" },
+	"Settings_LnkAbout"				: { "fr" : "À Propos du projet de Statistiques Canada", "en" : "About Statistics Canada Project" },
+	"Settings_LnkTutorial"			: { "fr" : "Tutoriel", "en" : "Tutorial" },
+	"Settings_LnkLanguage"			: { "fr" : "Langue", "en" : "Language" },
+	"Settings_LnkShare"				: { "fr" : "Partager sur Twitter/Facebook/Email", "en" : "Share on Twitter/Facebook/Email" },
+	"Settings_LnkLicense"			: { "fr" : "License & ententes", "en" : "Licensing & Agreements" },
+	"Settings_LnkTechnical"			: { "fr" : "Paramètres techniques", "en" : "Technical Settings" },
+
+	"Settings_About_Close"			: { "fr" : "Fermer", "en" : "Close" },
+	"Settings_About_Note1"			: { "fr" : "À propos du projet", "en" : "About the project" },
+	"Settings_About_Note2"			: { "fr" : "Note importante", "en" : "Important note" },
+	"Settings_About_Note3"			: { "fr" : "Il s’agit de la version bêta de cette application. Vous devrez peut-être activer une fenêtre contextuelle afin de pouvoir vous inscrire et vous connecter à ce site Web", "en" : "The application is in its beta version. You may have to enable popups for this website to be able to register and login." },
+	"Settings_About_Note4"			: { "fr" : "Bienvenue!", "en" : "Welcome!" },
+	"Settings_About_Note5"			: { "fr" : "Nous sommes ravis de vous compter parmi nous dans le cadre de ce nouveau projet pilote de Statistique Canada. Ce projet pilote constitue une occasion de prendre conscience que le travail de collaboration permet d’améliorer les statistiques nationales. C'est avec enthousiasme que nous nous joignons à la communauté <a href='http://www.openstreetmap.org/?locale=fr-CA#map=13/45.4243/-75.7205'>OpenStreetMap (OSM)</a> dans le cadre de ce projet.", "en" : "We are pleased to have you join us for this new pilot project from Statistics Canada. As a pilot, it is an opportunity to learn how working together could improve national statistics. With this project, we are excited to join the <a href='http://www.openstreetmap.org/?locale=en-CA#map=13/45.4243/-75.7205'>OpenStreetMap (OSM)</a> community." },
+	"Settings_About_Note6"			: { "fr" : "Le projet utilise OSM comme plateforme pour inviter les contributeurs à fournir, au moyen de l’approche participative, des renseignements sur des immeubles. Pour le moment, le projet pilote se concentrera sur la région d’Ottawa–Gatineau. À l’heure actuelle, il n’existe pas de statistiques nationales exactes sur les immeubles — et sur leurs attributs — qui peuvent servir à la comparaison des régions particulières. Les renseignements que vous fournirez aideront ainsi à combler des lacunes statistiques existantes et à fournir de nouvelles possibilités d’analyse qui sont importantes pour les utilisateurs de données.", "en" : "The pilot is using OSM as an open data platform for inviting contributors to crowdsource information on buildings. The pilot project will focus on the Ottawa-Gatineau region for now. There are currently no accurate national-level statistics on buildings— and their attributes—that can be used to compare specific local areas. The information you submit will help to fill existing data gaps and provide new analytical opportunities that are important to data users." },
+	"Settings_About_Note7"			: { "fr" : "Ce projet nous permettra aussi de découvrir les possibilités et les limites de l’approche participative. La collecte de données au moyen de l’approche participative pourrait devenir une façon pour Statistique Canada et d’autres organismes partout dans le monde de recueillir des renseignements précieux en faisant appel aux citoyens.", "en" : "This project will also teach us about the possibilities and limitations of crowdsourcing. Crowdsourcing data collection may become a way for Statistics Canada and other organizations around the world to collect much-needed information by reaching out to citizens." },
+	"Settings_About_Note8"			: { "fr" : "Pour commencer", "en" : "Getting started" },
+	"Settings_About_Note9"			: { "fr" : "Si la plateforme OpenStreetMap est nouvelle pour vous, vous pouvez d’abord consulter le <a href='http://learnosm.org/fr/'>guide du débutant</a>. Vous devrez ensuite vous inscrire sur OpenStreetMap afin d’être en mesure de fournir des renseignements. Le guide explique la façon de procéder. Vous pouvez commencer directement à modifier la carte et lorsque vous sauvegarderez vos modifications, vous devrez vous authentifier.", "en" : "The first thing you can do if you are new to OpenStreetMap is to go to the: <a href='http://learnosm.org/en/'>Beginner's guide</a>. You will need to register to OpenStreetMap to be able to contribute. The guide explains how. You can start mapping and when you save your changes, you will have to authenticate." },
+	"Settings_About_Note10"			: { "fr" : "Les étapes suivantes sont assez simples : agrandissez la carte et explorez-la. Vous pouvez changer la carte topographique pour une base avec imagerie satellitaire. Cliquez sur les immeubles que vous connaissez et saisissez des renseignements à leur sujet dans le formulaire figurant à gauche. Vous pouvez également ajouter des immeubles manquants ou de nouveaux points afin d’ajouter des entreprises, des boutiques et des services comme un bureau de poste. Regardez attentivement la carte afin d’éviter d’y ajouter des renseignements qui s’y trouvent déjà.", "en" : "The rest is simple: zoom in and explore the map. You can switch from a topographic map to a satellite imagery base. Click on buildings you know and enter information about them in the form on the left. You can also add new points to add businesses, shops and services like a post office. Look carefully to make sure that the information is not already there." },
+	"Settings_About_Note11"			: { "fr" : "Collaborations", "en" : "Collaborations" },
+	"Settings_About_Note12"			: { "fr" : "Ce projet ne serait pas possible sans l'aide de collaborateurs clés. <a href='http://www.nordouvert.ca'>Nord Ouvert</a> collabore avec Statistique Canada pour mettre en œuvre ce projet pilote. NordOuvert, un organisme sans but lucratif, possède une expérience reconnue à l’échelle nationale et internationale et offre une variété de solutions de données ouvertes et d’outils de technologies civiques adaptés au niveau local et national afin d’améliorer les démocraties et de les rendre plus ouvertes.", "en" : "This project would not be possible without key collaborations. <a href='http://www.opennorth.ca/'>Open North</a> is collaborating with Statistics Canada for the implementation of this pilot project. Open North is a non-profit organization with a proven track record nationally and internationally specialized in open data solutions and civic technology tools that scale both the national and local levels to foster better and more open democracies." },
+	"Settings_About_Note13"			: { "fr" : "Mikel Maron et Bryan Housel de <a href='https://www.mapbox.com/'>MapBox</a> collaborent en fournissant conseils et assistance au projet et pour le développement d'iD pour le projet.", "en" : "Mikel Maron and Bryan Housel at <a href='https://www.mapbox.com/'>MapBox</a> are providing assistance and advice to the project and the implementation of iD." },
+	"Settings_About_Note14"			: { "fr" : "La <a href='http://ottawa.ca/fr'>Ville d'Ottawa</a> ainsi que la communauté <a href='http://www.openstreetmap.org/wiki/FR:WikiProject_Canada'>OSM Canada</a> sont également des collaborateurs clés à ce projet.", "en" : "The <a href='http://ottawa.ca/en'>City of Ottawa</a> and the <a href='http://www.openstreetmap.org/wiki/WikiProject_Canada'>OSM Canada</a> community are also key collaborators in this project." },
+	"Settings_About_Note15"			: { "fr" : "Date de modification: 2016-10-17", "en" : "Date modified: 2016-10-17" },
+
+	"Settings_Unavailable_Note1"			: { "fr" : "En construction", "en" : "Under Construction" },
+	"Settings_Unavailable_Note2"			: { "fr" : "Cette section n'est pas disponible.", "en" : "This section is not available." }
+	
+	}		

@@ -1,0 +1,25 @@
+.ArrowContainer {
+    position: relative;
+    top		: 8px;
+	width	: 100%;
+	text-align : center;
+}
+
+.ArrowContainer .Arrow.Down {
+    border		: none;
+    background 	: url(../assets/arrowDown.png) no-repeat;
+	background-size: 100%;
+    width	: 30px;
+    height	: 16px;
+}
+
+.Modal.View {
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+	
+	background-color : rgba(20,30,40,0.65);
+	z-index:5000;
+}

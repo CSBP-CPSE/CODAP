@@ -1,0 +1,67 @@
+
+
+/* Applies to main view only */
+.Main.View .Menu {
+	position: absolute;
+}
+
+.Main.View {
+    left	: 0px;
+    right	: 0px;
+    top		: 0px;
+    bottom	: 0px;
+}
+
+.Main.View .Menu {
+    bottom	: 0px;
+    left	: 0px;
+    right	: 0px;
+    height	: 45px;
+	z-index : 500;
+}
+
+.Main.View .Menu .Buttons {
+    height: 100%;
+}
+
+.Main.View .Menu .Buttons > * {
+	width:25%;
+	height:100%;
+	border:none;
+	
+	background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.Main.View .Menu .Buttons > * { 
+	background-color : #444444;
+}
+
+.Main.View .Menu .Buttons > *.Active { 
+	background-color : #606060;
+}
+
+.Main.View .Menu .Buttons > *:disabled {
+	cursor : not-allowed;
+}
+
+.Main.View .Menu .Buttons .Geolocate {
+	background-image: url(../assets/Geolocate.png);
+}
+
+.Main.View .Menu .Buttons .Edit {
+	background-image: url(../assets/Edit.png);
+}
+
+.Main.View .Menu .Buttons .Building {
+	background-image: url(../assets/Building.png);
+}
+
+.Main.View .Menu .Buttons .Ranking {
+	background-image: url(../assets/Ranking.png);
+}
+
+.Main.View .Menu .Buttons .Settings {
+	background-image: url(../assets/Settings.png);
+}

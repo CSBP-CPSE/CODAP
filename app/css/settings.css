@@ -1,0 +1,130 @@
+.Settings.View {
+    bottom	: 0px;
+    left	: 0px;
+    right	: 0px;
+    text-align: center;
+}
+
+.Settings.View .Title {
+    margin: 20px 10px 20px 10px;
+}
+
+.Settings.View .Button.Logout {
+    position: relative;
+    display: inline-block;
+    background: #A8504E;
+    border: solid thin #ffffff;
+    border-radius: 4px;
+    height: 28px;
+    width: 80px;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+.Settings.View .Link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 18px 8px 18px 8px;
+    color: white;
+	cursor:pointer
+}
+
+.Settings.View .Link.disabled {
+	cursor: not-allowed;
+}
+
+.About .Container { 
+    min-height: 250px;
+    bottom: 10px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.Unavailable .Container { 
+    top: 200px;
+    left: 50px;
+    right: 50px;
+    height: 120px;
+}
+
+.Unavailable .Container,
+.About .Container {
+    position: absolute;
+	text-align:justify;
+	overflow-y: auto;
+    background-color: rgba(99, 30, 28, 0.8);
+    border-radius: 6px;
+    border: solid rgba(255, 255, 255, 0.9) 1.5px;
+}
+
+.Unavailable .Body,
+.About.View .Body,
+.About.View .Footer { 
+    border-top: solid thin silver;
+}
+
+.Unavailable.View h3,
+.About.View h3 {
+	font-size : x-large;
+}
+
+.Unavailable.View h4,
+.About.View h4 {
+	font-size : large;
+}
+
+.Unavailable.View .Header .Title,
+.Unavailable.View .Body > *,
+.About.View .Header .Title,
+.About.View .Body > *,
+.About.View .Footer > * {
+	margin: 15px 15px 15px 15px;
+}
+
+.Unavailable.View .Header > *,
+.About.View .Header > * {
+	display : inline-block;
+    vertical-align: middle;
+}
+
+.Unavailable.View .Header .Button.Close,
+.About.View .Footer .Button.Close,
+.About.View .Header .Button.Close {
+    float: right;
+    margin-right: 10px;
+}
+
+.Unavailable.View .Header .Button.Close,
+.About.View .Header .Button.Close {
+	background: url(../assets/cross.png) no-repeat;
+	border: none;
+	box-shadow : none;
+	position: absolute;
+    right: 10px;
+    top: 23px;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.About.View .Footer .Button.Close {
+    color: #A8504E;
+    background-color: white;
+}
+
+.About.View a {
+	color : #fff28a;
+    text-decoration: none;
+}
+
+.About.View a:visited {
+	color : #ffdcd3
+}
+
+.Unavailable.View p,
+.About.View p {
+    font-size: small;
+    font-weight: normal;
+}

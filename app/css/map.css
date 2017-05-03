@@ -1,0 +1,9 @@
+.Map.View {
+	background-color : #444444;
+	position: absolute;
+    top		: 0px;
+    bottom	: 45px;
+    left	: 0px;
+    right	: 0px;
+	z-index : 200;
+}

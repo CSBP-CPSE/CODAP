@@ -1,0 +1,5 @@
+﻿{
+	"yes"            		: { "fr" : "Oui", "en" : "Yes" },
+	"no"            		: { "fr" : "Non", "en" : "No" },
+	"limited"            	: { "fr" : "Limité", "en" : "Limited" }
+}

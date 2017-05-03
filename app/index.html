@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="width:100%;height:100%;">
+    <head>
+        <title>Crowdsourcing</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<link rel="stylesheet" href="../references/ol-3.19.1/ol.css" type="text/css">
+		
+		<link rel="stylesheet" href="../api/css/animation.css" type="text/css">
+		<link rel="stylesheet" href="../api/css/api.css" type="text/css">
+		
+		<link rel="stylesheet" href="./css/general.css" type="text/css">
+		<link rel="stylesheet" href="./css/main.css" type="text/css">
+		<link rel="stylesheet" href="./css/login.css" type="text/css">
+		<link rel="stylesheet" href="./css/map.css" type="text/css">
+		<link rel="stylesheet" href="./css/ranking.css" type="text/css">
+		<link rel="stylesheet" href="./css/settings.css" type="text/css">
+		<link rel="stylesheet" href="./css/building.css" type="text/css">
+		
+		<script src="../references/ol-3.19.1/ol-debug.js"></script>
+        <script src='../references/osmauth/osmauth.js'></script>
+        <script src='../references/osmtogeojson-gh-pages/osmtogeojson.js'></script>
+	    <script src="../references/requirejs-2.3.2/require_mod.js"></script>
+
+        <script type="text/javascript">
+			function onload(ev) {	
+				var loc = location.href.split("/");
+				var url = loc.splice(0, loc.length - 1).join("/") + "/";
+				
+				r.require.config({
+					urlArgs : "v=0.2",
+					paths: {
+						proj4 : url  + "../references/proj4js",
+						Api	  : url  + "../api/src",
+						Exp   : url  + "../exp/src",
+						App   : url  + "./src"
+					}
+				});
+					
+				r.require(['App/index'], function(index) {	
+					index.Start();
+				});
+			}
+        </script>
+    </head>
+
+	<body class="crowd" onload="onload(event)">
+	</body>
+</html>

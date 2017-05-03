@@ -1,0 +1,46 @@
+.Ranking.View {
+    bottom	: 0px;
+    left	: 0px;
+    right	: 0px;
+    text-align: center;
+}
+
+.Ranking.View .Title {
+    margin: 20px 10px 75px 10px;
+}
+
+.Ranking.View .Container {
+	display: inline-block;
+}
+
+.Ranking.View .Container .Icon {
+	width 	: 50px;
+	height 	: 50px;
+	background-image: url(../assets/user-circle.png);
+    background-repeat: no-repeat;
+}
+
+.Ranking.View .Container .Medal {
+	width 	: 40px;
+	height 	: 40px;
+	background-image: url(../assets/medal.png);
+    background-repeat: no-repeat;
+	margin-left : 2px;
+	margin-right : 2px;
+}
+
+.Ranking.View .Container .Position {
+	
+}
+
+.Ranking.View .Container > * {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.Ranking.View .Container > * > * {
+	display : inline-block;
+	vertical-align	: middle;
+	margin-left		: 10px;
+	margin-right	: 10px;
+}
