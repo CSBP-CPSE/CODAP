@@ -104,3 +104,12 @@
 	background-image: url(../assets/user.png);
     background-repeat: no-repeat;
 }
+
+.Login .Beta {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 11px;
+    text-align: right;
+    margin-right: 8px;
+    margin-bottom: 3px;
+}
