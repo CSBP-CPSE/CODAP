@@ -37,8 +37,8 @@ r.define(["Api/util/lang",
 				this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
 				this.Settings.LnkContact = this.BuildLink("contact", "Settings_LnkContact");
 				
-				this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?Subject=" + Lang.Nls("Settings_Subject_Issues");
-				this.Settings.LnkContact.href = "mailto:staubibr@gmail.com?Subject=" + Lang.Nls("Settings_Subject_Comment");
+				this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
+				this.Settings.LnkContact.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Comment");
 				
 				// this.Settings.LnkShare = this.BuildLink("share", "Settings_LnkShare");
 				// this.Settings.LnkLicense = this.BuildLink("license", "Settings_LnkLicense");
