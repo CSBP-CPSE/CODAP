@@ -34,8 +34,11 @@ r.define(["Api/util/lang",
 				this.Settings.LnkTerms = this.BuildLink("about", "Settings_LnkTerms");
 				this.Settings.LnkTutorial = this.BuildLink("disabled tutorial", "Settings_LnkTutorial");
 				this.Settings.LnkLanguage = this.BuildLink("disabled language", "Settings_LnkLanguage");
-				this.Settings.LnkIssues = this.BuildLink("disabled issues", "Settings_LnkIssues");
-				this.Settings.LnkContact = this.BuildLink("disabled contact", "Settings_LnkContact");
+				this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
+				this.Settings.LnkContact = this.BuildLink("contact", "Settings_LnkContact");
+				
+				this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?Subject=" + Lang.Nls("Settings_Subject_Issues");
+				this.Settings.LnkContact.href = "mailto:staubibr@gmail.com?Subject=" + Lang.Nls("Settings_Subject_Comment");
 				
 				// this.Settings.LnkShare = this.BuildLink("share", "Settings_LnkShare");
 				// this.Settings.LnkLicense = this.BuildLink("license", "Settings_LnkLicense");
@@ -49,8 +52,8 @@ r.define(["Api/util/lang",
 				this.Settings.LnkTerms.addEventListener("click", this.onBtnTerms_Click.bind(this));
 				this.Settings.LnkTutorial.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
 				this.Settings.LnkLanguage.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
-				this.Settings.LnkIssues.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
-				this.Settings.LnkContact.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
+				// this.Settings.LnkIssues.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
+				// this.Settings.LnkContact.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
 			},
 			
 			// TODO : Maybe about should be in a view, more like a widget of some kind or just in a container.
