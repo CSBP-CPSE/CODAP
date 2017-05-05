@@ -34,6 +34,7 @@
 	cursor: not-allowed;
 }
 
+.Terms .Container,
 .About .Container { 
     min-height: 250px;
     bottom: 10px;
@@ -44,12 +45,24 @@
 
 .Unavailable .Container { 
     top: 200px;
-    left: 50px;
-    right: 50px;
-    height: 120px;
+    left: 10px;
+    right: 10px;
+    height: 180px;
+	
+	max-width: 300px;
+}
+
+.Terms .Container {
+	max-width: 500px;
+    max-height: 650px;
+}
+
+.About .Container {
+	max-width: 965px;
 }
 
 .Unavailable .Container,
+.Terms .Container,
 .About .Container {
     position: absolute;
 	text-align:justify;
@@ -57,26 +70,36 @@
     background-color: rgba(99, 30, 28, 0.8);
     border-radius: 6px;
     border: solid rgba(255, 255, 255, 0.9) 1.5px;
+    margin: auto auto auto auto;
 }
 
 .Unavailable .Body,
+.Unavailable .Footer,
+.Terms.View .Body,
+.Terms.View .Footer,
 .About.View .Body,
 .About.View .Footer { 
     border-top: solid thin silver;
 }
 
 .Unavailable.View h3,
+.Terms.View h3,
 .About.View h3 {
 	font-size : x-large;
 }
 
 .Unavailable.View h4,
+.Terms.View h4
 .About.View h4 {
 	font-size : large;
 }
 
 .Unavailable.View .Header .Title,
 .Unavailable.View .Body > *,
+.Unavailable.View .Footer > *,
+.Terms.View .Header .Title,
+.Terms.View .Body > *,
+.Terms.View .Footer > *,
 .About.View .Header .Title,
 .About.View .Body > *,
 .About.View .Footer > * {
@@ -84,19 +107,24 @@
 }
 
 .Unavailable.View .Header > *,
+.Terms.View .Header > *,
 .About.View .Header > * {
 	display : inline-block;
     vertical-align: middle;
 }
 
 .Unavailable.View .Header .Button.Close,
+.Unavailable.View .Footer .Button.Close,
 .About.View .Footer .Button.Close,
-.About.View .Header .Button.Close {
+.Terms.View .Footer .Button.Close,
+.About.View .Header .Button.Close,
+.Terms.View .Header .Button.Close {
     float: right;
     margin-right: 10px;
 }
 
 .Unavailable.View .Header .Button.Close,
+.Terms.View .Header .Button.Close,
 .About.View .Header .Button.Close {
 	background: url(../assets/cross.png) no-repeat;
 	border: none;
@@ -109,21 +137,26 @@
     height: 20px;
 }
 
+.Unavailable.View .Footer .Button.Close,
+.Terms.View .Footer .Button.Close,
 .About.View .Footer .Button.Close {
     color: #A8504E;
     background-color: white;
 }
 
+.Terms.View a,
 .About.View a {
 	color : #fff28a;
     text-decoration: none;
 }
 
+.Terms.View a:visited,
 .About.View a:visited {
 	color : #ffdcd3
 }
 
 .Unavailable.View p,
+.Terms.View p,
 .About.View p {
     font-size: small;
     font-weight: normal;
