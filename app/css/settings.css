@@ -54,11 +54,12 @@
 
 .Terms .Container {
 	max-width: 500px;
-    max-height: 650px;
+    max-height: 580px;
 }
 
 .About .Container {
-	max-width: 965px;
+    max-width: 900px;
+    max-height: 825px;
 }
 
 .Unavailable .Container,
