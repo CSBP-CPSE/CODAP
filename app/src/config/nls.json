@@ -46,8 +46,8 @@
 	"Settings_LnkLicense"			: { "fr" : "License & ententes", "en" : "Licensing & Agreements" },
 	"Settings_LnkTechnical"			: { "fr" : "Paramètres techniques", "en" : "Technical Settings" },
 	
-	"Settings_Subject_Comment"		: { "fr" : "Commentaires sur CODAP", "en" : "CODAP Feedback" },
-	"Settings_Subject_Issues"		: { "fr" : "Problème avec CODAP", "en" : "CODAP Issue" },
+	"Settings_Subject_Comment"		: { "fr" : "Commentaires%20sur%20CODAP", "en" : "CODAP%20Feedback" },
+	"Settings_Subject_Issues"		: { "fr" : "Problème%20avec%20CODAP", "en" : "CODAP%20Issue" },
 
 	"Settings_About_Close"			: { "fr" : "Fermer", "en" : "Close" },
 	"Settings_About_Note1"			: { "fr" : "À propos du projet", "en" : "About the project" },
