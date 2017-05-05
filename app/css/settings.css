@@ -48,7 +48,6 @@
     left: 10px;
     right: 10px;
     height: 180px;
-	
 	max-width: 300px;
 }
 
@@ -148,7 +147,6 @@
 .Terms.View a,
 .About.View a {
 	color : #fff28a;
-    text-decoration: none;
 }
 
 .Terms.View a:visited,
