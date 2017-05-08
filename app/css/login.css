@@ -74,7 +74,8 @@
 .Login .Container .Language,
 .Login .Container .Tutorial {
 	height	: 35px;
-	width	: 115px;
+	/* width	: 115px; */
+	width : 100%;
 }
 
 .Login .Container .Language {
@@ -89,7 +90,7 @@
 
 .Login .Container .Tutorial,
 .Login .Container .Language {
-    cursor: not-allowed;
+    /*cursor: not-allowed;*/
 }
 
 .Login .Container .UserInfo {

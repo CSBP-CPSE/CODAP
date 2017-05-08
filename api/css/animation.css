@@ -20,12 +20,12 @@
 
 @keyframes fadeOut {
     0% 	 { opacity: 1; visibility:visible }
-    100% { opacity: 0; visibility:hidden; z-index:-1 }
+    100% { opacity: 0; visibility:hidden; z-index:1 }
 }
 
 @-webkit-keyframes fadeOut {
     0% 	 { opacity: 1; visibility:visible }
-    100% { opacity: 0; visibility:hidden; z-index:-1 }
+    100% { opacity: 0; visibility:hidden; z-index:1 }
 }
 
 .wipeInV {

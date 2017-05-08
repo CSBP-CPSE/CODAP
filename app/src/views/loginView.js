@@ -40,15 +40,16 @@ r.define(["Api/util/lang",
 
 				this.Login.Footer = {};
 				this.Login.Footer.Top = Dom.Create("div", { "className":"Footer" }, this.container);
-				this.Login.Footer.BtnTutorial = Dom.Create("button", { "className":"Tutorial" }, this.Login.Footer.Top)
+				// this.Login.Footer.BtnTutorial = Dom.Create("button", { "className":"Tutorial" }, this.Login.Footer.Top)
 				this.Login.Footer.BtnLanguage = Dom.Create("button", { "className":"Language" }, this.Login.Footer.Top)
 				
 				this.Login.Inner.Buttons.BtnGo.innerHTML = Lang.Nls("Main_BtnGo");
-				this.Login.Footer.BtnTutorial.innerHTML = Lang.Nls("Main_ButtonTutorial");
+				// this.Login.Footer.BtnTutorial.innerHTML = Lang.Nls("Main_ButtonTutorial");
 				this.Login.Footer.BtnLanguage.innerHTML = Lang.Nls("Main_ButtonLanguage");
 				
 				this.Login.Inner.Buttons.BtnLog.addEventListener("click", this.BtnLog_OnClick.bind(this), false);
 				this.Login.Inner.Buttons.BtnGo.addEventListener("click", this.BtnGo_OnClick.bind(this), false);
+				this.Login.Footer.BtnLanguage.addEventListener("click", this.BtnLanguage_OnClick.bind(this), false);
 			},
 			
 			UpdateLoginMessage : function(isLogged) {
@@ -76,6 +77,12 @@ r.define(["Api/util/lang",
 				if (this.controller.IsLogged()) this.controller.Logout();		
 
 				else this.controller.Login();		
+			},
+			
+			BtnLanguage_OnClick : function(e) {
+				var lang = (Lang.locale == "en") ? "fr" : "en" ;
+				
+				window.open(location.origin + location.pathname + "?locale=" + lang, "_self");
 			},
 			
 			onFirstViewNotified_NewModel : function(model) {
