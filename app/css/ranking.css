@@ -5,8 +5,13 @@
     text-align: center;
 }
 
-.Ranking.View .Title {
-    margin: 20px 10px 75px 10px;
+.Ranking.View .Note {
+	font-style:italic;
+}
+
+.Ranking.View .Title,
+.Ranking.View .Note {
+    margin: 20px 10px 40px 10px;
 }
 
 .Ranking.View .Container {

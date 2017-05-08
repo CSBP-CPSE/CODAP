@@ -28,9 +28,10 @@ r.define(["Api/util/lang",
 				this.Login.Inner = {};
 				this.Login.Inner.Top = Dom.Create("div", { "className":"Inner" }, this.container);
 				this.Login.Inner.Message = Dom.Create("div", { "className":"Message" }, this.Login.Inner.Top);
-				this.Login.Inner.Beta = Dom.Create("div", { "className":"Beta" }, this.Login.Inner.Top);
-				this.Login.Inner.UserInfo = {};
 				
+				// this.Login.Inner.Beta = Dom.Create("div", { "className":"Beta" }, this.Login.Inner.Top);
+				
+				this.Login.Inner.UserInfo = {};
 				this.Login.Inner.UserInfo.Top = Dom.Create("div", { "className":"UserInfo", "style":"opacity:0; visibility:hidden;" }, this.Login.Inner.Top);
 				this.Login.Inner.UserInfo.Label = Dom.Create("div", { "className":"Label" }, this.Login.Inner.UserInfo.Top);
 			
@@ -48,14 +49,14 @@ r.define(["Api/util/lang",
 				// this.Login.Footer.BtnTutorial.innerHTML = Lang.Nls("Main_ButtonTutorial");
 				this.Login.Footer.BtnLanguage.innerHTML = Lang.Nls("Main_ButtonLanguage");
 			
-				this.Login.Inner.Beta.innerHTML = Lang.Nls("Main_LoginMessage_4");
+				// this.Login.Inner.Beta.innerHTML = Lang.Nls("Main_LoginMessage_4");
 				this.Login.Inner.Buttons.BtnLog.addEventListener("click", this.BtnLog_OnClick.bind(this), false);
 				this.Login.Inner.Buttons.BtnGo.addEventListener("click", this.BtnGo_OnClick.bind(this), false);
 				this.Login.Footer.BtnLanguage.addEventListener("click", this.BtnLanguage_OnClick.bind(this), false);
 			},
 			
 			UpdateLoginMessage : function(isLogged) {
-				var text = Lang.Nls("Main_LoginMessage_1") + "<br><br>";
+				var text = Lang.Nls("Main_LoginMessage_1") + "<br><br>" + Lang.Nls("Main_LoginMessage_4") + "<br><br>" ;
 				
 				if (isLogged) {
 					this.Login.Inner.Buttons.BtnLog.innerHTML = Lang.Nls("Main_BtnLog_Out");	

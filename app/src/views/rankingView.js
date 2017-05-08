@@ -20,6 +20,7 @@ r.define(["Api/util/lang",
 			BuildRankings : function() {
 				this.Ranking = {};
 				this.Ranking.Title = Dom.Create("div", { "className":"Title" }, this.domNode);
+				this.Ranking.Note = Dom.Create("div", { "className":"Note" }, this.domNode);
 				this.Ranking.Container = {};
 				this.Ranking.Container.Top = Dom.Create("div", { "className":"Container" }, this.domNode);
 				this.Ranking.Container.Rank1 = this.BuildRank(1, this.Ranking.Container.Top);
@@ -27,6 +28,7 @@ r.define(["Api/util/lang",
 				this.Ranking.Container.Rank3 = this.BuildRank(3, this.Ranking.Container.Top);
 				
 				this.Ranking.Title.innerHTML = Lang.Nls("Ranking_Title");
+				this.Ranking.Note.innerHTML = Lang.Nls("Ranking_Note");
 			},
 			
 			BuildRank : function(n, pNode) {

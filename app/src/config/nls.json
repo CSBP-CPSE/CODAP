@@ -7,7 +7,7 @@
 	"Main_LoginMessage_1"			: { "fr" : "Bienvenue à l'application de cartographie en ligne de Statistiques Canada", "en" : "Welcome to Statistics Canada Mobile Mapping App"},
 	"Main_LoginMessage_2"			: { "fr" : "Veuillez vous authentifier avec votre compte OSM", "en" : "Please log into your OSM account to begin"},
 	"Main_LoginMessage_3"			: { "fr" : "Vous êtes présentement authentifié en tant qu'utilisateur", "en" : "You are currently logged<br>in as user"},
-	"Main_LoginMessage_4"			: { "fr" : "* VERSION BÊTA", "en" : "* BETA VERSION"},
+	"Main_LoginMessage_4"			: { "fr" : "Version Bêta", "en" : "Beta Version"},
 
 	"Main_ButtonTutorial"			: { "fr" : "Tutoriel", "en" : "Tutorial"},
 	"Main_ButtonLanguage"			: { "fr" : "English", "en" : "Français"},
@@ -20,7 +20,7 @@
 	"Building_LabelAddress"			: { "fr" : "Adresse", "en" : "Address" },
 	"Building_LabelSource"			: { "fr" : "Source de données", "en" : "Data Source" },
 	"Building_LabelAccess"			: { "fr" : "Accessible fauteuil roulant", "en" : "Wheelchair Accessible" },
-	"Building_LabelFixme"			: { "fr" : "Corrigez moi", "en" : "Fix me" },
+	"Building_LabelFixme"			: { "fr" : "Rapportez un problème avec cet enregistrement", "en" : "Report an issue with this record" },
 	"Building_BtnSave"				: { "fr" : "Sauvegarder", "en" : "Save" },
 	"Building_LabelNoPlace"			: { "fr" : "L'endroit n'existe pas?", "en" : "Place doesn't exist?" },
 	"Building_BtnDelete"			: { "fr" : "Effacer", "en" : "Delete" },
@@ -33,10 +33,11 @@
 	"Building_PH_Fixme"				: { "fr" : "Problème à corriger", "en" : "Issue to be fixed" },
 	
 	"Ranking_Title"					: { "fr" : "TABLEAU DE POINTAGE", "en" : "SCOREBOARD" },
+	"Ranking_Note"					: { "fr" : "À venir...", "en" : "Forthcoming..." },
 	
 	"Settings_Title"				: { "fr" : "PARAMÈTRES", "en" : "SETTINGS" },
 	"Settings_BtnLogout"			: { "fr" : "Logout", "en" : "Logout" },
-	"Settings_LnkContact"			: { "fr" : "Nous contacter", "en" : "Contact us" },
+	"Settings_LnkContact"			: { "fr" : "Nous contacter ou rapporter un problème", "en" : "Contact us or report an issue" },
 	"Settings_LnkIssues"			: { "fr" : "Rapporter un problème", "en" : "Report an issue" },
 	"Settings_LnkAbout"				: { "fr" : "À Propos du projet de Statistiques Canada", "en" : "About Statistics Canada Project" },
 	"Settings_LnkTerms"				: { "fr" : "Conditions d'utilisation", "en" : "Terms & Conditions" },

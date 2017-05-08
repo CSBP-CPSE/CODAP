@@ -32,12 +32,12 @@ r.define(["Api/util/lang",
 				
 				this.Settings.LnkAbout = this.BuildLink("about", "Settings_LnkAbout");
 				this.Settings.LnkTerms = this.BuildLink("about", "Settings_LnkTerms");
-				this.Settings.LnkTutorial = this.BuildLink("disabled tutorial", "Settings_LnkTutorial");
-				this.Settings.LnkLanguage = this.BuildLink("disabled language", "Settings_LnkLanguage");
-				this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
+				// this.Settings.LnkTutorial = this.BuildLink("disabled tutorial", "Settings_LnkTutorial");
+				this.Settings.LnkLanguage = this.BuildLink("language", "Settings_LnkLanguage");
+				// this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
 				this.Settings.LnkContact = this.BuildLink("contact", "Settings_LnkContact");
 				
-				this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
+				// this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
 				this.Settings.LnkContact.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Comment");
 				
 				// this.Settings.LnkShare = this.BuildLink("share", "Settings_LnkShare");
@@ -50,8 +50,8 @@ r.define(["Api/util/lang",
 				this.Settings.BtnLogout.addEventListener("click", this.onBtnLogout_Click.bind(this));
 				this.Settings.LnkAbout.addEventListener("click", this.onBtnAbout_Click.bind(this));
 				this.Settings.LnkTerms.addEventListener("click", this.onBtnTerms_Click.bind(this));
-				this.Settings.LnkTutorial.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
-				this.Settings.LnkLanguage.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
+				this.Settings.LnkLanguage.addEventListener("click", this.onBtnLanguage_Click.bind(this));
+				// this.Settings.LnkTutorial.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
 				// this.Settings.LnkIssues.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
 				// this.Settings.LnkContact.addEventListener("click", this.onBtnUnavailable_Click.bind(this));
 			},
@@ -170,6 +170,12 @@ r.define(["Api/util/lang",
 				link.innerHTML = Lang.Nls(nls);
 				
 				return link;
+			},
+			
+			onBtnLanguage_Click : function(e) {
+				var lang = (Lang.locale == "en") ? "fr" : "en" ;
+				
+				window.open(location.origin + location.pathname + "?locale=" + lang, "_self");
 			},
 			
 			onBtnUnavailable_Click : function(ev) { 
