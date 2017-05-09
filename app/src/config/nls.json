@@ -32,8 +32,11 @@
 	"Building_PH_Descr"				: { "fr" : "Description", "en" : "Description" },
 	"Building_PH_Fixme"				: { "fr" : "Problème à corriger", "en" : "Issue to be fixed" },
 	
+	"Building_Save_Note1"			: { "fr" : "Sauvegardé", "en" : "Saved" },
+	"Building_Save_Note2"			: { "fr" : "Les modifications à l'enregistrement ont été sauvegardées. <br><br><i>Note: La fonction de sauvegarde n'est pas implémentée dans la version bêta.</i>", "en" : "Modifications to record have been saved. <br><br><i>Note: The save function is not implemented in the beta version.</i>" },
+	
 	"Ranking_Title"					: { "fr" : "TABLEAU DE POINTAGE", "en" : "SCOREBOARD" },
-	"Ranking_Note"					: { "fr" : "À venir...", "en" : "Forthcoming..." },
+	"Ranking_Note"					: { "fr" : "À venir", "en" : "Forthcoming" },
 	
 	"Settings_Title"				: { "fr" : "PARAMÈTRES", "en" : "SETTINGS" },
 	"Settings_BtnLogout"			: { "fr" : "Logout", "en" : "Logout" },

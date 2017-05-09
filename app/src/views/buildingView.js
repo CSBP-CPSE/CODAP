@@ -3,6 +3,7 @@ r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/util/animate",
 		  "Api/util/array",
+		  "Api/components/popup/modal",
 		  "Api/plugins/domain!App/config/dom_access", 
 		  "Api/plugins/domain!App/config/dom_building", 
 		  "Exp/components/views/collapsible"],
@@ -11,6 +12,7 @@ r.define(["Api/util/lang",
 			  Dom,
 			  Animate,
 			  Array,
+			  ModalPopup,
 			  Dom_Access,
 			  Dom_Building,
 			  CollapsibleView) {
@@ -19,12 +21,17 @@ r.define(["Api/util/lang",
 				
 			Ranking :null,
 			
+			popups : null,
+			
 			Steps : [],
 			Step  : 0,
 			
 			constructor : function() {
 				Dom.AddCss(this.domNode, "Building");	
 
+				this.popups = {};
+				this.popups.Save = this.BuildSavePopup();
+				
 				this.BuildView();
 				
 				this.on("viewCollapsed", function(ev) { this.SetPage(0); }.bind(this));
@@ -134,6 +141,20 @@ r.define(["Api/util/lang",
 				return page;
 			},
 			
+			// TODO : Maybe about should be in a view, more like a widget of some kind or just in a container.
+			BuildSavePopup : function() {
+				var popup = new ModalPopup({ 
+					domNode : Dom.Create("div", { className:"Save" }, document.body),
+					title 	: Lang.Nls("Building_Save_Note1")
+				});
+				
+				var label = Dom.Create("p", { className : "Message" }, popup.body);
+				
+				label.innerHTML = Lang.Nls("Building_Save_Note2");
+				
+				return popup;
+			},
+			
 			onCollapsibleClicked : function(ev) {
 				if (this.Step == 1) {
 					this.controller.Clear();
@@ -150,6 +171,8 @@ r.define(["Api/util/lang",
 			onBtnSave_Click : function(ev) {
 				this.controller.Clear();
 				this.Collapse(false);
+				
+				this.popups.Save.FadeIn();
 			},
 			
 			onBtnDelete_Click : function(ev) {

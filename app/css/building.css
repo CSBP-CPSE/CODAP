@@ -123,6 +123,13 @@
 	background-color : #A8504E;
 }
 
+.Save .Container { 
+    top: 200px;
+    left: 10px;
+    right: 10px;
+    height:  230px;
+	max-width: 300px;
+}
 
 /* Animations */
 .step1.wipeInV {
