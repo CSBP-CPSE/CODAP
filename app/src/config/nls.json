@@ -79,7 +79,16 @@
 	"Settings_Terms_Note6"			: { "fr" : "Ceci est un projet pilote élaboré en collaboration avec une collectivité d'intervenants. En ce moment, l'application libre et ouverte est en période d'essai et peut ne pas remplir les besoins de tous les utilisateurs. Si vous éprouvez des difficultés en utilisant ce site, veuillez communiquer avec nous: <a href='mailto:statcan.approcheparticipative.statcan@canada.ca'>L'équipe de l'approche participative</a>.", "en" : "This is a pilot project developed in collaboration with a community of stakeholders, as such the open source application is in a testing phase and may not fulfil all of the users’ needs. In the event of difficulties using the Web pages or applications, contact us: <a href='mailto:statcan.crowdsource.statcan@canada.ca'>Crowdsourcing team</a>." },
 	"Settings_Terms_Note7"			: { "fr" : "Date de modification: 2016-10-17", "en" : "Date modified: 2016-10-17" },
 	
-	"Settings_Unavailable_Note1"			: { "fr" : "En construction", "en" : "Under Construction" },
-	"Settings_Unavailable_Note2"			: { "fr" : "Cette section n'est pas disponible.", "en" : "This section is not available." }
+	"Settings_Unavailable_Note1"	: { "fr" : "En construction", "en" : "Under Construction" },
+	"Settings_Unavailable_Note2"	: { "fr" : "Cette section n'est pas disponible.", "en" : "This section is not available." },
 	
-	}		
+	"Settings_License_Note1"		: { "fr" : "", "en" : "CODAP - Terms and Conditions of Use" },
+	"Settings_License_Note2"		: { "fr" : "", "en" : "Unless otherwise noted, computer program source code of the Crowdsourced Open Data Acquisition Platform (CODAP) is covered under Crown Copyright, Government of Canada, and is distributed under the MIT License." },
+	"Settings_License_Note3"		: { "fr" : "", "en" : "The Canada wordmark and related graphics associated with this distribution are protected under trademark law and copyright law. No permission is granted to use them outside the parameters of the Government of Canada's corporate identity program. For more information, see <a href='http://www.tbs-sct.gc.ca/fip-pcim/index-eng.asp'>http://www.tbs-sct.gc.ca/fip-pcim/index-eng.asp</a>." },
+	"Settings_License_Note4"		: { "fr" : "", "en" : "Copyright title to all 3rd party software distributed with CODAP is held by the respective copyright holders as noted in those files. Users are asked to read the 3rd Party Licenses referenced with those assets." },
+	"Settings_License_Note5"		: { "fr" : "", "en" : "MIT License" },
+	"Settings_License_Note6"		: { "fr" : "", "en" : "Copyright (c) 2016 Government of Canada" },
+	"Settings_License_Note7"		: { "fr" : "", "en" : "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:" },
+	"Settings_License_Note8"		: { "fr" : "", "en" : "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software." },
+	"Settings_License_Note9"		: { "fr" : "", "en" : "THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE" }	
+}	

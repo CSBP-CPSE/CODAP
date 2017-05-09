@@ -21,6 +21,7 @@ r.define(["Api/util/lang",
 				this.popups = {};
 				this.popups.About = this.BuildAboutPopup();
 				this.popups.Terms = this.BuildTermsPopup();
+				this.popups.License = this.BuildLicensePopup();
 				this.popups.Unavailable = this.BuildUnavailablePopup();
 				
 				this.BuildSettings();
@@ -45,6 +46,9 @@ r.define(["Api/util/lang",
 				this.Settings.LnkTerms = this.BuildLink("about", "Settings_LnkTerms");
 				this.Settings.LnkTerms.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.Terms));
 				
+				this.Settings.LnkLicense = this.BuildLink("about", "Settings_LnkLicense");
+				this.Settings.LnkLicense.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.License));
+				
 				this.Settings.LnkTutorial = this.BuildLink("disabled tutorial", "Settings_LnkTutorial");
 				this.Settings.LnkTutorial.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.Unavailable));
 				
@@ -59,7 +63,6 @@ r.define(["Api/util/lang",
 				// this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
 				
 				// this.Settings.LnkShare = this.BuildLink("share", "Settings_LnkShare");
-				// this.Settings.LnkLicense = this.BuildLink("license", "Settings_LnkLicense");
 				// this.Settings.LnkTechnical = this.BuildLink("technical", "Settings_LnkTechnical");
 			},
 			
@@ -100,6 +103,24 @@ r.define(["Api/util/lang",
 				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_Terms_Note5"));
 				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note6"));
 				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note7"));
+				
+				return popup;
+			},
+			
+			BuildLicensePopup : function() {
+				var popup = new ModalPopup({ 
+					domNode : Dom.Create("div", { className:"License" }, document.body),
+					title 	: Lang.Nls("Settings_License_Note1")
+				})
+
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note2"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note3"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note4"));
+				this.BuildLabel("h3", null, popup.body, Lang.Nls("Settings_License_Note5"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note6"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note7"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note8"));
+				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note9"));
 				
 				return popup;
 			},

@@ -34,6 +34,7 @@
 	cursor: not-allowed;
 }
 
+.License .Container,
 .Terms .Container,
 .About .Container { 
     min-height: 250px;
@@ -49,6 +50,11 @@
     right: 10px;
     height: 170px;
 	max-width: 300px;
+}
+
+.License .Container {
+    max-width: 680px;
+    max-height: 665px;
 }
 
 .Terms .Container {
