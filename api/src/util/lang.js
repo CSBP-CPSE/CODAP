@@ -77,7 +77,7 @@
 
 	            var txt = itm[(locale) ? locale : this.locale];
 
-	            if (!txt) throw "String does not exist for requested language.";
+	            if (txt === undefined || txt === null) throw "String does not exist for requested language.";
 
 	            return (!!subs && subs.length > 0) ? String.Format(txt, subs) : txt;
 			}
