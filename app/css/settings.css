@@ -35,6 +35,7 @@
 }
 
 .License .Container,
+.Tutorial .Container,
 .Terms .Container,
 .About .Container { 
     min-height: 250px;
@@ -57,12 +58,76 @@
     max-height: 665px;
 }
 
+.Tutorial .Container {
+    max-width: 680px;
+    max-height: 665px;
+}
+
 .Terms .Container {
 	max-width: 500px;
-    max-height: 570px;
+    max-height: 650px;
 }
 
 .About .Container {
     max-width: 900px;
     max-height: 815px;
+}
+
+.Tutorial .Image {
+	width : 45%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.Tutorial.Popup .Body {
+    overflow-x: hidden;
+}
+
+.Tutorial.Popup .Body .Row {
+	margin-top : 20px;
+    text-align : center;
+}
+
+.Tutorial.Popup .Body .Row > * {
+    vertical-align: middle;
+	display: inline-block;
+}
+
+.Tutorial .Image {
+
+}
+
+.Tutorial .Image.One {
+	background-image: url(../assets/tutorial/m1.png);
+}
+
+.Tutorial .Image.Two {
+	background-image: url(../assets/tutorial/m2.png);
+}
+
+.Tutorial .Image.Three {
+	background-image: url(../assets/tutorial/m3.png);
+}
+
+.Tutorial .Image.Four {
+	background-image: url(../assets/tutorial/m4.png);
+}
+
+.Tutorial.Popup .Body .Note {
+	width : 50%;
+	text-align: justify;
+}
+
+.Tutorial.Popup .Body .Note.Full {
+	width : 100%;
+}
+
+.Tutorial.Popup .Body .Note.Left {
+	margin-right : 15px;
+}
+
+.Tutorial.Popup .Body .Note.Right {
+	margin-left : 15px;
 }

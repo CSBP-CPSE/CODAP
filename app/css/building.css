@@ -127,8 +127,23 @@
     top: 200px;
     left: 10px;
     right: 10px;
-    height:  230px;
+    height: 190px;
 	max-width: 300px;
+}
+
+.Save.Disabled .Icon {
+	background: url(../assets/loading.gif) center;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    vertical-align: middle;
+	margin-left: 10px;
+}
+
+.Building.View .Page.Two .Button.Save.Disabled {
+	background-color:#559632;
+	box-shadow : none;
+	cursor : not-allowed;
 }
 
 /* Animations */

@@ -1,10 +1,22 @@
 {
 	"oAuth" : {
-		"oauth_secret"			: "6WWeX8Sl0As5QlZs726hF08EK8mxpy9O5kcxD8Dn",
-		"oauth_consumer_key"	: "wFQtg4ptwHKDn3nPymZJqqD1n0jfwz6TC65mEkEy",
+		"oauth_secret"			: "ypYn4P36CzrSer7ixv3IhIuAwauAwWonmwf0qn03",
+		"oauth_secret_dev"		: "fsU9ar4TtOyjKByrTFfViKYncUCL8obeBQ2F92Yu",
+		
+		"oauth_consumer_key"	: "R4B205ZzS6TvuI2oZZ95V2Ss4BlVl2SsFhOhONBN",
+		"oauth_consumer_key_dev": "8AQ0djjdlIFEZSH93a893xagkLudKzQxT4pvMg0d",
+		
+		"url"					: "https://www.openstreetmap.org",
+		"url_dev"				: "https://master.apis.dev.openstreetmap.org",
+		
 		"landing"				: "../references/osmauth/land.html"
 	},
 
+	"overpass" : {
+		"url" : "https://overpass-api.de/api/interpreter"
+	},
+	
+	"contact" : "statcan.crowdsourceapprocheparticipative.statcan@canada.ca",
 	"version" : "0.1",
 	"view" : { 
 		"center" : [-8425605, 5692012], 

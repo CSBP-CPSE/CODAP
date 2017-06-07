@@ -29,10 +29,11 @@ r.define(["Api/util/lang",
 			
 			busy : false,
 			
-			constructor : function(options) {
+			constructor : function(options) {				
 				this.options = {
 					view : options.view,
-					tolerance : options.tolerance
+					tolerance : options.tolerance,
+					overpass : options.overpass
 				}	
 				
 				this.CreateMap();
@@ -103,15 +104,13 @@ r.define(["Api/util/lang",
 				// NOTE : Openstreetmap has serious limitations when it comes to querying the data it contains. The two following API
 				//		  calls are the best I managed to do for now.
 				// NOTE : This url will only return features as long as the radius around the clicked point contains a node or a way
-				var url = 'https://overpass-api.de/api/interpreter?data=[out:json][timeout:60];(way["building"](around:{0},{1},{2});>);out;'
+				var url = this.options.overpass.url + '?data=[out:json][timeout:60];(way["building"](around:{0},{1},{2});>);out meta;'
 
 				// NOTE : This url will return ways that are in an area that contain  the clicked point. The problem is, an area must be 
 				// 		  defined for this to work. Usually, this works with big commercial buildings, not residences.
 				// var url = 'http://overpass-api.de/api/interpreter?data=[out:json][timeout:30];is_in({0},{1})->.a;(way["building"](pivot.a);>);out;';
 
 				var radius = this.map.getView().getResolution() * this.options.tolerance;
-				
-				// url = String.Format(url, [this.options.tolerance, xy.y, xy.x]);
 				
 				url = String.Format(url, [radius, xy.y, xy.x]);
 				
@@ -147,7 +146,23 @@ r.define(["Api/util/lang",
 					featureProjection : 'EPSG:900913'
 				}
 				
-				return format.readFeatures(geojson, opts);
+				var features = format.readFeatures(geojson, opts);
+				
+				Array.ForEach(features, function(f) {
+					this.AssignOSMElements(f, json.elements);
+				}.bind(this));
+				
+				return features;
+			},
+			
+			AssignOSMElements : function(f, elements) {
+				var id = f.getProperties().id;
+				
+				var el = Array.Find(elements, function(el) { return el.id === id; });
+				
+				if (!el) return null;
+				
+				f.nodes = el.nodes;
 			},
 			
 			Geolocate : function() {

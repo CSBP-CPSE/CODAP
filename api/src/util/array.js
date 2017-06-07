@@ -12,6 +12,16 @@ r.define([],
 				return null;
 			},
 			
+			Filter : function(array, delegate) {
+				var filtered = [];
+				
+				for (var i=0; i < array.length; i++) {
+					if (delegate(array[i])) filtered.push(array[i]);
+				}
+				
+				return filtered;
+			},
+			
 			FindIndex : function(array, delegate) {
 				for (var i=0; i < array.length; i++) {
 					if (delegate(array[i])) return i;

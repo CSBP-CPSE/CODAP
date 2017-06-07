@@ -31,11 +31,29 @@
 .Popup .Container {
     position: absolute;
 	text-align:justify;
-	overflow-y: auto;
     background-color: rgba(99, 30, 28, 0.8);
     border-radius: 6px;
     border: solid rgba(255, 255, 255, 0.9) 1.5px;
     margin: auto auto auto auto;
+}
+
+.Popup .Body {    
+	position:absolute;
+	top: 60px;
+    bottom: 60px;
+    overflow-y: auto;
+}
+
+.Popup .Footer {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+}
+
+.Popup .Footer,
+.Popup .Header {
+    height:60px;
 }
 
 .Popup .Body,

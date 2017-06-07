@@ -22,6 +22,7 @@ r.define(["Api/util/lang",
 				this.popups.About = this.BuildAboutPopup();
 				this.popups.Terms = this.BuildTermsPopup();
 				this.popups.License = this.BuildLicensePopup();
+				this.popups.Tutorial = this.BuildTutorialPopup();
 				this.popups.Unavailable = this.BuildUnavailablePopup();
 				
 				this.BuildSettings();
@@ -49,15 +50,14 @@ r.define(["Api/util/lang",
 				this.Settings.LnkLicense = this.BuildLink("about", "Settings_LnkLicense");
 				this.Settings.LnkLicense.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.License));
 				
-				this.Settings.LnkTutorial = this.BuildLink("disabled tutorial", "Settings_LnkTutorial");
-				this.Settings.LnkTutorial.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.Unavailable));
+				this.Settings.LnkTutorial = this.BuildLink("tutorial", "Settings_LnkTutorial");
+				this.Settings.LnkTutorial.addEventListener("click", this.onLnkPopup_Click.bind(this, this.popups.Tutorial));
 				
 				this.Settings.LnkLanguage = this.BuildLink("language", "Settings_LnkLanguage");
 				this.Settings.LnkLanguage.addEventListener("click", this.onBtnLanguage_Click.bind(this));
 				
 				this.Settings.LnkContact = this.BuildLink("contact", "Settings_LnkContact");
-				this.Settings.LnkContact.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Comment");
-				
+				this.Settings.LnkContact.href = "mailto:" + this.controller.model.Contact + "?subject=" + Lang.Nls("Settings_Subject_Comment");
 				
 				// this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
 				// this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
@@ -121,6 +121,34 @@ r.define(["Api/util/lang",
 				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note7"));
 				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note8"));
 				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note9"));
+				
+				return popup;
+			},
+			
+			BuildTutorialPopup : function() {
+				var popup = new ModalPopup({ 
+					domNode : Dom.Create("div", { className:"Tutorial" }, document.body),
+					title 	: Lang.Nls("Settings_Tutorial_Note1")
+				})
+				
+				var row = Dom.Create("div", { "className":"Row" }, popup.body);
+				this.BuildLabel("p", "Note Left", row, Lang.Nls("Settings_Tutorial_Note2"));
+				Dom.Create("div", { "className":"Image One" }, row);
+				
+				var row = Dom.Create("div", { "className":"Row" }, popup.body);
+				Dom.Create("div", { "className":"Image Two" }, row);
+				this.BuildLabel("p", "Note Right", row, Lang.Nls("Settings_Tutorial_Note3"));
+				
+				var row = Dom.Create("div", { "className":"Row" }, popup.body);
+				this.BuildLabel("p", "Note Left", row, Lang.Nls("Settings_Tutorial_Note4"));
+				Dom.Create("div", { "className":"Image Three" }, row);
+				
+				var row = Dom.Create("div", { "className":"Row" }, popup.body);
+				Dom.Create("div", { "className":"Image Four" }, row);
+				this.BuildLabel("p", "Note Right", row, Lang.Nls("Settings_Tutorial_Note5"));
+				
+				var row = Dom.Create("div", { "className":"Row" }, popup.body);
+				this.BuildLabel("p", "Note Full", row, Lang.Nls("Settings_Tutorial_Note6"));
 				
 				return popup;
 			},

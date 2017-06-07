@@ -11,11 +11,12 @@ r.define(["Api/util/lang",
 		
 			model : null,
 		
-			options : null,
+			contact : null,
 		
 			constructor : function(options, subs) {	
 				this.model = {
-					IsLogged : false
+					IsLogged : false,
+					Contact : options.contact
 				};
 			},
 			

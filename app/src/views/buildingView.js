@@ -111,7 +111,11 @@ r.define(["Api/util/lang",
 				page.IptFixme = Dom.Create("input", { "className":"Input Fixme" }, page.Container);
 				
 				var div = Dom.Create("div", { "className":"Footer" }, page.Container);
+				
 				page.BtnSave = Dom.Create("button", { "className":"Button Save" }, div);
+	
+				// Dom.Create("image", { "src":"../assets/icon.png" ,"className":"Icon" }, page.BtnSave);
+				
 				// page.LblNoPlace = Dom.Create("div", { "className":"Label NoPlace" }, div);
 				// page.BtnDelete = Dom.Create("button", { "className":"Button Delete" }, div);
 				
@@ -121,7 +125,8 @@ r.define(["Api/util/lang",
 				page.LblAccess.innerHTML = Lang.Nls("Building_LabelAccess");
 				page.LblSource.innerHTML = Lang.Nls("Building_LabelSource");
 				page.LblFixme.innerHTML = Lang.Nls("Building_LabelFixme");
-				page.BtnSave.innerHTML = Lang.Nls("Building_BtnSave");
+				page.BtnSave.innerHTML = Lang.Nls("Building_BtnSave") + '<div class="Icon">';
+				
 				// page.LblNoPlace.innerHTML = Lang.Nls("Building_LabelNoPlace");
 				// page.BtnDelete.innerHTML = Lang.Nls("Building_BtnDelete");
 				
@@ -155,6 +160,27 @@ r.define(["Api/util/lang",
 				return popup;
 			},
 			
+			GetUpdateData : function() {
+				return {
+					"addr:street" 		: this.ReadInput(this.Steps[1].IptStreet.value),
+					"addr:housenumber" 	: this.ReadInput(this.Steps[1].Row.IptNumber.value),
+					"addr:postcode" 	: this.ReadInput(this.Steps[1].Row.IptPostal.value),
+					"note"  			: this.ReadInput(this.Steps[1].IptDescr.value),
+					"source" 			: this.ReadInput(this.Steps[1].IptSource.value),
+					"fixme"  			: this.ReadInput(this.Steps[1].IptFixme.value),
+					"building" 			: this.ReadInput(this.Steps[1].CbxBuilding.value),
+					"wheelchair"	 	: this.ReadInput(this.Steps[1].CbxAccess.value)
+				}
+			},
+			
+			ReadInput : function(data) {
+				if (data == null || data == undefined) return null;
+				
+				if (data.length == 0) return null;
+				
+				return data;
+			},
+			
 			onCollapsibleClicked : function(ev) {
 				if (this.Step == 1) {
 					this.controller.Clear();
@@ -169,15 +195,37 @@ r.define(["Api/util/lang",
 			},
 			
 			onBtnSave_Click : function(ev) {
+				var data = this.GetUpdateData();
+				
+				this.SetButtonEnabled(this.Steps[1].BtnSave, false);
+				
+				var p = this.controller.Save(data);
+				
+				// Todo : Show wait animation
+				
+				p.then(this.onSave_Finished.bind(this), this.onSave_Finished.bind(this));
+			},
+			
+			onSave_Success : function(ev) {
+				this.popups.Save.FadeIn();
+				this.onSave_Finished(ev);
+			},
+			
+			onSave_Finished : function(ev) {
+				this.SetButtonEnabled(this.Steps[1].BtnSave, true);
 				this.controller.Clear();
 				this.Collapse(false);
-				
-				this.popups.Save.FadeIn();
 			},
 			
 			onBtnDelete_Click : function(ev) {
 				this.controller.Clear();
 				this.Collapse(false);
+			},
+			
+			SetButtonEnabled : function(button, isEnabled) {
+				button.disabled = !isEnabled;
+				
+				(isEnabled) ? Dom.RemoveCss(button, "Disabled") : Dom.AddCss(button, "Disabled");
 			},
 			
 			ClearUI : function() {

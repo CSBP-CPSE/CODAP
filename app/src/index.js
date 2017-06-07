@@ -80,7 +80,7 @@ r.define(["Api/util/lang",
 					controller  : mediator.Controller("Settings"),
 					collapsible : "Down"
 				}));
-
+				
 				mediator.AddView("Main", new MainView({ 
 					domNode 	: Dom.Create("div", null, document.body), 
 					controller  : mediator.Controller("Main")

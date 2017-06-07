@@ -4,7 +4,7 @@
 
 		return {
 		
-			Send : function(url, method, async, data) {
+			Send : function(url, method, async, data, headers) {
 				var p = new Promise();
 				var query = [];
 				var xhttp = new XMLHttpRequest();
@@ -21,8 +21,11 @@
 				
 				xhttp.open(method || "GET", url, _async);
 				
+				if (headers) {
+					for (var id in headers) xhttp.setRequestHeader(id, headers[id]);
+				}
+				
 				if (method == "POST") {
-					xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 					for (var id in data) {
 						query.push(id + "=" + data[id]);
@@ -35,11 +38,17 @@
 			},
 			
 			Post : function(url, data) {
+				var headers = { "Content-type": "application/x-www-form-urlencoded" };
+				
 				return this.Send(url, "POST", true, data);
 			},
 			
-			Get : function(url) {
+			Get : function(url) {				
 				return this.Send(url, "GET", true, null);
+			},
+			
+			Put : function(url) {				
+				return this.Send(url, "PUT", true, null);
 			}
 		}
 	});
