@@ -2,6 +2,7 @@
 Crowdsourced Open Data Acquisition Platform  (https://csbp-cpse.github.io/CODAP/app/index.html)
 
 About the project
+
 Important note
 
 The application is in its beta version. You may have to enable popups for this website to be able to register and login.
@@ -34,6 +35,7 @@ Date modified: 2017-05-11
 Plateforme d'acquisition de données ouvertes participative (https://csbp-cpse.github.io/CODAP/app/index.html)
 
 À propos du projet
+
 Note importante
 
 Il s’agit de la version bêta de cette application. Vous devrez peut-être activer une fenêtre contextuelle afin de pouvoir vous inscrire et vous connecter à ce site Web
