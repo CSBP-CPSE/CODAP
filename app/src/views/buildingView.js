@@ -200,10 +200,8 @@ r.define(["Api/util/lang",
 				this.SetButtonEnabled(this.Steps[1].BtnSave, false);
 				
 				var p = this.controller.Save(data);
-				
-				// Todo : Show wait animation
-				
-				p.then(this.onSave_Finished.bind(this), this.onSave_Finished.bind(this));
+								
+				p.then(this.onSave_Success.bind(this), this.onSave_Finished.bind(this));
 			},
 			
 			onSave_Success : function(ev) {
