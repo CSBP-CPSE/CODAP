@@ -1,22 +1,21 @@
+
 .Login .Container {
-	position: fixed;
-    left	: 50%;
-    top		: 50%;
-    margin-top	: -180px;
-    margin-left	: -120px;
-	z-index	 	: 500;
-	background : none;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 500;
 	
-    color		: white;
-    font-size	: 15px;
-    font-family	: sans-serif;
+    max-height: 310px;
+    max-width: 240px;
+	
+	position: absolute;
+    background-color: rgba(99, 30, 28, 0.8);
+    border-radius: 6px;
+    border: solid rgba(255, 255, 255, 0.9) 1.5px;
+    margin: auto auto auto auto;
 }
 
-.Login .Container .Inner {
-    width	: 240px;
-}
-
-.Login .Container .Inner,
 .Login .Container .Language,
 .Login .Container .Tutorial {
     background-color: rgba(99, 30, 28, 0.8);
