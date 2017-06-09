@@ -44,6 +44,8 @@ r.define(["Api/util/lang",
 				Lang.set('locale', locale);
 				Lang.set('nls', NlsJson);
 				
+				Dom.AddCss(document.body, locale);
+				
 				var mediator = new Mediator();
 				
 				mediator.AddController("Map", new MapController(AppJson));

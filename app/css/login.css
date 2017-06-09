@@ -14,6 +14,12 @@
     border-radius: 6px;
     border: solid rgba(255, 255, 255, 0.9) 1.5px;
     margin: auto auto auto auto;
+	
+	box-sizing : border-box;
+}
+
+.fr .Login .Container {
+    max-height: 355px;
 }
 
 .Login .Container .Language,
@@ -73,8 +79,9 @@
 .Login .Container .Language,
 .Login .Container .Tutorial {
 	height	: 35px;
-	/* width	: 115px; */
 	width : 100%;
+	box-sizing: content-box;
+    padding: 0px;
 }
 
 .Login .Container .Language {
