@@ -2,12 +2,22 @@
 r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/components/popup/modal",
-		  "Exp/components/views/collapsible"],
+		  "Exp/components/views/collapsible",
+		  "App/widgets/about",
+		  "App/widgets/terms",
+		  "App/widgets/license",
+		  "App/widgets/tutorial",
+		  "App/widgets/unavailable"],
     
 	function (Lang,
 			  Dom,
 			  ModalPopup,
-			  CollapsibleView) {
+			  CollapsibleView,
+			  AboutWidget,
+			  TermsWidget,
+			  LicenseWidget,
+			  TutorialWidget,
+			  UnavailableWidget) {
 
 		var settingsView = Lang.Declare("SettingsView", [CollapsibleView], { 
 				
@@ -19,11 +29,41 @@ r.define(["Api/util/lang",
 				Dom.AddCss(this.domNode, "Settings");	
 
 				this.popups = {};
-				this.popups.About = this.BuildAboutPopup();
-				this.popups.Terms = this.BuildTermsPopup();
-				this.popups.License = this.BuildLicensePopup();
-				this.popups.Tutorial = this.BuildTutorialPopup();
-				this.popups.Unavailable = this.BuildUnavailablePopup();
+				
+				var opts = {
+					domNode : Dom.Create("div", { className:"About" }, document.body),
+					title 	: Lang.Nls("Settings_About_Note1")
+				}
+				
+				this.popups.About = new AboutWidget(opts);
+				
+				var opts = {
+					domNode : Dom.Create("div", { className:"Terms" }, document.body),
+					title 	: Lang.Nls("Settings_Terms_Note1")
+				}
+				
+				this.popups.Terms = new TermsWidget(opts);
+				
+				var opts = {
+					domNode : Dom.Create("div", { className:"License" }, document.body),
+					title 	: Lang.Nls("Settings_License_Note1")
+				}
+				
+				this.popups.License = new LicenseWidget(opts);
+				
+				var opts = {
+					domNode : Dom.Create("div", { className:"Tutorial" }, document.body),
+					title 	: Lang.Nls("Settings_Tutorial_Note1")
+				}
+				
+				this.popups.Tutorial = new TutorialWidget(opts);
+				
+				var opts = {
+					domNode : Dom.Create("div", { className:"Unavailable" }, document.body),
+					title 	: Lang.Nls("Settings_Unavailable_Note1")
+				}
+				
+				this.popups.Unavailable = new UnavailableWidget(opts);
 				
 				this.BuildSettings();
 			},
@@ -58,111 +98,6 @@ r.define(["Api/util/lang",
 				
 				this.Settings.LnkContact = this.BuildLink("contact", "Settings_LnkContact");
 				this.Settings.LnkContact.href = "mailto:" + this.controller.model.Contact + "?subject=" + Lang.Nls("Settings_Subject_Comment");
-				
-				// this.Settings.LnkIssues = this.BuildLink("issues", "Settings_LnkIssues");
-				// this.Settings.LnkIssues.href = "mailto:staubibr@gmail.com?subject=" + Lang.Nls("Settings_Subject_Issues");
-				
-				// this.Settings.LnkShare = this.BuildLink("share", "Settings_LnkShare");
-				// this.Settings.LnkTechnical = this.BuildLink("technical", "Settings_LnkTechnical");
-			},
-			
-			// TODO : Maybe about should be in a view, more like a widget of some kind or just in a container.
-			BuildAboutPopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"About" }, document.body),
-					title 	: Lang.Nls("Settings_About_Note1")
-				})
-
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_About_Note2"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note3"));
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_About_Note4"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note5"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note6"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note7"));
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_About_Note8"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note9"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note10"));
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_About_Note11"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note12"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note13"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note14"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_About_Note15"));
-				
-				return popup;
-			},
-			
-			BuildTermsPopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"Terms" }, document.body),
-					title 	: Lang.Nls("Settings_Terms_Note1")
-				})
-
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note2"));
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_Terms_Note3"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note4"));
-				this.BuildLabel("h4", null, popup.body, Lang.Nls("Settings_Terms_Note5"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note6"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Terms_Note7"));
-				
-				return popup;
-			},
-			
-			BuildLicensePopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"License" }, document.body),
-					title 	: Lang.Nls("Settings_License_Note1")
-				})
-
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note2"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note3"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note4"));
-				this.BuildLabel("h3", null, popup.body, Lang.Nls("Settings_License_Note5"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note6"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note7"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note8"));
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_License_Note9"));
-				
-				return popup;
-			},
-			
-			BuildTutorialPopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"Tutorial" }, document.body),
-					title 	: Lang.Nls("Settings_Tutorial_Note1")
-				})
-				
-				var row = Dom.Create("div", { "className":"Row" }, popup.body);
-				this.BuildLabel("p", "Note Left", row, Lang.Nls("Settings_Tutorial_Note2"));
-				Dom.Create("div", { "className":"Image One" }, row);
-				
-				var row = Dom.Create("div", { "className":"Row" }, popup.body);
-				Dom.Create("div", { "className":"Image Two" }, row);
-				this.BuildLabel("p", "Note Right", row, Lang.Nls("Settings_Tutorial_Note3"));
-				
-				var row = Dom.Create("div", { "className":"Row" }, popup.body);
-				this.BuildLabel("p", "Note Left", row, Lang.Nls("Settings_Tutorial_Note4"));
-				Dom.Create("div", { "className":"Image Three" }, row);
-				
-				var row = Dom.Create("div", { "className":"Row" }, popup.body);
-				Dom.Create("div", { "className":"Image Four" }, row);
-				this.BuildLabel("p", "Note Right", row, Lang.Nls("Settings_Tutorial_Note5"));
-				
-				var row = Dom.Create("div", { "className":"Row" }, popup.body);
-				this.BuildLabel("p", "Note Full", row, Lang.Nls("Settings_Tutorial_Note6"));
-				
-				return popup;
-			},
-			
-			// TODO : Maybe about should be in a view, more like a widget of some kind or just in a container.
-			BuildUnavailablePopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"Unavailable" }, document.body),
-					title 	: Lang.Nls("Settings_Unavailable_Note1")
-				})
-				
-				this.BuildLabel("p", null, popup.body, Lang.Nls("Settings_Unavailable_Note2"));
-				
-				return popup;
 			},
 			
 			BuildLabel : function(type, className, pNode, innerHTML) {		
