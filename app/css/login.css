@@ -40,11 +40,12 @@
 
 
 .Login .Container .Inner .Link {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     box-sizing: border-box;
-	cursor : pointer;
-	color : #92e8ec;
+    cursor: pointer;
+    color: #92e8ec;
+    border-bottom: solid 1.5px #92e8ec;
 }
 
 .Login.View .Footer {
