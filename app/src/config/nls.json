@@ -1,4 +1,4 @@
-﻿{
+{
 	"Main_BtnLog_In"            	: { "fr" : "Login", "en" : "Login" },
 	"Main_BtnLog_Out"            	: { "fr" : "Logout", "en" : "Logout" },
 	"Main_BtnGo"            		: { "fr" : "Continuer", "en" : "Continue" },
@@ -8,6 +8,8 @@
 	"Main_LoginMessage_2"			: { "fr" : "Veuillez vous authentifier avec votre compte OSM", "en" : "Please log into your OSM account to begin"},
 	"Main_LoginMessage_3"			: { "fr" : "Vous êtes présentement authentifié en tant qu'utilisateur", "en" : "You are currently logged<br>in as user"},
 	"Main_LoginMessage_4"			: { "fr" : "Version Bêta", "en" : "Beta Version"},
+	"Main_LoginLink_About"			: { "fr" : "À propos", "en" : "About"},
+	"Main_LoginLink_Terms"			: { "fr" : "Conditions", "en" : "Terms"},
 
 	"Main_ButtonTutorial"			: { "fr" : "Tutoriel", "en" : "Tutorial"},
 	"Main_ButtonLanguage"			: { "fr" : "English", "en" : "Français"},
