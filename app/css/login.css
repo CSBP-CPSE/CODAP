@@ -14,8 +14,6 @@
     border-radius: 6px;
     border: solid rgba(255, 255, 255, 0.9) 1.5px;
     margin: auto auto auto auto;
-	
-	box-sizing : border-box;
 }
 
 .fr .Login .Container {
@@ -35,14 +33,12 @@
 
 .Login .Container .Inner .Message {
     padding: 10px;
-    box-sizing: border-box;
 }
 
 
 .Login .Container .Inner .Link {
     margin-left: 20px;
     margin-right: 20px;
-    box-sizing: border-box;
     cursor: pointer;
     color: #92e8ec;
     border-bottom: solid 1.5px #92e8ec;
@@ -90,7 +86,6 @@
 .Login .Container .Tutorial {
 	height	: 35px;
 	width : 100%;
-	box-sizing: content-box;
     padding: 0px;
 }
 
