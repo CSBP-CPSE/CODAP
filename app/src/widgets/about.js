@@ -29,7 +29,6 @@ r.define(["Api/util/lang",
 				this.BuildLabel("p", null, this.body, Lang.Nls("Settings_About_Note12"));
 				this.BuildLabel("p", null, this.body, Lang.Nls("Settings_About_Note13"));
 				this.BuildLabel("p", null, this.body, Lang.Nls("Settings_About_Note14"));
-				this.BuildLabel("p", null, this.body, Lang.Nls("Settings_About_Note15"));
 			},
 			
 			BuildLabel : function(type, className, pNode, innerHTML) {		
