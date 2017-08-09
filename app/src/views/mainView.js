@@ -34,11 +34,13 @@ r.define(["Api/util/lang",
 				this.Menu.Buttons = {};
 				this.Menu.Buttons.Top = Dom.Create("div", { "className":"Buttons" }, this.Menu.Top);
 				this.Menu.Buttons.Geolocate = Dom.Create("button", { "className":"Geolocate" }, this.Menu.Buttons.Top);
+				this.Menu.Buttons.POI = Dom.Create("button", { "className":"POI" }, this.Menu.Buttons.Top);
 				this.Menu.Buttons.Building = Dom.Create("button", { "className":"Building" }, this.Menu.Buttons.Top);
 				this.Menu.Buttons.Ranking = Dom.Create("button", { "className":"Ranking" }, this.Menu.Buttons.Top);
 				this.Menu.Buttons.Settings = Dom.Create("button", { "className":"Settings" }, this.Menu.Buttons.Top);
 				
 				this.Menu.Buttons.Geolocate.addEventListener("click", this.BtnGeolocate_OnClick.bind(this), false);
+				this.Menu.Buttons.POI.addEventListener("click", this.BtnPOI_OnClick.bind(this), false);
 				this.Menu.Buttons.Building.addEventListener("click", this.BtnBuilding_OnClick.bind(this), false);
 				this.Menu.Buttons.Ranking.addEventListener("click", this.BtnRanking_OnClick.bind(this), false);
 				this.Menu.Buttons.Settings.addEventListener("click", this.BtnSettings_OnClick.bind(this), false);
@@ -55,6 +57,8 @@ r.define(["Api/util/lang",
 				
 				else if (ev.model.Active == "Building") this.SetActiveButton(this.Menu.Buttons.Building);
 				
+				else if (ev.model.Active == "POI") this.SetActiveButton(this.Menu.Buttons.POI);
+				
 				else this.SetActiveButton(null);
 			},
 			
@@ -63,6 +67,7 @@ r.define(["Api/util/lang",
 				this.Menu.Buttons.Ranking.disabled = !enabled;
 				this.Menu.Buttons.Settings.disabled = !enabled;
 				this.Menu.Buttons.Building.disabled = !enabled;
+				this.Menu.Buttons.POI.disabled = !enabled;
 			},
 			
 			SetActiveButton : function(button) {
@@ -79,6 +84,10 @@ r.define(["Api/util/lang",
 			
 			BtnRanking_OnClick : function(e) {				
 				this.controller.SetActive((e.target !== this.activeButton) ? "Ranking" : null);
+			},
+			
+			BtnPOI_OnClick : function(e) {
+				this.controller.SetActive((e.target !== this.activeButton) ? "POI" : null);
 			},
 			
 			BtnBuilding_OnClick : function(e) { 

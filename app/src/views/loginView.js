@@ -22,19 +22,13 @@ r.define(["Api/util/lang",
 
 				this.popups = {};
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"About" }, document.body),
-					title 	: Lang.Nls("Settings_About_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"About" }, document.body);
 				
-				this.popups.About = new AboutWidget(opts);
+				this.popups.About = new AboutWidget(domNode, { title:Lang.Nls("Settings_About_Note1") });
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"Terms" }, document.body),
-					title 	: Lang.Nls("Settings_Terms_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"Terms" }, document.body);
 				
-				this.popups.Terms = new TermsWidget(opts);
+				this.popups.Terms = new TermsWidget(domNode, { title:Lang.Nls("Settings_Terms_Note1") });
 				
 				this.BuildLogin();
 				

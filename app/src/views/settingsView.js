@@ -24,46 +24,31 @@ r.define(["Api/util/lang",
 			Settings :null,
 			
 			popups : null,
-			
+		
 			constructor : function() {
 				Dom.AddCss(this.domNode, "Settings");	
 
 				this.popups = {};
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"About" }, document.body),
-					title 	: Lang.Nls("Settings_About_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"About" }, document.body);
 				
-				this.popups.About = new AboutWidget(opts);
+				this.popups.About = new AboutWidget(domNode, { title:Lang.Nls("Settings_About_Note1") });
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"Terms" }, document.body),
-					title 	: Lang.Nls("Settings_Terms_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"Terms" }, document.body);
 				
-				this.popups.Terms = new TermsWidget(opts);
+				this.popups.Terms = new TermsWidget(domNode, { title:Lang.Nls("Settings_Terms_Note1") });
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"License" }, document.body),
-					title 	: Lang.Nls("Settings_License_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"License" }, document.body);
 				
-				this.popups.License = new LicenseWidget(opts);
+				this.popups.License = new LicenseWidget(domNode, { title:Lang.Nls("Settings_License_Note1") });
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"Tutorial" }, document.body),
-					title 	: Lang.Nls("Settings_Tutorial_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"Tutorial" }, document.body);
 				
-				this.popups.Tutorial = new TutorialWidget(opts);
+				this.popups.Tutorial = new TutorialWidget(domNode, { title:Lang.Nls("Settings_Tutorial_Note1") });
 				
-				var opts = {
-					domNode : Dom.Create("div", { className:"Unavailable" }, document.body),
-					title 	: Lang.Nls("Settings_Unavailable_Note1")
-				}
+				var domNode = Dom.Create("div", { className:"Unavailable" }, document.body);
 				
-				this.popups.Unavailable = new UnavailableWidget(opts);
+				this.popups.Unavailable = new UnavailableWidget(domNode, { title:Lang.Nls("Settings_Unavailable_Note1") });
 				
 				this.BuildSettings();
 			},

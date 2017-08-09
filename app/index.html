@@ -10,8 +10,8 @@
 
 		<link rel="stylesheet" href="../references/ol-3.19.1/ol.css" type="text/css">
 		
-		<link rel="stylesheet" href="../api/css/animation.css" type="text/css">
-		<link rel="stylesheet" href="../api/css/api.css" type="text/css">
+		<link rel="stylesheet" href="../../jCore/css/animation.css" type="text/css">
+		<link rel="stylesheet" href="../../jCore/css/api.css" type="text/css">
 		
 		<link rel="stylesheet" href="./css/general.css" type="text/css">
 		<link rel="stylesheet" href="./css/main.css" type="text/css">
@@ -20,6 +20,8 @@
 		<link rel="stylesheet" href="./css/ranking.css" type="text/css">
 		<link rel="stylesheet" href="./css/settings.css" type="text/css">
 		<link rel="stylesheet" href="./css/building.css" type="text/css">
+		<link rel="stylesheet" href="./css/poi.css" type="text/css">
+		<link rel="stylesheet" href="./css/popup.css" type="text/css">
 		
 		<!--script src="../references/ol-3.19.1/ol-debug.js"></script-->
 
@@ -34,10 +36,10 @@
 				var url = loc.splice(0, loc.length - 1).join("/") + "/";
 				
 				r.require.config({
-					urlArgs : "v=0.2.3",
+					urlArgs : "v=0.3.0",
 					paths: {
 						proj4 : url  + "../references/proj4js",
-						Api	  : url  + "../api/src",
+						Api	  : url  + "../../jCore",
 						Exp   : url  + "../exp/src",
 						App   : url  + "./src"
 					}
@@ -50,6 +52,6 @@
         </script>
     </head>
 
-	<body class="crowd" onload="onload(event)">
+	<body class="CODAP" onload="onload(event)">
 	</body>
 </html>

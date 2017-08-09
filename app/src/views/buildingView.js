@@ -113,12 +113,7 @@ r.define(["Api/util/lang",
 				var div = Dom.Create("div", { "className":"Footer" }, page.Container);
 				
 				page.BtnSave = Dom.Create("button", { "className":"Button Save" }, div);
-	
-				// Dom.Create("image", { "src":"../assets/icon.png" ,"className":"Icon" }, page.BtnSave);
-				
-				// page.LblNoPlace = Dom.Create("div", { "className":"Label NoPlace" }, div);
-				// page.BtnDelete = Dom.Create("button", { "className":"Button Delete" }, div);
-				
+
 				page.Title.innerHTML = Lang.Nls("Building_Title");
 				page.LblBuilding.innerHTML = Lang.Nls("Building_LabelBuilding");
 				page.LblAddress.innerHTML = Lang.Nls("Building_LabelAddress");
@@ -126,10 +121,7 @@ r.define(["Api/util/lang",
 				page.LblSource.innerHTML = Lang.Nls("Building_LabelSource");
 				page.LblFixme.innerHTML = Lang.Nls("Building_LabelFixme");
 				page.BtnSave.innerHTML = Lang.Nls("Building_BtnSave") + '<div class="Icon">';
-				
-				// page.LblNoPlace.innerHTML = Lang.Nls("Building_LabelNoPlace");
-				// page.BtnDelete.innerHTML = Lang.Nls("Building_BtnDelete");
-				
+	
 				page.IptStreet.placeholder = Lang.Nls("Building_PH_Street");
 				page.Row.IptNumber.placeholder = Lang.Nls("Building_PH_Number");
 				page.Row.IptPostal.placeholder = Lang.Nls("Building_PH_Postal");
@@ -140,7 +132,6 @@ r.define(["Api/util/lang",
 				Array.ForEach(Dom_Access.Sort().Options(), function(option) { page.CbxAccess.add(option); });
 				Array.ForEach(Dom_Building.Sort().Options(), function(option) { page.CbxBuilding.add(option); });
 				
-				// page.BtnDelete.addEventListener("click", this.onBtnDelete_Click.bind(this));
 				page.BtnSave.addEventListener("click", this.onBtnSave_Click.bind(this));
 				
 				return page;
@@ -148,10 +139,9 @@ r.define(["Api/util/lang",
 			
 			// TODO : Maybe about should be in a view, more like a widget of some kind or just in a container.
 			BuildSavePopup : function() {
-				var popup = new ModalPopup({ 
-					domNode : Dom.Create("div", { className:"Save" }, document.body),
-					title 	: Lang.Nls("Building_Save_Note1")
-				});
+				var domNode = Dom.Create("div", { className:"Save" }, document.body);
+				
+				var popup = new ModalPopup(domNode, { title:Lang.Nls("Building_Save_Note1") });
 				
 				var label = Dom.Create("p", { className : "Message" }, popup.body);
 				

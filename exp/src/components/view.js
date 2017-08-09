@@ -15,7 +15,7 @@ r.define(["Api/util/lang",
 			controller : null,
 		
 			expanded : false,
-		
+			
 			set : function(prop, value) {
 				if (prop == "controller") {
 					this.controller = value;

@@ -106,6 +106,19 @@ r.define([],
 				})
 			}),
 			
+			POI: new ol.style.Style({
+				image: new ol.style.Circle({
+					radius: 3,
+					fill: new ol.style.Fill({
+						color: 'rgba(25,50,200,0.6)'
+					}),
+					stroke: new ol.style.Stroke({
+						color: 'rgba(10,25,100,0.2)',
+						width: 1
+					})
+				})
+			}),
+			
 			Marker : new ol.style.Style({
 				image: new ol.style.Icon({
 					anchor: [0.5, 0],

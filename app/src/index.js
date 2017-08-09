@@ -7,12 +7,14 @@ r.define(["Api/util/lang",
 		  "App/views/mainView",
 		  "App/views/mapView",
 		  "App/views/loginView",
+		  "App/views/poiView",
 		  "App/views/buildingView",
 		  "App/views/rankingView",
 		  "App/views/settingsView",
 		  "App/controllers/mainController",
 		  "App/controllers/mapController",
 		  "App/controllers/loginController",
+		  "App/controllers/poiController",
 		  "App/controllers/buildingController",
 		  "App/controllers/rankingController",
 		  "App/controllers/settingsController"],
@@ -26,12 +28,14 @@ r.define(["Api/util/lang",
 			  MainView,
 			  MapView,
 			  LoginView,
+			  PoiView,
 			  BuildingView,
 			  RankingView,
 			  SettingsView,
 			  MainController,
 			  MapController,
 			  LoginController,
+			  PoiController,
 			  BuildingController,
 			  RankingController,
 			  SettingsController) {
@@ -50,6 +54,7 @@ r.define(["Api/util/lang",
 				
 				mediator.AddController("Map", new MapController(AppJson));
 				mediator.AddController("Login", new LoginController(AppJson));
+				mediator.AddController("POI", new PoiController(AppJson));
 				mediator.AddController("Building", new BuildingController(AppJson));
 				mediator.AddController("Ranking", new RankingController(AppJson));
 				mediator.AddController("Settings", new SettingsController(AppJson));
@@ -63,6 +68,12 @@ r.define(["Api/util/lang",
 				mediator.AddView("Login", new LoginView({ 
 					domNode 	: Dom.Create("div", null, document.body), 
 					controller 	: mediator.Controller("Login")
+				}));
+				
+				mediator.AddView("POI", new PoiView({
+					domNode 	: Dom.Create("div", null, document.body), 
+					controller  : mediator.Controller("POI"),
+					collapsible : "Down"
 				}));
 				
 				mediator.AddView("Building", new BuildingView({

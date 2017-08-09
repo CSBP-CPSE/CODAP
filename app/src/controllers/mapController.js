@@ -60,8 +60,36 @@ r.define(["Api/util/lang",
 				
 				this.map.on("click", this.onMap_Click.bind(this));
 				
+				var p = this.LoadAmenities();
+				
 				function styleFn(f) {
 					return Styles[f.getGeometry().getType()];
+				}
+			},
+			
+			LoadAmenities : function() {
+				var ext = "45.319,-75.897,45.511,-75.597";
+				var qry = '?data=[out:json][timeout:60];(node["amenity"]({0});node["shop"]({0}););out;>;';
+				
+				var p = new Promise();
+				var url = this.options.overpass.url + String.Format(qry, [ext]);
+
+				Ajax.Get(url).then(OnSuccess.bind(this), function(err) { this.NotifyViewError(err); }.bind(this));
+				
+				return p;
+				
+				function OnSuccess(data) {					
+					var features = this.OverpassToOpenlayersFeatures(data);
+					
+					Array.ForEach(features, function(f) {
+						f.setStyle(Styles["POI"]);
+						
+						this.vLayer.getSource().addFeature(f);
+					}.bind(this));
+				}
+				
+				function OnError(error) {					
+					this.NotifyViewError.bind(this);
 				}
 			},
 			

@@ -1,0 +1,64 @@
+.Popup .Header .Title {
+	line-height : 60px;
+}
+
+.Popup .Container {
+    background-color: rgba(99, 30, 28, 0.8);
+    border: solid rgba(255, 255, 255, 0.9) 1.5px;
+}
+
+.Popup .Body {    
+	top: 60px;
+    bottom: 60px;
+}
+
+.Popup .Footer,
+.Popup .Header {
+    height:60px;
+}
+
+.Popup .Header .Button.Close {
+    background: url(../assets/cross.png) no-repeat;
+    background-size: contain;
+    box-shadow: none;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.Popup .Body > *,
+.Popup .Footer > * {
+    margin: 10px 15px 10px 15px;
+}
+
+.Popup .Header .Button.Close,
+.Popup .Footer .Button.Close {
+    float: right;
+    margin-right: 10px;
+}
+
+.Popup .Footer .Button.Close {
+    color: #A8504E;
+    background-color: white;
+}
+
+.Popup .Footer .Button {
+    height: 32px; 
+    font-size: 15px; 
+}
+
+.Popup a {
+	color : #fff28a;
+}
+
+.Popup a:visited {
+	color : #ffdcd3
+}
+
+.Popup.View h3 {
+	font-size : x-large;
+}
+
+.Popup.View h4 {
+	font-size : large;
+}

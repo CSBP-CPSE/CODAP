@@ -22,6 +22,7 @@ r.define(["Api/util/lang",
 				
 				this.View("Ranking").on("collapsibleClicked", this.onMainSubViewCollapsible_Click.bind(this));
 				this.View("Settings").on("collapsibleClicked", this.onMainSubViewCollapsible_Click.bind(this));
+				this.View("POI").on("collapsibleClicked", this.onMainSubViewCollapsible_Click.bind(this));
 				this.View("Building").on("collapsibleClicked", this.onMainSubViewCollapsible_Click.bind(this));
 			},
 			
@@ -84,6 +85,8 @@ r.define(["Api/util/lang",
 				if (ev.model.Active === "Ranking") this.SetActiveView(this.View("Ranking"));
 				
 				else if (ev.model.Active === "Settings") this.SetActiveView(this.View("Settings"));
+				
+				else if (ev.model.Active === "POI") this.SetActiveView(this.View("POI"));
 				
 				else if (ev.model.Active === "Building") this.SetActiveView(this.View("Building"));
 				

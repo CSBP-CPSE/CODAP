@@ -10,13 +10,13 @@ r.define(["Api/util/lang",
 		var unavailablePopup = Lang.Declare("UnavailablePopup", [ModalPopup], { 
 			
 			constructor : function() {
-				Dom.AddCss(this.domNode, "Unavailable");	
+				Dom.AddCss(this.root, "Unavailable");	
 
 				this.Build();
 			},
 			
 			Build : function() {
-				this.BuildLabel("p", null, this.body, Lang.Nls("Settings_Unavailable_Note2"));
+				this.BuildLabel("p", null, this.nodes.Body, Lang.Nls("Settings_Unavailable_Note2"));
 			},
 			
 			BuildLabel : function(type, className, pNode, innerHTML) {		
