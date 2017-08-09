@@ -60,7 +60,7 @@ r.define(["Api/util/lang",
 				
 				this.map.on("click", this.onMap_Click.bind(this));
 				
-				var p = this.LoadAmenities();
+				// var p = this.LoadAmenities();
 				
 				function styleFn(f) {
 					return Styles[f.getGeometry().getType()];
