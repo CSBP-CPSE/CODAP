@@ -23,23 +23,23 @@ r.define(["Api/util/lang",
 		
 			constructor : function(options, subs) {			
 				this.model = {
-					Selected : null
+					Building : null
 				};
 			},
 			
 			Clear: function() {
-				this.model.Selected = null;
+				this.model.Building = null;
 				this.NotifyViewNewModel("Building");
 			},
 			
 			GetTag : function(key) {
-				var f = this.model.Selected;
+				var f = this.model.Building;
 				
 				return f.getProperties()["tags"][key] || "";
 			},
 			
 			HasTag : function(key) {
-				var f = this.model.Selected;
+				var f = this.model.Building;
 				
 				return f.getProperties()["tags"].hasOwnProperty(key);
 			},
@@ -66,7 +66,7 @@ r.define(["Api/util/lang",
 			},
 			
 			UpdateSelected : function(data) {
-				var tags = this.model.Selected.getProperties().tags;
+				var tags = this.model.Building.getProperties().tags;
 				
 				for (var k in data) {
 					if (data[k] != null) tags[k] = data[k];
@@ -74,7 +74,7 @@ r.define(["Api/util/lang",
 			},
 			
 			onChangeset_Opened : function(pOut, ev) {
-				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.Selected);
+				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.Building);
 				
 				p.then(this.onUpload_Success.bind(this, pOut), failure.bind(this));
 				

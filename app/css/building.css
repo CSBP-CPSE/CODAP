@@ -1,3 +1,4 @@
+.POI.View, 
 .Building.View {	
     bottom	: 0px;
     left	: 0px;
@@ -7,23 +8,27 @@
 	padding-right : 10px;
 }
 
+.POI.View .Page.One,
 .Building.View .Page.One {
 	text-align 	: left;
     width		: 100%;
 	display 	: table;
 }
 
+.POI.View .Page.One.NoData,
 .Building.View .Page.One.NoData {
 	text-align: center;
     position: relative;
     top: 10px;
 }
 
+.POI.View .Title,
 .Building.View .Title {
 	text-align : center;
 	margin: 20px 10px 30px 10px;
 }
 
+.POI.View .Page.One .Column,
 .Building.View .Page.One .Column {
     display: table-cell;
 	text-align:left;
@@ -31,28 +36,35 @@
     margin-left: 10px;
 } 
 
+.POI.View .Page.One .Column.Left,
 .Building.View .Page.One .Column.Left { 
 	width : auto;
 }
 
+.POI.View .Page.One .Column.Right,
 .Building.View .Page.One .Column.Right { 
 	width : 100px;
 }
 
+.POI.View .Page.One .Label,
+.POI.View .Page.One .Value,
 .Building.View .Page.One .Label,
 .Building.View .Page.One .Value {
 	display:inline-block;
 	margin-left: 5px;
 }
 
+.POI.View .Page.One .Button.Edit,
 .Building.View .Page.One .Button.Edit {
     background-color: #92D36E;
 } 
 
+.POI.View .Page.Two *,
 .Building.View .Page.Two * {
 	box-sizing : border-box;
 }
 
+.POI.View .Page.Two .Container,
 .Building.View .Page.Two .Container { 
 	position: absolute;
     top: 70px;
@@ -63,6 +75,10 @@
     padding-right: 5px;
 }
 
+.POI.View .Page.Two .Label,
+.POI.View .Page.Two .Input,
+.POI.View .Page.Two .Combo,
+.POI.View .Page.Two .Row,
 .Building.View .Page.Two .Label,
 .Building.View .Page.Two .Input,
 .Building.View .Page.Two .Combo,
@@ -70,32 +86,41 @@
 	width : 100%;
 }
 
+.POI.View .Page.Two .Row > *,
 .Building.View .Page.Two .Row > * {
 	width : 50%;
 	display: inline-block;
 } 
 
+.POI.View .Page.Two .Gutter > *,
 .Building.View .Page.Two .Gutter > * {
 	width : 100%;
 }
 
+.POI.View .Page.Two .Gutter > *,
 .Building.View .Page.Two .Gutter > * {
 	width : 100%;
 }
 
+.POI.View .Row .Gutter:not(:first-child),
 .Building.View .Row .Gutter:not(:first-child) {
 	padding-left : 3px;
 }
 
+.POI.View .Row .Gutter:not(:last-child),
 .Building.View .Row .Gutter:not(:last-child) {
 	padding-right : 3px;
 }
 
+.POI.View .Page.Two .Label,
 .Building.View .Page.Two .Label {
 	margin-top : 8px;
 	margin-bottom : 2px;
 }
 
+.POI.View .Page.Two .Input,
+.POI.View .Page.Two .Combo,
+.POI.View .Page.Two .Row,
 .Building.View .Page.Two .Input,
 .Building.View .Page.Two .Combo,
 .Building.View .Page.Two .Row {
@@ -103,22 +128,26 @@
 	margin-bottom : 2px;
 }
 
+.POI.View .Page.Two .Footer > *,
 .Building.View .Page.Two .Footer > *{ 
 	margin-top : 8px;
 	margin-bottom : 8px;
 }
 
+.POI.View .Page.Two .Footer,
 .Building.View .Page.Two .Footer {
 	width : 100%;
 	text-align:center;
 	margin-top : 20px;
 }
 
+.POI.View .Page.Two .Button.Save,
 .Building.View .Page.Two .Button.Save {
 	background-color : #92D36E;
 	width	: 100%;
 }
 
+.POI.View .Page.Two .Button.Delete,
 .Building.View .Page.Two .Button.Delete {
 	background-color : #A8504E;
 }
@@ -140,6 +169,7 @@
 	margin-left: 10px;
 }
 
+.POI.View .Page.Two .Button.Save.Disabled,
 .Building.View .Page.Two .Button.Save.Disabled {
 	background-color:#559632;
 	box-shadow : none;

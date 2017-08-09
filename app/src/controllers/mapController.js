@@ -6,6 +6,7 @@ r.define(["Api/util/lang",
 		  "Api/util/array",
 		  "Api/components/promise",
 		  "App/config/styles",
+		  "App/helpers/overpass",
 		  "Exp/util/osmAuth",
 		  "Exp/components/controller"],
     
@@ -16,6 +17,7 @@ r.define(["Api/util/lang",
 			  Array,
 			  Promise,
 			  Styles,
+			  Overpass,
 			  OsmAuth,
 			  Controller) {
 
@@ -24,23 +26,21 @@ r.define(["Api/util/lang",
 			model : null,
 			options : null,
 			
+			busy : false,
+			
 			vLayer : null,
 			bLayer : null,
-			
-			busy : false,
 			
 			constructor : function(options) {				
 				this.options = {
 					view : options.view,
-					tolerance : options.tolerance,
-					overpass : options.overpass
+					tolerance : options.tolerance
 				}	
 				
 				this.CreateMap();
 				
 				this.model = {
 					Map : this.map,
-					Selected : null,
 					Geolocating : false
 				};
 			},
@@ -60,49 +60,44 @@ r.define(["Api/util/lang",
 				
 				this.map.on("click", this.onMap_Click.bind(this));
 				
-				// var p = this.LoadAmenities();
-				
-				function styleFn(f) {
+				function styleFn(f) {					
 					return Styles[f.getGeometry().getType()];
-				}
-			},
-			
-			LoadAmenities : function() {
-				var ext = "45.319,-75.897,45.511,-75.597";
-				var qry = '?data=[out:json][timeout:60];(node["amenity"]({0});node["shop"]({0}););out;>;';
-				
-				var p = new Promise();
-				var url = this.options.overpass.url + String.Format(qry, [ext]);
-
-				Ajax.Get(url).then(OnSuccess.bind(this), function(err) { this.NotifyViewError(err); }.bind(this));
-				
-				return p;
-				
-				function OnSuccess(data) {					
-					var features = this.OverpassToOpenlayersFeatures(data);
-					
-					Array.ForEach(features, function(f) {
-						f.setStyle(Styles["POI"]);
-						
-						this.vLayer.getSource().addFeature(f);
-					}.bind(this));
-				}
-				
-				function OnError(error) {					
-					this.NotifyViewError.bind(this);
 				}
 			},
 			
 			onMap_Click : function(ev) {
 				if (this.busy) {
 					this.NotifyViewMessage("The map controller is busy please wait for previous operation to complete.");
-					ev.preventDefault();
+					return;
 				}
 				
 				if (this.map.getView().getZoom() < 16) {
 					this.NotifyViewMessage("Please zoom in further before trying to select a building.");
-					ev.preventDefault();
+					return;
 				}
+				
+				this.busy = true;
+				
+				this.AddSearchFeature(ev.coordinate);
+				
+				var p = this.IdentifyFeatures(ev.coordinate);
+				
+				p.then(this.onMap_FeaturesIdentified.bind(this), this.onMap_Error.bind(this));
+			},
+			
+			onMap_FeaturesIdentified : function(ev) {
+				this.busy = false;
+				
+				this.model.POI = ev.poi;
+				this.model.Building = ev.building;
+				
+				this.NotifyViewNewModel("Map");
+			},
+			
+			onMap_Error : function(ev) {
+				this.busy = false;
+				
+				this.NotifyViewError(err);
 			},
 			
 			AddSearchFeature : function(coordinate) {
@@ -123,75 +118,14 @@ r.define(["Api/util/lang",
 				this.map.setView(view);
 			},
 			
-			IdentifyFeatures : function(coordinate) {
-				this.busy = true;
-			
-				var p = new Promise();
+			IdentifyFeatures : function(coordinate) {	
+				var radius = this.map.getView().getResolution() * this.options.tolerance;
 				var xy = Project.Point(coordinate[0], coordinate[1], "900913", 4326);
 				
-				// NOTE : Openstreetmap has serious limitations when it comes to querying the data it contains. The two following API
-				//		  calls are the best I managed to do for now.
-				// NOTE : This url will only return features as long as the radius around the clicked point contains a node or a way
-				var url = this.options.overpass.url + '?data=[out:json][timeout:60];(way["building"](around:{0},{1},{2});>);out meta;'
-
-				// NOTE : This url will return ways that are in an area that contain  the clicked point. The problem is, an area must be 
-				// 		  defined for this to work. Usually, this works with big commercial buildings, not residences.
-				// var url = 'http://overpass-api.de/api/interpreter?data=[out:json][timeout:30];is_in({0},{1})->.a;(way["building"](pivot.a);>);out;';
-
-				var radius = this.map.getView().getResolution() * this.options.tolerance;
-				
-				url = String.Format(url, [radius, xy.y, xy.x]);
-				
-				Ajax.Get(url).then(OnSuccess.bind(this), OnError.bind(this));
+				return Overpass.Identify(xy, radius);
 				
 				return p;
-				
-				function OnSuccess(data) {
-					this.busy = false;
-					
-					var features = this.OverpassToOpenlayersFeatures(data);
-					
-					p.Resolve({ feature:(features.length > 0 ? features[0] : null) });
-				}
-				
-				function OnError(error) {
-					this.busy = false;
-					
-					p.Reject(error);
-					
-					this.NotifyViewError.bind(this);
-				}
 			},			
-			
-			OverpassToOpenlayersFeatures : function(opData) {
-				var json = JSON.parse(opData);
-				var geojson = osmtogeojson(json);
-				
-				var format = new ol.format.GeoJSON();
-				
-				var opts = {
-					dataProjection : 'EPSG:4326',
-					featureProjection : 'EPSG:900913'
-				}
-				
-				var features = format.readFeatures(geojson, opts);
-				
-				Array.ForEach(features, function(f) {
-					this.AssignOSMElements(f, json.elements);
-				}.bind(this));
-				
-				return features;
-			},
-			
-			AssignOSMElements : function(f, elements) {
-				var id = f.getProperties().id;
-				
-				var el = Array.Find(elements, function(el) { return el.id === id; });
-				
-				if (!el) return null;
-				
-				f.nodes = el.nodes;
-			},
 			
 			Geolocate : function() {
 				this.model.Geolocating = false;
@@ -230,13 +164,7 @@ r.define(["Api/util/lang",
 				
 				return f;
 			},
-			
-			SelectFeature : function(feature) {
-				this.model.Selected = feature;
-				
-				this.NotifyViewNewModel("Map");
-			},
-			
+						
 			ClearMap : function() {
 				this.vLayer.getSource().clear();
 			},

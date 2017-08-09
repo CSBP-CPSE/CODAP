@@ -233,7 +233,7 @@ r.define(["Api/util/lang",
 			onController_ModelChange : function(ev) {
 				this.ClearUI();
 				
-				if (!ev.model.Selected) return;
+				if (!ev.model.Building) return;
 				
 				this.Steps[0].Data.style.display = '';
 				this.Steps[0].NoData.style.display = 'none';

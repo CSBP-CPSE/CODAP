@@ -18,6 +18,7 @@ r.define(["Api/util/lang",
 				this.Controller("Main").on("ControllerModelChange", this.onMainController_ModelChange.bind(this));
 				this.Controller("Map").on("ControllerModelChange", this.onMapController_ModelChange.bind(this));
 				this.Controller("Settings").on("ControllerModelChange", this.onSettingsController_ModelChange.bind(this));
+				this.Controller("POI").on("ControllerModelChange", this.onPOIController_ModelChange.bind(this));
 				this.Controller("Building").on("ControllerModelChange", this.onBuildingController_ModelChange.bind(this));
 				
 				this.View("Ranking").on("collapsibleClicked", this.onMainSubViewCollapsible_Click.bind(this));
@@ -60,20 +61,41 @@ r.define(["Api/util/lang",
 			},
 			
 			onMapController_ModelChange : function(ev) {
-				this.Controller("Building").model.Selected = ev.model.Selected;
+				this.Controller("Building").model.Building = null;
+				this.Controller("POI").model.POI = null;
 				
-				if (ev.model.Selected) this.Controller("Main").model.Active = "Building";
+				if (ev.model.POI) {
+					this.Controller("POI").model.POI = ev.model.POI;
+					this.Controller("Main").model.Active = "POI";
+				}
+				
+				else if (ev.model.Building) {
+					this.Controller("POI").model.Building = ev.model.Building;
+					this.Controller("Main").model.Active = "Building";
+				}
 				
 				if (ev.origin !== "Map") return;
 				
 				this.NotifyViewNewModel("Main");
 				this.NotifyViewNewModel("Building");
+				this.NotifyViewNewModel("POI");
+			},
+			
+			onPOIController_ModelChange : function(ev) {
+				this.Controller("Map").model.POI = ev.model.POI;
+				
+				if (!ev.model.POI) this.Controller("Main").model.Active = null;
+				
+				if (ev.origin !== "POI") return;
+				
+				this.NotifyViewNewModel("Main");
+				this.NotifyViewNewModel("Map");
 			},
 			
 			onBuildingController_ModelChange : function(ev) {
-				this.Controller("Map").model.Selected = ev.model.Selected;
+				this.Controller("Map").model.Building = ev.model.Building;
 				
-				if (!ev.model.Selected) this.Controller("Main").model.Active = null;
+				if (!ev.model.Building) this.Controller("Main").model.Active = null;
 				
 				if (ev.origin !== "Building") return;
 				

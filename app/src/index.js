@@ -4,6 +4,7 @@ r.define(["Api/util/lang",
 		  "Api/plugins/json!App/config/app", 
 		  "Api/plugins/json!App/config/nls", 
 		  "App/mediator",
+		  "App/helpers/overpass",
 		  "App/views/mainView",
 		  "App/views/mapView",
 		  "App/views/loginView",
@@ -25,6 +26,7 @@ r.define(["Api/util/lang",
 			  AppJson,
 			  NlsJson,
 			  Mediator,
+			  Overpass,
 			  MainView,
 			  MapView,
 			  LoginView,
@@ -49,6 +51,8 @@ r.define(["Api/util/lang",
 				Lang.set('nls', NlsJson);
 				
 				Dom.AddCss(document.body, locale);
+				
+				Overpass.overpass = AppJson.overpass;
 				
 				var mediator = new Mediator();
 				
