@@ -93,16 +93,16 @@ r.define(["Api/util/array",
 				
 				function OnSuccess(data) {					
 					var features = this.OverpassToOpenlayersFeatures(data);
+					var f = (features.length > 0 ? features[0] : null)
 					
-					p.Resolve({ feature:(features.length > 0 ? features[0] : null) });
+					var type = null;
 					
-					/*
-					Array.ForEach(features, function(f) {
-						f.setStyle(Styles["POI"]);
-						
-						this.vLayer.getSource().addFeature(f);
-					}.bind(this));
-					*/
+					if (f) {
+						var tags = f.getProperties().tags;
+						type = tags.hasOwnProperty("amenity") ? "amenity" : "shop" ;
+					}
+					
+					p.Resolve({ feature:f, type:type });
 				}
 			},
 			

@@ -54,7 +54,7 @@ r.define(["Api/util/lang",
 				
 				page.Col1 = {};
 				page.Col1.Top = Dom.Create("div", { "className":"Column Left" }, page.Data);
-				/*
+				
 				page.Col1.Row1 = {};
 				page.Col1.Row1.Top = Dom.Create("div", { "className":"Row" }, page.Col1.Top);
 				page.Col1.Row1.Label = Dom.Create("div", { "className":"Label" }, page.Col1.Row1.Top);
@@ -62,8 +62,9 @@ r.define(["Api/util/lang",
 				
 				page.Col1.Row2 = {};
 				page.Col1.Row2.Top = Dom.Create("div", { "className":"Row" }, page.Col1.Top);
+				page.Col1.Row2.Label = Dom.Create("div", { "className":"Label" }, page.Col1.Row2.Top);
 				page.Col1.Row2.Value = Dom.Create("div", { "className":"Value" }, page.Col1.Row2.Top);
-				*/
+				
 				page.Col2 = {};
 				page.Col2.Top = Dom.Create("div", { "className":"Column Right" }, page.Data);
 				page.Col2.BtnEdit = Dom.Create("button", { "className":"Button Edit" }, page.Col2.Top);
@@ -71,6 +72,7 @@ r.define(["Api/util/lang",
 				page.NoData.innerHTML = Lang.Nls("POI_LabelNoData");
 				// page.Col1.Row1.Label.innerHTML = Lang.Nls("Building_LabelBuilding") + ":";
 				page.Col2.BtnEdit.innerHTML = Lang.Nls("Building_BtnEdit");
+				page.Col1.Row1.Label.innerHTML = Lang.Nls("POI_LabelName");
 				
 				page.Col2.BtnEdit.addEventListener("click", this.onBtnEdit_Click.bind(this));
 				
@@ -142,8 +144,10 @@ r.define(["Api/util/lang",
 			},
 			
 			ClearUI : function() {
-				// this.Steps[0].Col1.Row1.Value.innerHTML = ""
-				// this.Steps[0].Col1.Row2.Value.innerHTML = ""
+				// this.Steps[0].Col1.Row1.Label.innerHTML = "";
+				this.Steps[0].Col1.Row1.Value.innerHTML = "";
+				this.Steps[0].Col1.Row2.Label.innerHTML = "";
+				this.Steps[0].Col1.Row2.Value.innerHTML = "";
 				
 				this.active.ClearUI();
 				
@@ -152,12 +156,13 @@ r.define(["Api/util/lang",
 			},
 			
 			ShowPOI : function() {
+				this.ClearUI();
+				
 				this.Steps[0].Data.style.display = '';
 				this.Steps[0].NoData.style.display = 'none';
 				
-				// this.Steps[0].Col1.Row2.Value.innerHTML = this.controller.GetAddress();
-				// this.Steps[0].Col1.Row1.Value.innerHTML = this.controller.GetTag("building");
-
+				(this.controller.model.POI.type === null) ? this.ShowNewPOI() : this.ShowExistingPOI() ;
+	
 				var data = {
 					"addr:street" 		: this.controller.GetTag("addr:street") || "",
 					"addr:housenumber" 	: this.controller.GetTag("addr:housenumber") || "",
@@ -170,6 +175,20 @@ r.define(["Api/util/lang",
 				}
 				
 				this.active.SetData(data);
+			},
+			
+			ShowExistingPOI : function() {
+				this.Steps[0].Col1.Row1.Label.innerHTML = Lang.Nls("POI_LabelName") + ":";
+				this.Steps[0].Col1.Row1.Value.innerHTML = this.controller.GetTag("name");
+				
+				var type = this.controller.model.POI.type;
+				
+				this.Steps[0].Col1.Row2.Label.innerHTML = ((type == "amenity") ? Lang.Nls("POI_LabelAmenity") : Lang.Nls("POI_LabelShop")) + ":";
+				this.Steps[0].Col1.Row2.Value.innerHTML = (type == "amenity") ? this.controller.GetTag("amenity") : this.controller.GetTag("shop");
+			},
+			
+			ShowNewPOI : function() {
+				
 			},
 			
 			onController_ModelChange : function(ev) {

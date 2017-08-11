@@ -24,13 +24,17 @@ r.define(["Api/util/lang",
 			},
 			
 			GetTag : function(key) {
-				var f = this.model.POI;
+				var f = this.model.POI.feature;
+				
+				if (!f) return null;
 				
 				return f.getProperties()["tags"][key] || null;
 			},
 			
 			HasTag : function(key) {
-				var f = this.model.POI;
+				var f = this.model.POI.feature;
+				
+				if (!f) return null;
 				
 				return f.getProperties()["tags"].hasOwnProperty(key);
 			},
@@ -57,7 +61,7 @@ r.define(["Api/util/lang",
 			},
 			
 			UpdateSelected : function(data) {
-				var tags = this.model.POI.getProperties().tags;
+				var tags = this.model.POI.feature.getProperties().tags;
 				
 				for (var k in data) {
 					if (data[k] != null) tags[k] = data[k];
@@ -65,7 +69,7 @@ r.define(["Api/util/lang",
 			},
 			
 			onChangeset_Opened : function(pOut, ev) {
-				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.POI);
+				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.POI.feature);
 				
 				p.then(this.onUpload_Success.bind(this, pOut), failure.bind(this));
 				

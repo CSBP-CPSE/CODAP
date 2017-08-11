@@ -44,6 +44,9 @@
 	"Ranking_Note"					: { "fr" : "À venir", "en" : "Forthcoming" },
 	
 	"POI_Title"						: { "fr" : "Lieu d'intérêt (POI)", "en" : "Place of Interest (POI)" },
+	"POI_LabelName"					: { "fr" : "Nom", "en" : "Name" },
+	"POI_LabelAmenity"				: { "fr" : "Service", "en" : "Amenity" },
+	"POI_LabelShop"					: { "fr" : "Magasin", "en" : "Shop" },
 	"POI_LabelMessage"				: { "fr" : "Cliquer sur la carte pour ajouter un nouveau point d'intérêt (POI)", "en" : "Click on the map to add a new point of interest (POI)" },
 	"POI_LabelNoData"				: { "fr" : "Pour sélectionner un lieu d'intérêt ou en créer un nouveau, zoomer et cliquer sur la carte", "en" : "To select a place of interest or create a new one, zoom in and click on the map" },
 

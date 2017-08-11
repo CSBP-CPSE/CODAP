@@ -102,11 +102,11 @@ r.define(["Api/util/lang",
 				
 				this.busy = false;
 				
-				this.model.Selected = ev.feature;
+				this.model.Selected = ev;
 				
-				if (this.model.Mode === "POI" && !this.model.Selected) this.AddPOI(coordinate);
+				if (this.model.Mode === "POI" && !this.model.Selected.feature) this.AddPOI(coordinate);
 
-				else if (this.model.Mode === "Building" && this.model.Selected) this.AddBuilding(this.model.Selected);
+				else if (this.model.Mode === "Building" && this.model.Selected.feature) this.AddBuilding(this.model.Selected.feature);
 				
 				this.NotifyViewNewModel("Map");
 			},
@@ -148,7 +148,7 @@ r.define(["Api/util/lang",
 			
 				this.AddFeature(f);
 				
-				this.model.Selected = f;
+				this.model.Selected.feature = f;
 			},
 			
 			Geolocate : function() {

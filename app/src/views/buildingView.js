@@ -147,6 +147,8 @@ r.define(["Api/util/lang",
 			},
 			
 			ShowBuilding : function() {
+				this.ClearUI();
+				
 				this.Steps[0].Data.style.display = '';
 				this.Steps[0].NoData.style.display = 'none';
 				
