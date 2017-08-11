@@ -2,7 +2,7 @@
 r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/components/popup/modal",
-		  "Exp/components/views/collapsible",
+		  "App/components/views/collapsible",
 		  "App/widgets/about",
 		  "App/widgets/terms",
 		  "App/widgets/license",

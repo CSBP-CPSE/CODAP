@@ -3,7 +3,7 @@ r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/util/array",
 		  "Api/util/animate",
-		  "Exp/components/views/view"],
+		  "App/components/views/view"],
     
 	function (Lang,
 			  Dom,
@@ -51,13 +51,13 @@ r.define(["Api/util/lang",
 			onController_ModelChange : function(ev) {
 				this.SetButtonState(ev.model.IsLogged);
 				
-				if (ev.model.Active == "Ranking") this.SetActiveButton(this.Menu.Buttons.Ranking);
+				if (ev.model.Active == "Ranking") this.SetActiveButton("Ranking");
 				
-				else if (ev.model.Active == "Settings") this.SetActiveButton(this.Menu.Buttons.Settings);
+				else if (ev.model.Active == "Settings") this.SetActiveButton("Settings");
 				
-				else if (ev.model.Active == "Building") this.SetActiveButton(this.Menu.Buttons.Building);
+				else if (ev.model.Active == "Building") this.SetActiveButton("Building");
 				
-				else if (ev.model.Active == "POI") this.SetActiveButton(this.Menu.Buttons.POI);
+				else if (ev.model.Active == "POI") this.SetActiveButton("POI");
 				
 				else this.SetActiveButton(null);
 			},
@@ -70,7 +70,9 @@ r.define(["Api/util/lang",
 				this.Menu.Buttons.POI.disabled = !enabled;
 			},
 			
-			SetActiveButton : function(button) {
+			SetActiveButton : function(id) {
+				var button = this.Menu.Buttons[id];
+				
 				if (this.activeButton) Dom.RemoveCss(this.activeButton, "Active");
 			
 				this.activeButton = button;

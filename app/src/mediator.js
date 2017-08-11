@@ -1,6 +1,6 @@
 
 r.define(["Api/util/lang",
-		  "Exp/components/mediator"],
+		  "App/components/mediator"],
     
 	function (Lang,
 			  Mediator) {
@@ -15,8 +15,8 @@ r.define(["Api/util/lang",
 			
 			Startup : function() {
 				this.Controller("Login").on("ControllerModelChange", this.onLoginController_ModelChange.bind(this));
-				this.Controller("Main").on("ControllerModelChange", this.onMainController_ModelChange.bind(this));
 				this.Controller("Map").on("ControllerModelChange", this.onMapController_ModelChange.bind(this));
+				this.Controller("Main").on("ControllerModelChange", this.onMainController_ModelChange.bind(this));
 				this.Controller("Settings").on("ControllerModelChange", this.onSettingsController_ModelChange.bind(this));
 				this.Controller("POI").on("ControllerModelChange", this.onPOIController_ModelChange.bind(this));
 				this.Controller("Building").on("ControllerModelChange", this.onBuildingController_ModelChange.bind(this));
@@ -29,103 +29,73 @@ r.define(["Api/util/lang",
 			
 			onMainSubViewCollapsible_Click : function(ev) {
 				this.SetActiveView(null);
-				
-				this.Controller("Main").model.Active = null;
-				
-				this.NotifyViewNewModel("Main");
 			},
 			
 			onLoginController_ModelChange : function(ev) {
-				this.Controller("Main").model.IsLogged = ev.model.IsLogged;
-				this.Controller("Main").model.Active = null;
 				this.Controller("Settings").model.IsLogged = ev.model.IsLogged;
+				this.Controller("Main").model.IsLogged = ev.model.IsLogged;
 				
-				if (ev.origin !== "Login") return;
-				
-				this.NotifyViewNewModel("Main");
-				this.NotifyViewNewModel("Settings");
+				this.View("Main").SetButtonState(ev.model.IsLogged);
 			},
 			
 			onSettingsController_ModelChange : function(ev) {
-				this.Controller("Main").model.IsLogged = ev.model.IsLogged;	
 				this.Controller("Login").model.IsLogged = ev.model.IsLogged;
+				this.Controller("Main").model.IsLogged = ev.model.IsLogged;
 				
-				if (!ev.model.IsLogged) {
-					this.Controller("Main").model.Active = null;		
-				}
+				if (!ev.model.IsLogged) this.SetActiveView(null);
 				
-				if (ev.origin !== "Settings") return;
-				
-				this.NotifyViewNewModel("Main");
-				this.NotifyViewNewModel("Login");
+				this.View("Login").DoLogin();
 			},
 			
-			onMapController_ModelChange : function(ev) {
-				this.Controller("Building").model.Building = null;
-				this.Controller("POI").model.POI = null;
-				
-				if (ev.model.POI) {
-					this.Controller("POI").model.POI = ev.model.POI;
-					this.Controller("Main").model.Active = "POI";
-				}
-				
-				else if (ev.model.Building) {
-					this.Controller("POI").model.Building = ev.model.Building;
-					this.Controller("Main").model.Active = "Building";
-				}
-				
+			onMapController_ModelChange : function(ev) {				
 				if (ev.origin !== "Map") return;
 				
-				this.NotifyViewNewModel("Main");
-				this.NotifyViewNewModel("Building");
-				this.NotifyViewNewModel("POI");
+				if (ev.model.Mode === "POI") {
+					this.Controller("POI").model.POI = ev.model.Selected;
+					this.SetActiveView("POI");
+					this.View("POI").ShowPOI();
+				}
+				
+				if (ev.model.Mode === "Building") {
+					this.Controller("Building").model.Building = ev.model.Selected;
+					this.SetActiveView("Building");
+					this.View("Building").ShowBuilding();
+				}
 			},
 			
 			onPOIController_ModelChange : function(ev) {
-				this.Controller("Map").model.POI = ev.model.POI;
-				
-				if (!ev.model.POI) this.Controller("Main").model.Active = null;
-				
 				if (ev.origin !== "POI") return;
 				
-				this.NotifyViewNewModel("Main");
-				this.NotifyViewNewModel("Map");
+				if (ev.model.Active) this.Controller("Map").model.Mode = "POI";
+				
+				if (!ev.model.POI) this.Controller("Map").ClearMap();
 			},
 			
 			onBuildingController_ModelChange : function(ev) {
-				this.Controller("Map").model.Building = ev.model.Building;
-				
-				if (!ev.model.Building) this.Controller("Main").model.Active = null;
-				
 				if (ev.origin !== "Building") return;
 				
-				this.NotifyViewNewModel("Main");
-				this.NotifyViewNewModel("Map");
+				if (ev.model.Active) this.Controller("Map").model.Mode = "Building";
+				
+				if (!ev.model.Building) this.Controller("Map").ClearMap();
 			},
 			
 			onMainController_ModelChange : function(ev) {
-				if (ev.model.Active === "Ranking") this.SetActiveView(this.View("Ranking"));
+				this.SetActiveView(ev.model.Active);
 				
-				else if (ev.model.Active === "Settings") this.SetActiveView(this.View("Settings"));
-				
-				else if (ev.model.Active === "POI") this.SetActiveView(this.View("POI"));
-				
-				else if (ev.model.Active === "Building") this.SetActiveView(this.View("Building"));
-				
-				else if (ev.model.Active === "Geolocate") {
+				if (ev.model.Active === "Geolocate") {
 					this.SetActiveView(null);
 
 					this.Controller("Map").model.Geolocating = true;
-				
-					if (ev.origin !== "Main") return;
-				
-					this.NotifyViewNewModel("Map");
+				 
+					this.View("Map").DoGeolocate();
 				}
-				
-				else this.SetActiveView(null);
 			},
 			
-			SetActiveView : function(view) {
+			SetActiveView : function(id) {
+				var view = this.View(id);
+				
+				this.View("Main").SetActiveButton(id);
+				
 				if (this.aView === view) return;
 				
 				if (this.aView && this.aView.IsExpanded()) this.aView.Collapse(view !== null);

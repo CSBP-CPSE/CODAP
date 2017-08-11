@@ -1,6 +1,6 @@
 
 r.define(["Api/components/promise",
-		  "Exp/util/osmXml",
+		  "App/util/osmXml",
 		  "Api/util/string"],
 
 	function (Promise,

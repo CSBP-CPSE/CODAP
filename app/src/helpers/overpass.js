@@ -76,7 +76,7 @@ r.define(["Api/util/array",
 				function OnSuccess(data) {
 					var features = this.OverpassToOpenlayersFeatures(data);
 					
-					p.Resolve({ building:(features.length > 0 ? features[0] : null) });
+					p.Resolve({ feature:(features.length > 0 ? features[0] : null) });
 				}
 			},
 			
@@ -94,7 +94,7 @@ r.define(["Api/util/array",
 				function OnSuccess(data) {					
 					var features = this.OverpassToOpenlayersFeatures(data);
 					
-					p.Resolve({ poi:(features.length > 0 ? features[0] : null) });
+					p.Resolve({ feature:(features.length > 0 ? features[0] : null) });
 					
 					/*
 					Array.ForEach(features, function(f) {

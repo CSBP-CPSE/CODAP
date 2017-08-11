@@ -14,6 +14,9 @@
 	"Main_ButtonTutorial"			: { "fr" : "Tutoriel", "en" : "Tutorial"},
 	"Main_ButtonLanguage"			: { "fr" : "English", "en" : "Français"},
 	
+	"Map_ZoomInMore" 				: { "fr" : "Vous devez zoomer davantage pour interagir avec la carte.", "en" : "Please zoom in further before interacting with the map." }, 
+	"Map_Busy" 						: { "fr" : "Le controleur de la carte est occupé, veuillez attendre que l'opération précédente soit terminée.", "en" : "The map controller is busy please wait for previous operation to complete." }, 
+	
 	"Building_Title"				: { "fr" : "MODIFIER UN BÂTIMENT", "en" : "EDIT BUILDING" },
 	"Building_LabelBuilding"		: { "fr" : "Bâtiment", "en" : "Building" },
 	"Building_BtnEdit"				: { "fr" : "Modifier", "en" : "Edit" },
@@ -40,6 +43,10 @@
 	"Ranking_Title"					: { "fr" : "TABLEAU DE POINTAGE", "en" : "SCOREBOARD" },
 	"Ranking_Note"					: { "fr" : "À venir", "en" : "Forthcoming" },
 	
+	"POI_Title"						: { "fr" : "Lieu d'intérêt (POI)", "en" : "Place of Interest (POI)" },
+	"POI_LabelMessage"				: { "fr" : "Cliquer sur la carte pour ajouter un nouveau point d'intérêt (POI)", "en" : "Click on the map to add a new point of interest (POI)" },
+	"POI_LabelNoData"				: { "fr" : "Pour sélectionner un lieu d'intérêt ou en créer un nouveau, zoomer et cliquer sur la carte", "en" : "To select a place of interest or create a new one, zoom in and click on the map" },
+
 	"Settings_Title"				: { "fr" : "PARAMÈTRES", "en" : "SETTINGS" },
 	"Settings_BtnLogout"			: { "fr" : "Logout", "en" : "Logout" },
 	"Settings_LnkContact"			: { "fr" : "Nous contacter ou rapporter un problème", "en" : "Contact us or report an issue" },

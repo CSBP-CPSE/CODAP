@@ -1,0 +1,62 @@
+
+
+/* Animations */
+.TwoStep.step1.wipeInV {
+    -webkit-animation: step1 WipeInV 0.25s forwards;
+    animation: step1WipeInV 0.25s forwards;
+}
+
+@-webkit-keyframes step1WipeInV {
+    0% { height:0%; z-index:300; } 
+	100% { height:130px; z-index:300; }
+}
+
+@keyframes step1WipeInV {
+    0% { height:0%; z-index:300; } 
+	100% { height:130px; z-index:300; }
+}
+
+.TwoStep.step2.wipeInV {
+    -webkit-animation: step2WipeInV 0.25s forwards;
+    animation: step2WipeInV 0.25s forwards;
+}
+
+@-webkit-keyframes step2WipeInV {
+    0% { height:130px; z-index:300; } 
+	100% { height:100%; z-index:300; }
+}
+
+@keyframes step2WipeInV {
+    0% { height:130px; z-index:300; } 
+	100% { height:100%; z-index:300; }
+}
+
+.TwoStep.step1.wipeOutV {
+    -webkit-animation: step1WipeOutV 0.25s forwards;
+    animation: step1WipeOutV 0.25s forwards;
+}
+
+@-webkit-keyframes step1WipeOutV {
+    0% { height:100%; z-index:300; } 
+	100% { height:130px; z-index:300; }
+}
+
+@keyframes step1WipeOutV {
+    0% { height:100%; z-index:300; } 
+	100% { height:130px; z-index:300; }
+}
+
+.TwoStep.step0.wipeOutV {
+    -webkit-animation: step0WipeOutV 0.25s forwards;
+    animation: step0WipeOutV 0.25s forwards;
+}
+
+@-webkit-keyframes step0WipeOutV {
+    0% { height:130px; z-index:300; } 
+	100% { height:0%; z-index:300; }
+}
+
+@keyframes step0WipeOutV {
+    0% { height:130px; z-index:300; } 
+	100% { height:0%; z-index:300; }
+}

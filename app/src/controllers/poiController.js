@@ -1,6 +1,6 @@
 
 r.define(["Api/util/lang",
-		  "Exp/components/controller"],
+		  "App/components/controller"],
     
 	function (Lang,
 			  Controller) {
@@ -12,7 +12,10 @@ r.define(["Api/util/lang",
 			options : null,
 		
 			constructor : function(options, subs) {			
-				this.model = {};
+				this.model = {
+					POI : null,
+					Active : false
+				};
 			},
 			
 			Clear: function() {
@@ -23,7 +26,7 @@ r.define(["Api/util/lang",
 			GetTag : function(key) {
 				var f = this.model.POI;
 				
-				return f.getProperties()["tags"][key] || "";
+				return f.getProperties()["tags"][key] || null;
 			},
 			
 			HasTag : function(key) {
@@ -42,10 +45,62 @@ r.define(["Api/util/lang",
 				return addr.join(", ");
 			},
 			
-			GetLabel : function() {
-				if (this.HasTag("amenity")) return this.GetTag("amenity");
+			Save : function(data) {
+				var pOut = new Promise();
 				
-				if (this.HasTag("shop")) return this.GetTag("name");
+				this.UpdateSelected(data);
+				
+				var p = OsmAuth.OpenChangeset();
+				p.then(this.onChangeset_Opened.bind(this, pOut), this.onOSM_Error.bind(this, pOut));
+				
+				return pOut;
+			},
+			
+			UpdateSelected : function(data) {
+				var tags = this.model.POI.getProperties().tags;
+				
+				for (var k in data) {
+					if (data[k] != null) tags[k] = data[k];
+				}
+			},
+			
+			onChangeset_Opened : function(pOut, ev) {
+				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.POI);
+				
+				p.then(this.onUpload_Success.bind(this, pOut), failure.bind(this));
+				
+				function failure(err) {
+					var p = OsmAuth.CloseChangeset(ev.changeset.id);
+					
+					p.then(this.onOSM_Error.bind(this, pOut, err), this.onOSM_Error.bind(this, pOut, err));
+				}
+			},
+			
+			onUpload_Success : function(pOut, ev) {
+				var p = OsmAuth.CloseChangeset(ev.changeset.id);
+				
+				p.then(this.onChangeset_Closed.bind(this, pOut), this.onOSM_Error.bind(this, pOut));
+			},
+			
+			onChangeset_Closed : function(pOut, ev) {
+				pOut.Resolve(ev);
+			},
+			
+			onOSM_Error : function(pOut, error) {
+				pOut.Reject(error);
+				this.NotifyViewError(error);
+			},
+			
+			Activate : function(ev) {
+				this.model.Active = true;
+				
+				this.NotifyViewNewModel("POI");
+			},
+			
+			Deactivate : function(ev) {
+				this.model.Active = false;
+				
+				this.NotifyViewNewModel("POI");
 			}
 		})
 		

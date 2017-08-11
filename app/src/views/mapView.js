@@ -1,7 +1,7 @@
 
 r.define(["Api/util/lang",
 		  "Api/util/dom",
-		  "Exp/components/views/view"],
+		  "App/components/views/view"],
     
 	function (Lang,
 			  Dom,
@@ -15,14 +15,12 @@ r.define(["Api/util/lang",
 				this.controller.map.setTarget(this.domNode);
 			},
 			
-			onController_ModelChange : function(ev) {
-				this.controller.ClearMap();
-				
-				if (ev.model.Building) this.controller.AddFeature(ev.model.Building);
-				
-				if (ev.model.POI) this.controller.AddFeature(ev.model.POI);
-				
-				if (ev.model.Geolocating) this.controller.Geolocate();
+			DoGeolocate : function() {
+				if (this.controller.model.Geolocating) this.controller.Geolocate();
+			},
+			
+			onController_ModelChange : function(ev) {			
+				this.DoGeolocate();
 			}
 		})
 		

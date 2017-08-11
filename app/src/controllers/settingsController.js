@@ -1,7 +1,7 @@
 
 r.define(["Api/util/lang",
-		  "Exp/util/osmAuth",
-		  "Exp/components/controller"],
+		  "App/util/osmAuth",
+		  "App/components/controller"],
     
 	function (Lang,
 			  OsmAuth,
@@ -15,6 +15,7 @@ r.define(["Api/util/lang",
 		
 			constructor : function(options, subs) {	
 				this.model = {
+					State : "LoggedOut",
 					IsLogged : false,
 					Contact : options.contact
 				};

@@ -1,7 +1,7 @@
 
 r.define(["Api/util/lang",
 		  "Api/util/dom",
-		  "Exp/components/views/collapsible"],
+		  "App/components/views/collapsible"],
     
 	function (Lang,
 			  Dom,

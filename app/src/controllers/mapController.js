@@ -7,8 +7,8 @@ r.define(["Api/util/lang",
 		  "Api/components/promise",
 		  "App/config/styles",
 		  "App/helpers/overpass",
-		  "Exp/util/osmAuth",
-		  "Exp/components/controller"],
+		  "App/util/osmAuth",
+		  "App/components/controller"],
     
 	function (Lang,
 			  Ajax,
@@ -41,6 +41,9 @@ r.define(["Api/util/lang",
 				
 				this.model = {
 					Map : this.map,
+					Building : null,
+					POI : null,
+					Mode : "Building",
 					Geolocating : false
 				};
 			},
@@ -67,29 +70,43 @@ r.define(["Api/util/lang",
 			
 			onMap_Click : function(ev) {
 				if (this.busy) {
-					this.NotifyViewMessage("The map controller is busy please wait for previous operation to complete.");
+					this.NotifyViewMessage(Lang.Nls("Map_Busy"));
 					return;
 				}
 				
 				if (this.map.getView().getZoom() < 16) {
-					this.NotifyViewMessage("Please zoom in further before trying to select a building.");
+					this.NotifyViewMessage(Lang.Nls("Map_ZoomInMore"));
 					return;
 				}
 				
-				this.busy = true;
-				
+				this.model.Selected = null;
+
 				this.AddSearchFeature(ev.coordinate);
 				
-				var p = this.IdentifyFeatures(ev.coordinate);
-				
-				p.then(this.onMap_FeaturesIdentified.bind(this), this.onMap_Error.bind(this));
+				this.IdentifyFeature(ev.coordinate);
 			},
 			
-			onMap_FeaturesIdentified : function(ev) {
+			IdentifyFeature : function(coordinate) {
+				this.busy = true;
+			
+				var radius = this.map.getView().getResolution() * this.options.tolerance;
+				var xy = Project.Point(coordinate[0], coordinate[1], "900913", 4326);
+				
+				var p = (this.model.Mode === "POI") ? Overpass.IdentifyPOI(xy, radius) : Overpass.IdentifyBuilding(xy, radius);
+				
+				p.then(this.onMap_FeaturesIdentified.bind(this, coordinate), this.onMap_Error.bind(this));
+			},
+			
+			onMap_FeaturesIdentified : function(coordinate, ev) {
+				this.ClearMap();
+				
 				this.busy = false;
 				
-				this.model.POI = ev.poi;
-				this.model.Building = ev.building;
+				this.model.Selected = ev.feature;
+				
+				if (this.model.Mode === "POI" && !this.model.Selected) this.AddPOI(coordinate);
+
+				else if (this.model.Mode === "Building" && this.model.Selected) this.AddBuilding(this.model.Selected);
 				
 				this.NotifyViewNewModel("Map");
 			},
@@ -109,7 +126,7 @@ r.define(["Api/util/lang",
 				
 				f.setStyle(Styles["Search"]);
 				
-				this.vLayer.getSource().addFeature(f);
+				this.AddFeature(f);
 			},
 			
 			SetView : function(coords, zoom) {
@@ -118,14 +135,21 @@ r.define(["Api/util/lang",
 				this.map.setView(view);
 			},
 			
-			IdentifyFeatures : function(coordinate) {	
-				var radius = this.map.getView().getResolution() * this.options.tolerance;
-				var xy = Project.Point(coordinate[0], coordinate[1], "900913", 4326);
+			AddBuilding : function(building) {
+				building.setStyle(Styles["Polygon"]);
 				
-				return Overpass.Identify(xy, radius);
+				this.AddFeature(building);
+			},
+			
+			AddPOI : function(coordinate) {
+				var f = new ol.Feature({ geometry: new ol.geom.Point(coordinate) });
 				
-				return p;
-			},			
+				f.setStyle(Styles["POI"]);
+			
+				this.AddFeature(f);
+				
+				this.model.Selected = f;
+			},
 			
 			Geolocate : function() {
 				this.model.Geolocating = false;
@@ -164,19 +188,13 @@ r.define(["Api/util/lang",
 				
 				return f;
 			},
-						
+			
 			ClearMap : function() {
 				this.vLayer.getSource().clear();
 			},
 			
 			AddFeature : function(f) {
 				this.vLayer.getSource().addFeature(f);
-			},
-			
-			AddFeatures : function(features) {
-				Array.ForEach(features, function(f) {
-					this.AddFeature(f);
-				}.bind(this))
 			}
 		})
 		

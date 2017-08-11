@@ -1,7 +1,7 @@
 
 r.define(["Api/util/lang",
-		  "Exp/util/osmAuth",
-		  "Exp/components/controller"],
+		  "App/util/osmAuth",
+		  "App/components/controller"],
     
 	function (Lang,
 			  OsmAuth,

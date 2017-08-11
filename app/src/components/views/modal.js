@@ -2,7 +2,7 @@
 r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/util/animate",
-		  "Exp/components/views/view"],
+		  "App/components/views/view"],
     
 	function (Lang,
 			  Dom,

@@ -1,6 +1,6 @@
 
 r.define(["Api/util/lang",
-		  "Exp/components/controller"],
+		  "App/components/controller"],
     
 	function (Lang,
 			  Controller) {

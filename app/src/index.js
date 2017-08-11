@@ -105,7 +105,7 @@ r.define(["Api/util/lang",
 				
 				mediator.Startup();
 				
-				Array.ForEach(mediator.views, function(view) { view.controller.UpdateModel(); });
+				mediator.Controller("Login").UpdateModel();
 			}
 		}
 	});

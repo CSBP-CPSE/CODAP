@@ -4,8 +4,8 @@ r.define(["Api/util/lang",
 		  "Api/util/ajax",
 		  "Api/components/promise",
 		  "App/config/payloads",
-		  "Exp/util/osmAuth",
-		  "Exp/components/controller"],
+		  "App/util/osmAuth",
+		  "App/components/controller"],
     
 	function (Lang,
 			  String,
@@ -23,7 +23,8 @@ r.define(["Api/util/lang",
 		
 			constructor : function(options, subs) {			
 				this.model = {
-					Building : null
+					Building : null,
+					Active : false
 				};
 			},
 			
@@ -35,7 +36,7 @@ r.define(["Api/util/lang",
 			GetTag : function(key) {
 				var f = this.model.Building;
 				
-				return f.getProperties()["tags"][key] || "";
+				return f.getProperties()["tags"][key] || null;
 			},
 			
 			HasTag : function(key) {
@@ -89,7 +90,6 @@ r.define(["Api/util/lang",
 				var p = OsmAuth.CloseChangeset(ev.changeset.id);
 				
 				p.then(this.onChangeset_Closed.bind(this, pOut), this.onOSM_Error.bind(this, pOut));
-				
 			},
 			
 			onChangeset_Closed : function(pOut, ev) {
@@ -99,6 +99,18 @@ r.define(["Api/util/lang",
 			onOSM_Error : function(pOut, error) {
 				pOut.Reject(error);
 				this.NotifyViewError(error);
+			},
+			
+			Activate : function(ev) {
+				this.model.Active = true;
+				
+				this.NotifyViewNewModel("Building");
+			},
+			
+			Deactivate : function(ev) {
+				this.model.Active = false;
+				
+				this.NotifyViewNewModel("Building");
 			}
 		})
 		

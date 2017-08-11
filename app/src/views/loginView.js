@@ -2,7 +2,7 @@
 r.define(["Api/util/lang",
 		  "Api/util/dom",
 		  "Api/util/animate",
-		  "Exp/components/views/modal",
+		  "App/components/views/modal",
 		  "App/widgets/about",
 		  "App/widgets/terms"],
     
@@ -110,16 +110,20 @@ r.define(["Api/util/lang",
 				window.open(location.origin + location.pathname + "?locale=" + lang, "_self");
 			},
 			
+			DoLogin : function() {
+				if (!this.controller.IsLogged()) this.FadeIn(false);
+			
+				this.UpdateLoginMessage(this.controller.model.IsLogged);
+				
+				this.Login.Inner.Buttons.BtnGo.disabled = !this.controller.IsLogged();
+			},
+			
 			onFirstViewNotified_NewModel : function(model) {
 				this.FadeIn(false);
 			},
 			
 			onController_ModelChange : function(ev) {
-				if (!ev.model.IsLogged) this.FadeIn(false);
-			
-				this.UpdateLoginMessage(ev.model.IsLogged);
-				
-				this.Login.Inner.Buttons.BtnGo.disabled = !this.controller.IsLogged();
+				this.DoLogin();
 			},
 			
 			onLnkPopup_Click : function(popup, ev) {
