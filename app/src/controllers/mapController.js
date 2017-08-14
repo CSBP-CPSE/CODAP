@@ -142,7 +142,7 @@ r.define(["Api/util/lang",
 			},
 			
 			AddPOI : function(coordinate) {
-				var f = new ol.Feature({ geometry: new ol.geom.Point(coordinate) });
+				var f = new ol.Feature({ geometry: new ol.geom.Point(coordinate), tags:{} });
 				
 				f.setStyle(Styles["POI"]);
 			

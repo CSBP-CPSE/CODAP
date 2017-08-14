@@ -16,9 +16,11 @@ r.define(["Api/util/lang",
 		var info = Lang.Declare("Info", [Evented], { 
 			
 			constructor : function(domNode) {
-				// Dom.AddCss(this.root, "Info");	
+				this.root = domNode || Dom.Create("div");
 				
-				this.container = domNode;
+				Dom.AddCss(this.root, "Info");	
+				
+				this.container = Dom.Create("div", {}, this.root);
 				
 				this.inputs = {};
 				
@@ -95,7 +97,7 @@ r.define(["Api/util/lang",
 			
 			SetData : function(data) {				
 				for (var id in this.inputs) {
-					this.inputs[id].value = data[id];					
+					if (data.hasOwnProperty(id)) this.inputs[id].value = data[id];					
 				};
 			}
 		})

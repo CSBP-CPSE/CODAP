@@ -1,0 +1,598 @@
+{
+	"alcohol": {
+		"fr": "alcool",
+		"en": "alcohol"
+	},
+	"bakery": {
+		"fr": "boulangerie",
+		"en": "bakery"
+	},
+	"beverages": {
+		"fr": "breuvages",
+		"en": "beverages"
+	},
+	"brewing_supplies": {
+		"fr": "ingrédients de brassage",
+		"en": "brewing supplies"
+	},
+	"butcher": {
+		"fr": "boucher",
+		"en": "butcher"
+	},
+	"cheese": {
+		"fr": "fromage",
+		"en": "cheese"
+	},
+	"chocolate": {
+		"fr": "chocolat",
+		"en": "chocolate"
+	},
+	"coffee": {
+		"fr": "café",
+		"en": "coffee"
+	},
+	"confectionery": {
+		"fr": "confiserie",
+		"en": "confectionery"
+	},
+	"convenience": {
+		"fr": "dépanneur",
+		"en": "convenience"
+	},
+	"deli": {
+		"fr": "déli",
+		"en": "deli"
+	},
+	"dairy": {
+		"fr": "lait",
+		"en": "dairy"
+	},
+	"farm": {
+		"fr": "ferme",
+		"en": "farm"
+	},
+	"greengrocer": {
+		"fr": "épicerie verte",
+		"en": "greengrocer"
+	},
+	"ice_cream": {
+		"fr": "crème glacée",
+		"en": "ice cream"
+	},
+	"organic": {
+		"fr": "organique",
+		"en": "organic"
+	},
+	"pasta": {
+		"fr": "pâtes",
+		"en": "pasta"
+	},
+	"pastry": {
+		"fr": "patisserie",
+		"en": "pastry"
+	},
+	"seafood": {
+		"fr": "fruits de mer",
+		"en": "seafood"
+	},
+	"spices": {
+		"fr": "épices",
+		"en": "spices"
+	},
+	"tea": {
+		"fr": "thé",
+		"en": "tea"
+	},
+	"wine": {
+		"fr": "vin",
+		"en": "wine"
+	},
+	"department_store": {
+		"fr": "grande surface",
+		"en": "department store"
+	},
+	"general": {
+		"fr": "général",
+		"en": "general"
+	},
+	"kiosk": {
+		"fr": "kiosque",
+		"en": "kiosk"
+	},
+	"mall": {
+		"fr": "centre d'achats",
+		"en": "mall"
+	},
+	"supermarket": {
+		"fr": "supermarché",
+		"en": "supermarket"
+	},
+	"baby_goods": {
+		"fr": "objets pour bébés",
+		"en": "baby goods"
+	},
+	"bag": {
+		"fr": "sac",
+		"en": "bag"
+	},
+	"boutique": {
+		"fr": "boutique",
+		"en": "boutique"
+	},
+	"clothes": {
+		"fr": "vêtements",
+		"en": "clothes"
+	},
+	"fabric": {
+		"fr": "fabrique",
+		"en": "fabric"
+	},
+	"fashion": {
+		"fr": "mode",
+		"en": "fashion"
+	},
+	"jewelry": {
+		"fr": "bijoux",
+		"en": "jewelry"
+	},
+	"leather": {
+		"fr": "cuir",
+		"en": "leather"
+	},
+	"sewing": {
+		"fr": "couture",
+		"en": "sewing"
+	},
+	"shoes": {
+		"fr": "souliers",
+		"en": "shoes"
+	},
+	"tailor": {
+		"fr": "couturier",
+		"en": "tailor"
+	},
+	"watches": {
+		"fr": "montres",
+		"en": "watches"
+	},
+	"charity": {
+		"fr": "charité",
+		"en": "charity"
+	},
+	"second_hand": {
+		"fr": "seconde main",
+		"en": "second hand"
+	},
+	"variety_store": {
+		"fr": "variété",
+		"en": "variety store"
+	},
+	"beauty": {
+		"fr": "salon de beauté",
+		"en": "beauty"
+	},
+	"chemist": {
+		"fr": "droguerie",
+		"en": "chemist"
+	},
+	"cosmetics": {
+		"fr": "cosmétiques",
+		"en": "cosmetics"
+	},
+	"drugstore": {
+		"fr": "pharmacie",
+		"en": "drugstore"
+	},
+	"erotic": {
+		"fr": "érotique",
+		"en": "erotic"
+	},
+	"hairdresser": {
+		"fr": "coiffeur",
+		"en": "hairdresser"
+	},
+	"hairdresser_supply": {
+		"fr": "accessoires de coiffure",
+		"en": "hairdresser supply"
+	},
+	"hearing_aids": {
+		"fr": "appareils auditifs",
+		"en": "hearing aids"
+	},
+	"herbalist": {
+		"fr": "herbaliste",
+		"en": "herbalist"
+	},
+	"massage": {
+		"fr": "massage",
+		"en": "massage"
+	},
+	"medical_supply": {
+		"fr": "accesoires médicaux",
+		"en": "medical supply"
+	},
+	"nutrition_supplements": {
+		"fr": "suppléments nutritifs",
+		"en": "nutrition supplements"
+	},
+	"optician": {
+		"fr": "opticien",
+		"en": "optician"
+	},
+	"perfumery": {
+		"fr": "parfumerie",
+		"en": "perfumery"
+	},
+	"tattoo": {
+		"fr": "tattoo",
+		"en": "tattoo"
+	},
+	"agrarian": {
+		"fr": "agricole",
+		"en": "agrarian"
+	},
+	"bathroom_furnishing": {
+		"fr": "effets de salle de bain",
+		"en": "bathroom_furnishing"
+	},
+	"doityourself": {
+		"fr": "doityourself",
+		"en": "doityourself"
+	},
+	"electrical": {
+		"fr": "électrique",
+		"en": "electrical"
+	},
+	"energy": {
+		"fr": "énergie",
+		"en": "energy"
+	},
+	"fireplace": {
+		"fr": "foyer",
+		"en": "fireplace"
+	},
+	"florist": {
+		"fr": "fleuriste",
+		"en": "florist"
+	},
+	"garden_centre": {
+		"fr": "centre de jardinage",
+		"en": "garden centre"
+	},
+	"garden_furniture": {
+		"fr": "accesoires de jardin",
+		"en": "garden furniture"
+	},
+	"gas": {
+		"fr": "gaz",
+		"en": "gas"
+	},
+	"glaziery": {
+		"fr": "vitrages",
+		"en": "glaziery"
+	},
+	"hardware": {
+		"fr": "quicaillerie",
+		"en": "hardware"
+	},
+	"houseware": {
+		"fr": "effets de maison",
+		"en": "houseware"
+	},
+	"locksmith": {
+		"fr": "serrurier",
+		"en": "locksmith"
+	},
+	"paint": {
+		"fr": "peinture",
+		"en": "paint"
+	},
+	"security": {
+		"fr": "sécurité",
+		"en": "security"
+	},
+	"trade": {
+		"fr": "échange",
+		"en": "trade"
+	},
+	"antiques": {
+		"fr": "antiquités",
+		"en": "antiques"
+	},
+	"bed": {
+		"fr": "literie",
+		"en": "bed"
+	},
+	"candles": {
+		"fr": "chandelles",
+		"en": "candles"
+	},
+	"carpet": {
+		"fr": "tapis",
+		"en": "carpet"
+	},
+	"curtain": {
+		"fr": "rideaux",
+		"en": "curtain"
+	},
+	"furniture": {
+		"fr": "meubles",
+		"en": "furniture"
+	},
+	"interior_decoration": {
+		"fr": "décoration intérieure",
+		"en": "interior decoration"
+	},
+	"kitchen": {
+		"fr": "cuisine",
+		"en": "kitchen"
+	},
+	"lamps": {
+		"fr": "lampes",
+		"en": "lamps"
+	},
+	"tiles": {
+		"fr": "tuiles",
+		"en": "tiles"
+	},
+	"window_blind": {
+		"fr": "stores de fenêtres",
+		"en": "window blind"
+	},
+	"computer": {
+		"fr": "ordinateur",
+		"en": "computer"
+	},
+	"robot": {
+		"fr": "robot",
+		"en": "robot"
+	},
+	"electronics": {
+		"fr": "électronique",
+		"en": "electronics"
+	},
+	"hifi": {
+		"fr": "hifi",
+		"en": "hifi"
+	},
+	"mobile_phone": {
+		"fr": "téléphone cellulaire",
+		"en": "mobile phone"
+	},
+	"radiotechnics": {
+		"fr": "radiotechnique",
+		"en": "radiotechnics"
+	},
+	"vacuum_cleaner": {
+		"fr": "aspirateur",
+		"en": "vacuum cleaner"
+	},
+	"atv": {
+		"fr": "tout terrain",
+		"en": "atv"
+	},
+	"bicycle": {
+		"fr": "bicycle",
+		"en": "bicycle"
+	},
+	"boat": {
+		"fr": "bateau",
+		"en": "boat"
+	},
+	"car": {
+		"fr": "voiture",
+		"en": "car"
+	},
+	"car_repair": {
+		"fr": "réparation de voiture",
+		"en": "car repair"
+	},
+	"car_parts": {
+		"fr": "pièces automobiles",
+		"en": "car parts"
+	},
+	"fuel": {
+		"fr": "essence",
+		"en": "fuel"
+	},
+	"fishing": {
+		"fr": "pêche",
+		"en": "fishing"
+	},
+	"free_flying": {
+		"fr": "parachutisme",
+		"en": "free flying"
+	},
+	"hunting": {
+		"fr": "chasse",
+		"en": "hunting"
+	},
+	"jetski": {
+		"fr": "jetski",
+		"en": "jetski"
+	},
+	"motorcycle": {
+		"fr": "motocyclette",
+		"en": "motorcycle"
+	},
+	"outdoor": {
+		"fr": "plein air",
+		"en": "outdoor"
+	},
+	"scuba_diving": {
+		"fr": "plongée sous marine",
+		"en": "scuba diving"
+	},
+	"ski": {
+		"fr": "ski",
+		"en": "ski"
+	},
+	"snowmobile": {
+		"fr": "motoneige",
+		"en": "snowmobile"
+	},
+	"sports": {
+		"fr": "sports",
+		"en": "sports"
+	},
+	"swimming_pool": {
+		"fr": "piscine",
+		"en": "swimming pool"
+	},
+	"tyres": {
+		"fr": "pneus",
+		"en": "tyres"
+	},
+	"art": {
+		"fr": "art",
+		"en": "art"
+	},
+	"collector": {
+		"fr": "collectionneur",
+		"en": "collector"
+	},
+	"craft": {
+		"fr": "loisirs créatifs",
+		"en": "craft"
+	},
+	"frame": {
+		"fr": "encadrement",
+		"en": "frame"
+	},
+	"games": {
+		"fr": "jeux",
+		"en": "games"
+	},
+	"model": {
+		"fr": "modèles",
+		"en": "model"
+	},
+	"music": {
+		"fr": "musique",
+		"en": "music"
+	},
+	"musical_instrument": {
+		"fr": "instruments musicaux",
+		"en": "musical instrument"
+	},
+	"photo": {
+		"fr": "photo",
+		"en": "photo"
+	},
+	"camera": {
+		"fr": "caméra",
+		"en": "camera"
+	},
+	"trophy": {
+		"fr": "trophées",
+		"en": "trophy"
+	},
+	"video": {
+		"fr": "vidéo",
+		"en": "video"
+	},
+	"video_games": {
+		"fr": "jeux vidéos",
+		"en": "video games"
+	},
+	"anime": {
+		"fr": "animé",
+		"en": "anime"
+	},
+	"books": {
+		"fr": "livres",
+		"en": "books"
+	},
+	"gift": {
+		"fr": "cadeaux",
+		"en": "gift"
+	},
+	"lottery": {
+		"fr": "lotterie",
+		"en": "lottery"
+	},
+	"newsagent": {
+		"fr": "journaux",
+		"en": "newsagent"
+	},
+	"stationery": {
+		"fr": "matériel de bureau",
+		"en": "stationery"
+	},
+	"ticket": {
+		"fr": "billeterie",
+		"en": "ticket"
+	},
+	"bookmaker": {
+		"fr": "boutique à paris",
+		"en": "bookmaker"
+	},
+	"copyshop": {
+		"fr": "centre de copies",
+		"en": "copyshop"
+	},
+	"dry_cleaning": {
+		"fr": "nettoyage à sec",
+		"en": "dry cleaning"
+	},
+	"e-cigarette": {
+		"fr": "cigarette électronique",
+		"en": "e-cigarette"
+	},
+	"funeral_directors": {
+		"fr": "salon funérarire",
+		"en": "funeral directors"
+	},
+	"laundry": {
+		"fr": "buanderie",
+		"en": "laundry"
+	},
+	"money_lender": {
+		"fr": "prêteur",
+		"en": "money lender"
+	},
+	"party": {
+		"fr": "party",
+		"en": "party"
+	},
+	"pawnbroker": {
+		"fr": "consigne",
+		"en": "pawnbroker"
+	},
+	"pet": {
+		"fr": "animaux",
+		"en": "pet"
+	},
+	"pyrotechnics": {
+		"fr": "pyrotechnie",
+		"en": "pyrotechnics"
+	},
+	"religion": {
+		"fr": "religion",
+		"en": "religion"
+	},
+	"storage_rental": {
+		"fr": "location d'entrepôts",
+		"en": "storage rental"
+	},
+	"tobacco": {
+		"fr": "tabac",
+		"en": "tobacco"
+	},
+	"toys": {
+		"fr": "jouets",
+		"en": "toys"
+	},
+	"travel_agency": {
+		"fr": "agence de voyage",
+		"en": "travel agency"
+	},
+	"vacant": {
+		"fr": "vacant",
+		"en": "vacant"
+	},
+	"weapons": {
+		"fr": "armes",
+		"en": "weapons"
+	}
+}

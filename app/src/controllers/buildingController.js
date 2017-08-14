@@ -5,6 +5,7 @@ r.define(["Api/util/lang",
 		  "Api/components/promise",
 		  "App/config/payloads",
 		  "App/util/osmAuth",
+		  "App/helpers/osm",
 		  "App/components/controller"],
     
 	function (Lang,
@@ -13,6 +14,7 @@ r.define(["Api/util/lang",
 			  Promise,
 			  Payloads,
 			  OsmAuth,
+			  OsmH,
 			  Controller) {
 
 		var buildingController = Lang.Declare("BuildingController", [Controller], { 
@@ -34,29 +36,15 @@ r.define(["Api/util/lang",
 			},
 			
 			GetTag : function(key) {
-				var f = this.model.Building.feature;
+				if (!this.model.Building.feature) return null;
 				
-				if (!f) return null;
-				
-				return f.getProperties()["tags"][key] || null;
-			},
-			
-			HasTag : function(key) {
-				var f = this.model.Building.feature;
-				
-				if (!f) return null;
-				
-				return f.getProperties()["tags"].hasOwnProperty(key);
+				return OsmH.Tag(this.model.Building.feature, key);
 			},
 			
 			GetAddress : function() {
-				addr = [];
+				if (!this.model.Building.feature) return null;
 				
-				if (this.HasTag("addr:housenumber")) addr.push(this.GetTag("addr:housenumber"));
-				if (this.HasTag("addr:street")) addr.push(this.GetTag("addr:street"));
-				if (this.HasTag("addr:city")) addr.push(this.GetTag("addr:city"));
-				
-				return addr.join(", ");
+				return OsmH.Index.building.Label(this.model.Building.feature);
 			},
 			
 			Save : function(data) {

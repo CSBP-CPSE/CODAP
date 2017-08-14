@@ -1,0 +1,438 @@
+{
+	"bar": {
+		"fr": "bar",
+		"en": "bar"
+	},
+	"bbq": {
+		"fr": "bbq",
+		"en": "bbq"
+	},
+	"biergarten": {
+		"fr": "biergarten",
+		"en": "beer garden"
+	},
+	"cafe": {
+		"fr": "café",
+		"en": "cafe"
+	},
+	"drinking_water": {
+		"fr": "eau à boire",
+		"en": "drinking water"
+	},
+	"fast_food": {
+		"fr": "fast food",
+		"en": "fast food"
+	},
+	"food_court": {
+		"fr": "food court",
+		"en": "food court"
+	},
+	"ice_cream": {
+		"fr": "crêmerie",
+		"en": "ice cream"
+	},
+	"pub": {
+		"fr": "pub",
+		"en": "pub"
+	},
+	"restaurant": {
+		"fr": "restaurant",
+		"en": "restaurant"
+	},
+	"college": {
+		"fr": "collège",
+		"en": "college"
+	},
+	"kindergarten": {
+		"fr": "prématernelle",
+		"en": "kindergarten"
+	},
+	"library": {
+		"fr": "bibliothèque",
+		"en": "library"
+	},
+	"public_bookcase": {
+		"fr": "boite à livres",
+		"en": "public bookcase"
+	},
+	"school": {
+		"fr": "école",
+		"en": "school"
+	},
+	"music_school": {
+		"fr": "école de musique",
+		"en": "music school"
+	},
+	"driving_school": {
+		"fr": "école de conduite",
+		"en": "driving school"
+	},
+	"language_school": {
+		"fr": "école de langue",
+		"en": "language school"
+	},
+	"university": {
+		"fr": "université",
+		"en": "university"
+	},
+	"bicycle_parking": {
+		"fr": "stationnement vélo",
+		"en": "bicycle parking"
+	},
+	"bicycle_repair_station": {
+		"fr": "station de réparation de vélo",
+		"en": "bicycle repair station"
+	},
+	"bicycle_rental": {
+		"fr": "location de vélo",
+		"en": "bicycle rental"
+	},
+	"boat_rental": {
+		"fr": "location de bateau",
+		"en": "boat rental"
+	},
+	"boat_sharing": {
+		"fr": "partage de bateau",
+		"en": "boat sharing"
+	},
+	"bus_station": {
+		"fr": "station d'autobus",
+		"en": "bus station"
+	},
+	"car_rental": {
+		"fr": "location de voiture",
+		"en": "car rental"
+	},
+	"car_sharing": {
+		"fr": "partage de voiture",
+		"en": "car sharing"
+	},
+	"car_wash": {
+		"fr": "lave-auto",
+		"en": "car wash"
+	},
+	"charging_station": {
+		"fr": "station de chargement",
+		"en": "charging station"
+	},
+	"ferry_terminal": {
+		"fr": "traversier",
+		"en": "ferry terminal"
+	},
+	"fuel": {
+		"fr": "essence",
+		"en": "fuel"
+	},
+	"grit_bin": {
+		"fr": "grit bin",
+		"en": "grit bin"
+	},
+	"motorcycle_parking": {
+		"fr": "stationnement de moto",
+		"en": "motorcycle parking"
+	},
+	"parking": {
+		"fr": "stationnement",
+		"en": "parking"
+	},
+	"parking_entrance": {
+		"fr": "entrée de stationnement",
+		"en": "parking entrance"
+	},
+	"parking_space": {
+		"fr": "espace de stationnement",
+		"en": "parking space"
+	},
+	"taxi": {
+		"fr": "taxi",
+		"en": "taxi"
+	},
+	"atm": {
+		"fr": "atm",
+		"en": "atm"
+	},
+	"bank": {
+		"fr": "banque",
+		"en": "bank"
+	},
+	"bureau_de_change": {
+		"fr": "bureau de change",
+		"en": "bureau de change"
+	},
+	"baby_hatch": {
+		"fr": "pouponnière",
+		"en": "baby hatch"
+	},
+	"clinic": {
+		"fr": "clinique",
+		"en": "clinic"
+	},
+	"dentist": {
+		"fr": "dentiste",
+		"en": "dentist"
+	},
+	"doctors": {
+		"fr": "docteurs",
+		"en": "doctors"
+	},
+	"hospital": {
+		"fr": "hôpital",
+		"en": "hospital"
+	},
+	"nursing_home": {
+		"fr": "maison de soins",
+		"en": "nursing home"
+	},
+	"pharmacy": {
+		"fr": "pharmacie",
+		"en": "pharmacy"
+	},
+	"social_facility": {
+		"fr": "services sociaux",
+		"en": "social facility"
+	},
+	"veterinary": {
+		"fr": "vétérinaire",
+		"en": "veterinary"
+	},
+	"blood_donation": {
+		"fr": "don de sang",
+		"en": "blood donation"
+	},
+	"arts_centre": {
+		"fr": "centre d'arts",
+		"en": "arts centre"
+	},
+	"brothel": {
+		"fr": "bordel",
+		"en": "brothel"
+	},
+	"casino": {
+		"fr": "casino",
+		"en": "casino"
+	},
+	"cinema": {
+		"fr": "cinéma",
+		"en": "cinema"
+	},
+	"community_centre": {
+		"fr": "centre communautaire",
+		"en": "community centre"
+	},
+	"fountain": {
+		"fr": "fontaine",
+		"en": "fountain"
+	},
+	"gambling": {
+		"fr": "gambling",
+		"en": "gambling"
+	},
+	"nightclub": {
+		"fr": "club de nuit",
+		"en": "nightclub"
+	},
+	"planetarium": {
+		"fr": "planétarium",
+		"en": "planetarium"
+	},
+	"social_centre": {
+		"fr": "centre social",
+		"en": "social centre"
+	},
+	"stripclub": {
+		"fr": "boîte de striptease",
+		"en": "stripclub"
+	},
+	"studio": {
+		"fr": "studio",
+		"en": "studio"
+	},
+	"swingerclub": {
+		"fr": "club échangiste",
+		"en": "swingerclub"
+	},
+	"theatre": {
+		"fr": "théatre",
+		"en": "theatre"
+	},
+	"animal_boarding": {
+		"fr": "garde d'animaux",
+		"en": "animal boarding"
+	},
+	"animal_shelter": {
+		"fr": "protection des animaux",
+		"en": "animal shelter"
+	},
+	"baking_oven": {
+		"fr": "four à cuisson",
+		"en": "baking oven"
+	},
+	"bench": {
+		"fr": "banc",
+		"en": "bench"
+	},
+	"clock": {
+		"fr": "horloge",
+		"en": "clock"
+	},
+	"courthouse": {
+		"fr": "court municipale",
+		"en": "courthouse"
+	},
+	"coworking_space": {
+		"fr": "espace de travail commun",
+		"en": "coworking space"
+	},
+	"crematorium": {
+		"fr": "crématorium",
+		"en": "crematorium"
+	},
+	"crypt": {
+		"fr": "crypte",
+		"en": "crypt"
+	},
+	"dive_centre": {
+		"fr": "centre de plongée",
+		"en": "dive centre"
+	},
+	"dojo": {
+		"fr": "dojo",
+		"en": "dojo"
+	},
+	"embassy": {
+		"fr": "ambassade",
+		"en": "embassy"
+	},
+	"fire_station": {
+		"fr": "caserne",
+		"en": "fire_station"
+	},
+	"firepit": {
+		"fr": "pit à feu",
+		"en": "firepit"
+	},
+	"game_feeding": {
+		"fr": "game feeding",
+		"en": "game feeding"
+	},
+	"grave_yard": {
+		"fr": "cimetière",
+		"en": "grave yard"
+	},
+	"gym": {
+		"fr": "gym",
+		"en": "gym"
+	},
+	"hunting_stand": {
+		"fr": "cache de chasse",
+		"en": "hunting stand"
+	},
+	"internet_cafe": {
+		"fr": "café internet",
+		"en": "internet cafe"
+	},
+	"kneipp_water_cure": {
+		"fr": "soin aquatique kneipp",
+		"en": "kneipp water cure"
+	},
+	"marketplace": {
+		"fr": "marché",
+		"en": "marketplace"
+	},
+	"photo_booth": {
+		"fr": "boîte à photo",
+		"en": "photo booth"
+	},
+	"place_of_worship": {
+		"fr": "lieu de prière",
+		"en": "place of worship"
+	},
+	"police": {
+		"fr": "police",
+		"en": "police"
+	},
+	"post_box": {
+		"fr": "boîte postale",
+		"en": "post box"
+	},
+	"post_office": {
+		"fr": "bureau de poste",
+		"en": "post office"
+	},
+	"prison": {
+		"fr": "prison",
+		"en": "prison"
+	},
+	"public_building": {
+		"fr": "bâtiment public",
+		"en": "public building"
+	},
+	"ranger_station": {
+		"fr": "station de garde chasse",
+		"en": "ranger station"
+	},
+	"recycling": {
+		"fr": "recyclage",
+		"en": "recycling"
+	},
+	"rescue_station": {
+		"fr": "station de sauvetage",
+		"en": "rescue station"
+	},
+	"sanitary_dump_station": {
+		"fr": "station de dépôt sanitaire",
+		"en": "sanitary dump station"
+	},
+	"sauna": {
+		"fr": "sauna",
+		"en": "sauna"
+	},
+	"shelter": {
+		"fr": "abri",
+		"en": "shelter"
+	},
+	"shower": {
+		"fr": "douche",
+		"en": "shower"
+	},
+	"table": {
+		"fr": "table",
+		"en": "table"
+	},
+	"telephone": {
+		"fr": "téléphone",
+		"en": "telephone"
+	},
+	"toilets": {
+		"fr": "toilettes",
+		"en": "toilets"
+	},
+	"townhall": {
+		"fr": "hôtel de ville",
+		"en": "townhall"
+	},
+	"vending_machine": {
+		"fr": "machine distributrice",
+		"en": "vending machine"
+	},
+	"waste_basket": {
+		"fr": "poubelle",
+		"en": "waste basket"
+	},
+	"waste_disposal": {
+		"fr": "dépotoire",
+		"en": "waste disposal"
+	},
+	"waste_transfer_station": {
+		"fr": "station de transfert de déchêts",
+		"en": "waste transfer station"
+	},
+	"watering_place": {
+		"fr": "espace d'eau",
+		"en": "watering place"
+	},
+	"water_point": {
+		"fr": "point d'eau",
+		"en": "water point"
+	}
+}

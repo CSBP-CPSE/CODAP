@@ -1,0 +1,4 @@
+{
+	"amenity"            	: { "fr" : "Service", "en" : "Amenity" },
+	"shop"            		: { "fr" : "Magasin", "en" : "Shop" }
+}

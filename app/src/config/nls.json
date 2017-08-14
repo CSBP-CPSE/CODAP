@@ -40,6 +40,22 @@
 	"Building_Save_Note1"			: { "fr" : "Sauvegardé", "en" : "Saved" },
 	"Building_Save_Note2"			: { "fr" : "Les modifications à l'enregistrement ont été sauvegardées.", "en" : "Modifications to record have been saved." },
 	
+	"Amenity_LabelAmenity"			: { "fr" : "Service", "en" : "Amenity" },
+	"Amenity_LabelName"				: { "fr" : "Nom", "en" : "Name" },
+	"Amenity_PH_Name"				: { "fr" : "Nom", "en" : "Name" },
+	"Amenity_LabelWebsite"			: { "fr" : "Site Web", "en" : "Website" },
+	"Amenity_PH_Website"			: { "fr" : "Site Web", "en" : "Website" },
+	"Amenity_LabelPhone"			: { "fr" : "Téléphone", "en" : "Phone" },
+	"Amenity_PH_Phone"				: { "fr" : "Téléphone", "en" : "Phone" },
+	
+	"Shop_LabelShop"				: { "fr" : "Magasin", "en" : "Shop" },
+	"Shop_LabelName"				: { "fr" : "Nom", "en" : "Name" },
+	"Shop_PH_Name"					: { "fr" : "Nom", "en" : "Name" },
+	"Shop_LabelWebsite"				: { "fr" : "Site Web", "en" : "Website" },
+	"Shop_PH_Website"				: { "fr" : "Site Web", "en" : "Website" },
+	"Shop_LabelPhone"				: { "fr" : "Téléphone", "en" : "Phone" },
+	"Shop_PH_Phone"					: { "fr" : "Téléphone", "en" : "Phone" },
+		
 	"Ranking_Title"					: { "fr" : "TABLEAU DE POINTAGE", "en" : "SCOREBOARD" },
 	"Ranking_Note"					: { "fr" : "À venir", "en" : "Forthcoming" },
 	
@@ -49,6 +65,9 @@
 	"POI_LabelShop"					: { "fr" : "Magasin", "en" : "Shop" },
 	"POI_LabelMessage"				: { "fr" : "Cliquer sur la carte pour ajouter un nouveau point d'intérêt (POI)", "en" : "Click on the map to add a new point of interest (POI)" },
 	"POI_LabelNoData"				: { "fr" : "Pour sélectionner un lieu d'intérêt ou en créer un nouveau, zoomer et cliquer sur la carte", "en" : "To select a place of interest or create a new one, zoom in and click on the map" },
+	"POI_LabelNewData"				: { "fr" : "Il n'y a pas de lieu d'intérêt (POI) à cet endroit.", "en" : "There is no Point of Interest (POI) in this location." },
+	"POI_LabelCategory"				: { "fr" : "Catégorie", "en" : "Category" },
+	"POI_BtnNewData"				: { "fr" : "Ajouter", "en" : "Add New" },
 
 	"Settings_Title"				: { "fr" : "PARAMÈTRES", "en" : "SETTINGS" },
 	"Settings_BtnLogout"			: { "fr" : "Logout", "en" : "Logout" },

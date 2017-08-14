@@ -6,7 +6,7 @@ r.define(["Api/util/lang",
 		  "Api/components/popup/modal",
 		  "Api/plugins/domain!App/config/dom_access", 
 		  "Api/plugins/domain!App/config/dom_building", 
-		  "App/widgets/info/building", 
+		  "App/helpers/osm", 
 		  "App/components/views/twoStep"],
     
 	function (Lang,
@@ -16,7 +16,7 @@ r.define(["Api/util/lang",
 			  ModalPopup,
 			  Dom_Access,
 			  Dom_Building,
-			  BuildingInfo,
+			  OSM,
 			  TwoStep) {
 
 		var editBuildingView = Lang.Declare("EditBuildingView", [TwoStep], { 
@@ -84,7 +84,9 @@ r.define(["Api/util/lang",
 				page.Title = Dom.Create("div", { "className":"Title" }, page.Top);
 				page.Container = Dom.Create("div", { "className":"Container" }, page.Top);
 				
-				this.info = new BuildingInfo(page.Container);
+				OSM.Index.building.Info = new OSM.Index.building.InfoClass(page.Container);
+				
+				this.info = OSM.Index.building.Info;
 				
 				var div = Dom.Create("div", { "className":"Footer" }, page.Container);
 				
@@ -149,6 +151,8 @@ r.define(["Api/util/lang",
 			ShowBuilding : function() {
 				this.ClearUI();
 				
+				if (!this.controller.model.Building.feature) return;
+				
 				this.Steps[0].Data.style.display = '';
 				this.Steps[0].NoData.style.display = 'none';
 				
@@ -171,10 +175,6 @@ r.define(["Api/util/lang",
 			
 			onController_ModelChange : function(ev) {
 				this.ClearUI();
-				
-				if (!ev.model.Building) return;
-				
-				this.ShowBuilding();
 			},
 			
 			SetButtonEnabled : function(button, isEnabled) {
