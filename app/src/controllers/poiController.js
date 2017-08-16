@@ -1,8 +1,12 @@
 
 r.define(["Api/util/lang",
+		  "Api/components/promise",	
+		  "App/util/osmAuth", 
 		  "App/components/controller"],
     
 	function (Lang,
+			  Promise,
+			  OsmAuth,
 			  Controller) {
 
 		var POIController = Lang.Declare("POIController", [Controller], { 
@@ -20,7 +24,6 @@ r.define(["Api/util/lang",
 			
 			Clear: function() {
 				this.model.POI = null;
-				this.NotifyViewNewModel("POI");
 			},
 			
 			GetTag : function(key) {
@@ -69,7 +72,9 @@ r.define(["Api/util/lang",
 			},
 			
 			onChangeset_Opened : function(pOut, ev) {
-				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.POI.feature);
+				var isNew = (!this.model.POI.type);
+				
+				var p = OsmAuth.UploadPOIModification(ev.changeset.id, this.model.POI.feature, isNew);
 				
 				p.then(this.onUpload_Success.bind(this, pOut), failure.bind(this));
 				

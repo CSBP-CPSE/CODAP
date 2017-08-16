@@ -22,9 +22,9 @@ r.define(["Api/util/lang",
 				
 				else Animate.WipeV(this.domNode, false);
 				
-				this.emit("viewCollapsed");
-				
 				this.expanded = false;
+				
+				this.emit("viewCollapsed");
 			},
 			
 			Expand : function(instant) {
@@ -32,9 +32,9 @@ r.define(["Api/util/lang",
 				
 				else Animate.WipeV(this.domNode, true);
 				
-				this.emit("viewExpanded");
-				
 				this.expanded = true;
+				
+				this.emit("viewExpanded");
 			},
 			
 			IsCollapsed : function() {

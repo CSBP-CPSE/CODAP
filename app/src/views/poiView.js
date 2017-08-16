@@ -4,7 +4,7 @@ r.define(["Api/util/lang",
 		  "Api/util/animate",
 		  "Api/util/array",
 		  "Api/components/popup/modal",
-		  "App/helpers/osm", 
+		  "App/util/osm", 
 		  "Api/plugins/domain!App/config/dom_category", 
 		  "App/components/views/twoStep"],
     
@@ -238,7 +238,7 @@ r.define(["Api/util/lang",
 			},
 			
 			onViewCollapsed : function(ev) {
-				this.controller.Clear();
+				this.controller.model.POI = null;
 				this.controller.Deactivate();
 			},
 			
@@ -260,7 +260,7 @@ r.define(["Api/util/lang",
 			onSave_Finished : function(ev) {
 				this.Enable();
 				
-				this.controller.Clear();
+				this.controller.model.POI = null;
 				this.Collapse(false);
 			},
 			

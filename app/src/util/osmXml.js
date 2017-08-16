@@ -1,10 +1,12 @@
 
 r.define(["Api/util/string",
 		  "Api/util/array",
+		  "Api/util/project",
 		  "Api/xml/xmlNode"],
 
 	function (String,
 			  Array,
+			  Project,
 			  XmlNode) {
 
 	    return { 
@@ -19,28 +21,117 @@ r.define(["Api/util/string",
 				
 				return root.ToXml();
 			},
+			
+			Node : function(attributes, feature) {
+				var prop = feature.getProperties();
+				var node = new XmlNode("node", attributes);
 				
-			Changeset_Modify_WayTags : function(chgId, f) {
-				var prop = f.getProperties();
+				if (prop.tags) node.AddChildren(this.Tags(prop.tags));
 				
-				var root = new XmlNode("osmChange", { version:"0.6", generator:"CODAP" });
+				var oCoords = feature.getGeometry().getCoordinates();
+				var pCoords = Project.Point(oCoords[0], oCoords[1], "900913", 4326);
 				
-				root.AddChild(new XmlNode("create"));
+				node.AddAttribute("lat", pCoords.y);
+				node.AddAttribute("lon", pCoords.x);
 				
-				var node = root.AddChild(new XmlNode("modify"));
-				var way = node.AddChild(new XmlNode("way", { "id":prop.id, "version":prop.meta.version, "changeset":chgId }));
+				return node;
+			},
+			
+			Way : function(attributes, tags, ref) {
+				var node = new XmlNode("way", attributes);
 				
-				root.AddChild(new XmlNode("delete", { "if-unused":true }));
+				if (tags) node.AddChildren(this.Tags(tags));
 				
-				Array.ForEach(f.nodes, function(nd){
-					way.AddChild(new XmlNode("nd", { "ref":nd }));
+				Array.ForEach(ref, function(nd) {
+					node.AddChild(new XmlNode("nd", { "ref":nd }))
 				});
 				
-				for (var k in prop.tags) {
-					way.AddChild(new XmlNode("tag", { "k":k, "v":prop.tags[k] }));
-				}
+				return node;
+			},
+			
+			Tag : function(k, v) {
+				return new XmlNode("tag", { "k":k, "v":v });
+			},
+			
+			Tags : function(tags) {
+				var tagNodes = [];
 				
-				return root.ToXml();
+				for (var k in tags) { tagNodes.push(this.Tag(k, tags[k])); };
+				
+				return tagNodes;
+			},
+			
+			Create : function(features, changeset) {
+				var node = new XmlNode("create");
+				
+				Array.ForEach(features, function(f, i) {
+					var id = -1 * (i + 1);
+					var attributes = { id:id, version:1, changeset:changeset };
+					
+					if (f.getGeometry().getType() !== "Point") {
+						throw new Error("Creating geometries other than Point is not currently supported.");
+						return;
+					} 
+				
+					node.AddChild(this.Node(attributes, f));
+				}.bind(this));
+				
+				return node;
+			},
+			
+			Modify : function(features, changeset) {
+				var node = new XmlNode("modify");
+				
+				Array.ForEach(features, function(f) {
+					var prop = f.getProperties();
+					var attributes = { id:prop.id, version:prop.meta.version, changeset:changeset };
+					
+					if (f.nodes) node.AddChild(this.Way(attributes, f.getProperties().tags, f.nodes));
+					
+					else {
+						var oCoords = f.getGeometry().getCoordinates();
+						var pCoords = Project.Point(oCoords[0], oCoords[1], "900913", 4326);
+						
+						node.AddChild(this.Node(attributes, f));					
+					}
+				}.bind(this));
+				
+				return node;
+			},
+			
+			Delete : function(features, changeset) {
+				var node = new XmlNode("delete");
+				
+				node.AddAttribute("if-unused", true);
+				
+				Array.ForEach(features, function(f) {
+					var prop = f.getProperties();
+					var attributes = { id:prop.id, version:prop.meta.version, changeset:changeset };
+					
+					if (f.nodes) node.AddChild(this.Way(attributes, f.getProperties().tags, f.nodes));
+					
+					else node.AddChild(this.Node(attributes, f));					
+				}.bind(this));
+				
+				return node;
+			},
+			
+			OSMChange : function(version, generator) {
+				return new XmlNode("osmChange", { version:version, generator:generator });
+			},
+			
+			Changeset : function(changeset, features, chgType) {	
+				var node = this.OSMChange("0.6", "CODAP");
+				
+				if (chgType === "create") node.AddChild(this.Create(features, changeset));
+				
+				else if (chgType === "modify") node.AddChild(this.Modify(features, changeset));
+				
+				else if (chgType === "delete") node.AddChild(this.Delete(features, changeset));
+				
+				else throw new Error("Specified Change Type is not supported.");
+				
+				return node.ToXml();
 			}
 		}
 	});

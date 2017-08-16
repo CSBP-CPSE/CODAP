@@ -112,8 +112,7 @@ r.define(["Api/components/promise",
 				}
 			},
 			
-			// TODO : This function is specific for tags on way objects, it should be more generic. No time.
-			UploadChangeset : function(id, feature) {
+			UploadBuildingModification : function(id, feature) {
 				var p = new Promise();
 				var path = String.Format("/api/0.6/changeset/{0}/upload", [id]);
 				
@@ -121,7 +120,27 @@ r.define(["Api/components/promise",
 					method: 'POST',
 					path: path,
 					options: { header: { 'Content-Type': 'text/xml' } },
-					content: OsmXml.Changeset_Modify_WayTags(id, feature)
+					content: OsmXml.Changeset(id, [feature], "modify")
+				}, done);
+				
+				return p;
+				
+				function done(err) {
+					(err) ? p.Reject(err) : p.Resolve({ changeset:{ id:id, state:"closed" }});
+				}
+			},
+			
+			UploadPOIModification : function(id, feature, isNew) {
+				var p = new Promise();
+				var path = String.Format("/api/0.6/changeset/{0}/upload", [id]);
+				
+				var chgType = isNew ? "create" : "modify" ;
+				
+				this._auth.xhr({
+					method: 'POST',
+					path: path,
+					options: { header: { 'Content-Type': 'text/xml' } },
+					content: OsmXml.Changeset(id, [feature], chgType)
 				}, done);
 				
 				return p;

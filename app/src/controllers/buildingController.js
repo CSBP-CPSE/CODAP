@@ -3,16 +3,14 @@ r.define(["Api/util/lang",
 		  "Api/util/string",
 		  "Api/util/ajax",
 		  "Api/components/promise",
-		  "App/config/payloads",
 		  "App/util/osmAuth",
-		  "App/helpers/osm",
+		  "App/util/osm",
 		  "App/components/controller"],
     
 	function (Lang,
 			  String,
 			  Ajax,
 			  Promise,
-			  Payloads,
 			  OsmAuth,
 			  OsmH,
 			  Controller) {
@@ -28,11 +26,6 @@ r.define(["Api/util/lang",
 					Building : null,
 					Active : false
 				};
-			},
-			
-			Clear: function() {
-				this.model.Building = null;
-				this.NotifyViewNewModel("Building");
 			},
 			
 			GetTag : function(key) {
@@ -67,7 +60,7 @@ r.define(["Api/util/lang",
 			},
 			
 			onChangeset_Opened : function(pOut, ev) {
-				var p = OsmAuth.UploadChangeset(ev.changeset.id, this.model.Building.feature);
+				var p = OsmAuth.UploadBuildingModification(ev.changeset.id, this.model.Building.feature);
 				
 				p.then(this.onUpload_Success.bind(this, pOut), failure.bind(this));
 				

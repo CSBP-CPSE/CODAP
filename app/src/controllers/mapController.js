@@ -6,7 +6,7 @@ r.define(["Api/util/lang",
 		  "Api/util/array",
 		  "Api/components/promise",
 		  "App/config/styles",
-		  "App/helpers/overpass",
+		  "App/util/overpass",
 		  "App/util/osmAuth",
 		  "App/components/controller"],
     
