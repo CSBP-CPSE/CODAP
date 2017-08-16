@@ -58,7 +58,8 @@ r.define(["Api/util/lang",
 				this.map = new ol.Map({
 					layers	: [this.bLayer, this.vLayer ],
 					controls: controls,
-					view	: view
+					view	: view,
+					moveTolerance : 5
 				});
 				
 				this.map.on("singleclick", this.onMap_Click.bind(this));
