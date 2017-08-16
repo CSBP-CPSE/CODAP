@@ -61,7 +61,7 @@ r.define(["Api/util/lang",
 					view	: view
 				});
 				
-				this.map.on("click", this.onMap_Click.bind(this));
+				this.map.on("singleclick", this.onMap_Click.bind(this));
 				
 				function styleFn(f) {					
 					return Styles[f.getGeometry().getType()];
