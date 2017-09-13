@@ -5,6 +5,7 @@
         <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 		<!-- “group, human, men, people, users” icon by http://www.uniquedesign10.com/ from the Unique-Round-Blue Project. -->
 		
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -26,18 +27,20 @@
 		
 		<!--script src="../references/ol-4.3.1/ol-debug.js"></script-->
 
-		<script src="../references/ol-4.3.1/ol-debug.js"></script>
+		<script src="../references/ol-4.3.1/ol.js"></script>
         <script src='../references/osmauth/osmauth.js'></script>
         <script src='../references/osmtogeojson-gh-pages/osmtogeojson.js'></script>
 	    <script src="../references/requirejs-2.3.2/require_mod.js"></script>
 
         <script type="text/javascript">
+			window.name = 'index';
+		
 			function onload(ev) {	
 				var loc = location.href.split("/");
 				var url = loc.splice(0, loc.length - 1).join("/") + "/";
 				
 				r.require.config({
-					urlArgs : "v=0.3.1",
+					urlArgs : "v=0.7.0",
 					paths: {
 						proj4 : url  + "../references/proj4js",
 						// Api	  : "https://csbp-cpse.github.io/jCore",

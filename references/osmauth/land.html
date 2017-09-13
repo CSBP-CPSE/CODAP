@@ -2,10 +2,12 @@
 <!-- saved from url=(0042)http://osmlab.github.io/osm-auth/land.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
     <body>
-        <script>
-            opener.authComplete(window.location.href);
+        <script>			
+			if (!window.opener) window.opener = window.open('','index');
+
+            window.opener.authComplete(window.location.href);
+			
             window.close();
         </script>
-    
-
-</body></html>
+	</body>
+</html>

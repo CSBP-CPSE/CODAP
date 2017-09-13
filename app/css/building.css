@@ -124,13 +124,16 @@
 }
 
 .Save .Container { 
-    top: 0px;
+    top: 10px;
     bottom: 40px;
     left: 0px;
     right: 0px;
     z-index: 500;
     height: 190px;
 	max-width: 300px;
+	
+	width	: 95%;
+	
     position: absolute;
     background-color: rgba(99, 30, 28, 0.8);
     border-radius: 6px;

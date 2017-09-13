@@ -94,15 +94,15 @@ r.define(["Api/util/lang",
 			OpenView : function(id) {
 				this.aViewId = id;
 				
-				if (this.ActiveView().IsCollapsed()) this.ActiveView().Expand();
+				if (!!this.aViewId && this.ActiveView().IsCollapsed()) this.ActiveView().Expand();
 				
 				this.View("Main").SetActiveButton(id);
 			},
 			
-			CloseView : function(animate) {
+			CloseView : function(instant) {
 				if (!this.aViewId) return;
 				
-				if (this.ActiveView().IsExpanded()) this.ActiveView().Collapse(animate);
+				if (this.ActiveView().IsExpanded()) this.ActiveView().Collapse(instant);
 				
 				this.aViewId = null;
 				
@@ -112,7 +112,7 @@ r.define(["Api/util/lang",
 			SetActiveView : function(id) {
 				if (this.aViewId === id) return;
 				
-				this.CloseView(true);
+				this.CloseView(id !== null);
 				this.OpenView(id);
 			},
 			
