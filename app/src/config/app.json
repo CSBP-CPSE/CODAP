@@ -1,9 +1,9 @@
 {
 	"oAuth" : {
-		"oauth_secret"			: "ypYn4P36CzrSer7ixv3IhIuAwauAwWonmwf0qn03",
+		"oauth_secret"			: "2S5eyCWpYzO2y0NJdEZ7GfHvz4qEFG6q8RtXE6VK",
 		"oauth_secret_dev"		: "fsU9ar4TtOyjKByrTFfViKYncUCL8obeBQ2F92Yu",
 		
-		"oauth_consumer_key"	: "R4B205ZzS6TvuI2oZZ95V2Ss4BlVl2SsFhOhONBN",
+		"oauth_consumer_key"	: "b8Edi8SVcbRg97s2w9BwwQFQZnAKXylgbQa7DibB",
 		"oauth_consumer_key_dev": "8AQ0djjdlIFEZSH93a893xagkLudKzQxT4pvMg0d",
 		
 		"url"					: "https://www.openstreetmap.org",
