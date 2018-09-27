@@ -15,7 +15,7 @@ r.define(["Api/util/array",
 				var p = new Promise();
 				
 				// NOTE : This url will only return features as long as the radius around the clicked point contains a node or a way
-				var data = 'data=[out:json][timeout:60];(node["amenity"](around:{0},{1},{2});way["building"](around:{0},{1},{2});>);out meta;'
+				var data = 'data=[out:json][timeout:60];(node["amenity"](around:{0},{1},{2});way["building"](around:{0},{1},{2});>;);out meta;'
 				
 				var url = this.overpass.url + '?' + this.PreventCache() + '&' + String.Format(data, [radius, xy.y, xy.x]);
 				
