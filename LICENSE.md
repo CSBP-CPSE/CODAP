@@ -1,4 +1,4 @@
-## CODAP- Terms and Conditions of Use
+## CODAP - Terms and Conditions of Use
 
 Unless otherwise noted, computer program source code of the Crowdsourced Open Data Acquisition Platform (CODAP) is covered under Crown Copyright, Government of Canada, and is distributed under the MIT License.
 
