@@ -1,4 +1,4 @@
-# CODAP (PADOP)
+# CODAP / PADOP 
 Crowdsourced Open Data Acquisition Platform  (https://csbp-cpse.github.io/CODAP/app/index.html)
 
 ## About the project
@@ -31,7 +31,7 @@ The City of Ottawa and the OSM Canada community are also key collaborators in th
 
 Date modified: 2017-05-11
 
-# CODAP (PADOP)
+# PADOP / CODAP 
 Plateforme d'acquisition de données ouvertes participative (https://csbp-cpse.github.io/CODAP/app/index.html)
 
 ## À propos du projet
